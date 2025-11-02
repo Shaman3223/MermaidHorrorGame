@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bocalktbtgeou"]
+
+[ext_resource type="PackedScene" uid="uid://1n5avnwdn3yh" path="res://3DModels/paddle_prot.fbx" id="1_0sbc1"]
+
+[node name="Paddle" type="Node3D"]
+
+[node name="paddle_prot" parent="." instance=ExtResource("1_0sbc1")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)

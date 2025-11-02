@@ -1,11 +1,21 @@
-[gd_scene load_steps=11 format=3 uid="uid://pm7l3k20fkv1"]
+[gd_scene load_steps=14 format=3 uid="uid://pm7l3k20fkv1"]
 
 [ext_resource type="Script" uid="uid://c5n5t76tntvc3" path="res://Script/playerCharacter.gd" id="1_8gbba"]
+[ext_resource type="PackedScene" uid="uid://dmuyyt4o3ougc" path="res://3DModels/boat_prot.fbx" id="2_21xkr"]
 [ext_resource type="Shader" uid="uid://08qo0nnjkiii" path="res://Shaders/water.gdshader" id="2_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://1n5avnwdn3yh" path="res://3DModels/paddle_prot.fbx" id="2_kry3j"]
 [ext_resource type="PackedScene" uid="uid://cdwfi2ju7bjr0" path="res://Scenes/control.tscn" id="3_kry3j"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
 size = Vector3(4.6078796, 1, 1)
+
+[sub_resource type="Curve3D" id="Curve3D_21xkr"]
+bake_interval = 38.99
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 2, -1, -1.5, 0, 0, 0, 0, 0, 0, 1, -1, -2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, -1, 2, 0, 0, 0, 0, 0, 0, 2, -1, 1.5),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
 
 [sub_resource type="Gradient" id="Gradient_ig7tw"]
 
@@ -45,9 +55,8 @@ shader_parameter/uWaveScale = 1.6
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 script = ExtResource("1_8gbba")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6684723, -0.3569715, 0)
-size = Vector3(4.608673, 1, 1)
+[node name="boat_prot" parent="CharacterBody3D" instance=ExtResource("2_21xkr")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -0.465, 0.49, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6732025, -0.32580757, 0)
@@ -58,6 +67,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2758827, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Path3D" type="Path3D" parent="CharacterBody3D/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.302, 0, 0)
+curve = SubResource("Curve3D_21xkr")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="CharacterBody3D/Head/Path3D"]
+transform = Transform3D(0.44719383, -6.996651e-08, -0.89442164, 1.5645529e-07, 0.9999214, 7.1053837e-15, 0.8943878, -1.3993305e-07, 0.44721076, 2, -1, 1.5)
+progress = 8.236068
+
+[node name="paddle_prot" parent="CharacterBody3D/Head/Path3D/PathFollow3D" instance=ExtResource("2_kry3j")]
+transform = Transform3D(0.43073484, 1.0837752e-08, -0.25390446, 1.0837759e-08, 0.5, 3.972782e-08, 0.2539045, -3.9727823e-08, 0.43073484, 0, 0, 0)
 
 [node name="Water" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23077393, -0.50049996, -1.2306519)

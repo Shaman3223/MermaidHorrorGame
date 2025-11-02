@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://1n5avnwdn3yh"
-path="res://.godot/imported/paddle_prot.fbx-263f524ff313b1cbef21ab41a14c55a5.scn"
+uid="uid://dmuyyt4o3ougc"
+path="res://.godot/imported/boat_prot.fbx-d418f9a099b21702df7ff3fabe89a4d8.scn"
 
 [deps]
 
-source_file="res://3DModels/paddle_prot.fbx"
-dest_files=["res://.godot/imported/paddle_prot.fbx-263f524ff313b1cbef21ab41a14c55a5.scn"]
+source_file="res://3DModels/boat_prot.fbx"
+dest_files=["res://.godot/imported/boat_prot.fbx-d418f9a099b21702df7ff3fabe89a4d8.scn"]
 
 [params]
 

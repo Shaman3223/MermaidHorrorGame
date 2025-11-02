@@ -32,11 +32,12 @@ func _input(event: InputEvent):
 			if not (isOnRight or isOnLeft):
 				return
 			
+			if isOnLeft: leftSide.emit(delta.length())
+			if isOnRight: rightSide.emit(delta.length())
+			
 			
 			if abs(delta.x) < abs(delta.y):
 				if delta.y < 0:
-					if isOnLeft: leftSide.emit(delta.length())
-					if isOnRight: rightSide.emit(delta.length())
 					print("Swipe Up")
 				else:
 					print("Swipe Down")

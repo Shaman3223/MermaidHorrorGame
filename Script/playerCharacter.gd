@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 	velocity.z += 0.2 * delta
 	
 	rotation.y += rotationalSpeed
-	$CSGBox3D.rotation.y = boatLag
+	$boat_prot.rotation.y = boatLag
 	
 	var sinvers: float = sin(rotation.y - PI/2) * pushVelocity
 	var cosvers: float = cos(rotation.y - PI/2) * pushVelocity
@@ -43,7 +43,9 @@ func _physics_process(delta: float) -> void:
 		boatLerpRate = 0.0009
 		rockback = false
 		print("yippe kaiye")
-
+	#display/window/size/viewport_width
+	var screenWidth = get_viewport().size.x
+	$Head/Path3D/PathFollow3D.progress_ratio = -$"../CanvasLayer/Control".get_global_mouse_position().x/screenWidth
 	move_and_slide()
 
 func paddleRight(mag: int):
@@ -61,3 +63,4 @@ func forwardPaddle(charge, mag):
 	boatLagBack = (boatLag * -1) * 0.2
 	boatLerpRate = 0.002
 	rockback = true
+	print("paddle")
