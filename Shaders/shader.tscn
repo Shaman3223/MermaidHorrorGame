@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtm717fg1blcg"]
+
+[ext_resource type="Shader" uid="uid://dtaxhidahu4fn" path="res://Shaders/pixelation01.gdshader" id="1_pmnub"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_edaxr"]
+shader = ExtResource("1_pmnub")
+
+[node name="ColorRect" type="ColorRect"]
+material = SubResource("ShaderMaterial_edaxr")
+offset_right = 1920.0
+offset_bottom = 1440.0
