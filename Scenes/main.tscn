@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://pm7l3k20fkv1"]
+[gd_scene load_steps=21 format=3 uid="uid://pm7l3k20fkv1"]
 
 [ext_resource type="Script" uid="uid://c5n5t76tntvc3" path="res://Script/playerCharacter.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://dmuyyt4o3ougc" path="res://3DModels/boat_prot.fbx" id="2_21xkr"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://1n5avnwdn3yh" path="res://3DModels/paddle_prot.fbx" id="2_kry3j"]
 [ext_resource type="PackedScene" uid="uid://cdwfi2ju7bjr0" path="res://Scenes/control.tscn" id="3_kry3j"]
 [ext_resource type="PackedScene" uid="uid://ce5auqul0pn8t" path="res://Scenes/check_point.tscn" id="6_21xkr"]
+[ext_resource type="Shader" uid="uid://yvgemnay0w2o" path="res://Shaders/pixelation.gdshader" id="7_6bp64"]
+[ext_resource type="PackedScene" uid="uid://cdet5l6wmgm7t" path="res://Shaders/pixelation.tscn" id="8_344ge"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
 size = Vector3(4.6078796, 1, 1)
@@ -59,6 +61,11 @@ fog_light_color = Color(0.16284272, 0.34576368, 0.40917102, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_21xkr"]
 size = Vector3(18.751953, 4.880127, 30.006073)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_21xkr"]
+shader = ExtResource("7_6bp64")
+
+[sub_resource type="QuadMesh" id="QuadMesh_6bp64"]
 
 [node name="Main" type="Node3D"]
 
@@ -154,6 +161,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.6048, 0, 34.690224)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="KillArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.616211, 0.15344238, -10.533432)
 shape = SubResource("BoxShape3D_21xkr")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+visible = false
+texture_filter = 1
+material = SubResource("ShaderMaterial_21xkr")
+position = Vector2(959.75, 719.75)
+scale = Vector2(1920.5, 1440.5)
+mesh = SubResource("QuadMesh_6bp64")
+
+[node name="ColorRect" parent="." instance=ExtResource("8_344ge")]
+offset_left = 959.75
+offset_top = 719.75
+offset_right = 2879.75
+offset_bottom = 2159.75
 
 [connection signal="mouseEventObserved" from="CanvasLayer/Control" to="CharacterBody3D" method="forwardPaddle"]
 [connection signal="body_entered" from="KillArea" to="CharacterBody3D" method="_on_kill_area_body_entered"]
