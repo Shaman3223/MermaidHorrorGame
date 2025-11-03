@@ -1,10 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdwfi2ju7bjr0"]
+[gd_scene load_steps=2 format=3 uid="uid://cdwfi2ju7bjr0"]
 
 [ext_resource type="Script" uid="uid://dyiry3nk68tm0" path="res://Script/InputObtainer.gd" id="1_0fbet"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0fbet"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_62e2m"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -14,26 +10,3 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0fbet")
-
-[node name="Left" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_left = 53.0
-offset_right = 553.0
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_0fbet")
-
-[node name="Right" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -538.0
-offset_top = 3.0
-offset_right = -38.0
-offset_bottom = 3.0
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_62e2m")
