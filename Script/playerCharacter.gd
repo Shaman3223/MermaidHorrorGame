@@ -34,7 +34,7 @@ func _physics_process(delta: float) -> void:
 		#velocity.z = direction.z * SPEED
 	#else:
 	
-	pushVelocity = move_toward(pushVelocity, 0.0, 0.1 )
+	pushVelocity = move_toward(pushVelocity, 0.0, 0.04 )
 	
 	velocity.x = move_toward(velocity.x, 0.0, 0.1)
 	velocity.z = move_toward(velocity.z, 0.0, 0.1)
@@ -55,12 +55,15 @@ func _physics_process(delta: float) -> void:
 
 func forwardPaddle(charge, dir, mag):
 	var rotateDividend: float = 40
-	var pushPower: float = 1.5
-	#if dir == "Up":
-		#pushPower = -0.6
-	#if dir == "Right" or "Left":
-		#rotateDividend = 30
-		#pushPower = 0.2
+	var pushPower: float = 0.8
+	
+	print(dir)
+	if dir == "Right":
+		rotateDividend = 23
+	elif dir == "Left":
+		rotateDividend = 23
+	elif dir == "Down":
+		rotateDividend = 40
 
 	rotationalSpeed += charge * (PI/rotateDividend) * mag/(rotateDividend * 25)
 	
