@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b258uqyit34ty"]
+
+[ext_resource type="PackedScene" uid="uid://dmuyyt4o3ougc" path="res://3DModels/boat_prot.fbx" id="1_n4181"]
+
+[node name="boat_prot" instance=ExtResource("1_n4181")]

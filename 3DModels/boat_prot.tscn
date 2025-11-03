@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx2uyulfp7gfp"]
+
+[ext_resource type="PackedScene" uid="uid://dmuyyt4o3ougc" path="res://3DModels/boat_prot.fbx" id="1_qxo0f"]
+[ext_resource type="Material" uid="uid://bk4gc6ygc8pjg" path="res://Materials/green.tres" id="2_n4xi2"]
+
+[node name="boat_prot" instance=ExtResource("1_qxo0f")]
+
+[node name="Cube" parent="." index="0"]
+material_override = ExtResource("2_n4xi2")
+
+[node name="Cube_001" parent="." index="1"]
+material_override = ExtResource("2_n4xi2")
+
+[node name="Cube_002" parent="." index="2"]
+material_override = ExtResource("2_n4xi2")
+
+[node name="Sphere" parent="." index="3"]
+material_override = ExtResource("2_n4xi2")
