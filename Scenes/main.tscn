@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://pm7l3k20fkv1"]
 
-[ext_resource type="Script" uid="uid://c5n5t76tntvc3" path="res://Script/playerCharacter.gd" id="1_8gbba"]
+[ext_resource type="Script" uid="uid://cewraoujrf1fr" path="res://Script/playerCharacter03.gd" id="1_344ge"]
 [ext_resource type="PackedScene" uid="uid://dmuyyt4o3ougc" path="res://3DModels/boat_prot.fbx" id="2_21xkr"]
 [ext_resource type="Shader" uid="uid://08qo0nnjkiii" path="res://Shaders/water.gdshader" id="2_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://1n5avnwdn3yh" path="res://3DModels/paddle_prot.fbx" id="2_kry3j"]
@@ -70,7 +70,8 @@ shader = ExtResource("7_6bp64")
 [node name="Main" type="Node3D"]
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-script = ExtResource("1_8gbba")
+transform = Transform3D(0.6506417, 0, -0.7593849, 0, 1, 0, 0.7593849, 0, 0.6506417, 63.568115, 0, 19.194921)
+script = ExtResource("1_344ge")
 
 [node name="boat_prot" parent="CharacterBody3D" instance=ExtResource("2_21xkr")]
 transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -0.465, 0.49, 0)
@@ -117,6 +118,21 @@ min_swipe_distance = 150
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="Enviro"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57, 0, 0)
+use_collision = true
+radius = 15.0
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="Enviro"]
+transform = Transform3D(0.1548457, 0, 0, 0, 0.1245245, 0, 0, 0, 0.109503776, 13.0060425, 0, -7.42062)
+use_collision = true
+radius = 15.0
+
+[node name="CSGSphere3D3" type="CSGSphere3D" parent="Enviro"]
+transform = Transform3D(0.103193566, 0, -0.08164263, 0, 0.12452451, 0, 0.11544817, 0, 0.07297643, 31.931927, 0, 1.6379299)
+use_collision = true
+radius = 15.0
+
+[node name="CSGSphere3D4" type="CSGSphere3D" parent="Enviro"]
+transform = Transform3D(0.15272075, 0, 0.018078998, 0, 0.12452453, 0, -0.025564902, 0, 0.10800105, 37.341564, 0, 7.2090855)
 use_collision = true
 radius = 15.0
 
@@ -171,10 +187,9 @@ scale = Vector2(1920.5, 1440.5)
 mesh = SubResource("QuadMesh_6bp64")
 
 [node name="ColorRect" parent="." instance=ExtResource("8_344ge")]
-offset_left = 959.75
-offset_top = 719.75
-offset_right = 2879.75
-offset_bottom = 2159.75
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.43515253, -0.31656232, 0.8428705, -1.1104438e-08, 0.9361517, 0.35159653, -0.90035677, -0.15299813, 0.40736875, 5.4505067, 8.201745, 5.3995037)
 
 [connection signal="mouseEventObserved" from="CanvasLayer/Control" to="CharacterBody3D" method="forwardPaddle"]
 [connection signal="body_entered" from="KillArea" to="CharacterBody3D" method="_on_kill_area_body_entered"]

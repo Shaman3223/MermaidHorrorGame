@@ -38,8 +38,8 @@ func _physics_process(delta: float) -> void:
 	
 	pushVelocity = move_toward(pushVelocity, 0.0, 0.08 )
 	
-	velocity.x = move_toward(velocity.x, 0.0, 0.1)
-	velocity.z = move_toward(velocity.z, 0.0, 0.1)
+	velocity.x = move_toward(velocity.x, 0.0, 0.01)
+	velocity.z = move_toward(velocity.z, 0.0, 0.01)
 	
 	rotationalSpeed = move_toward(rotationalSpeed, 0, 0.05)
 	boatLag = move_toward(boatLag, boatLagBack, boatLerpRate)
