@@ -10,7 +10,7 @@ var pushVelocity: float = 0.0
 
 var boatLag: float = 0.0
 var boatLagBack: float = 0.0
-var boatLerpRate: float = 0.8
+var boatLerpRate: float = 100.0
 var boatRockback: bool = false
 
 var headLag: float = 0.0
@@ -42,9 +42,8 @@ func _physics_process(delta: float) -> void:
 	rotationalSpeed = move_toward(rotationalSpeed, 0, 0.05)
 	boatLag = move_toward(boatLag, boatLagBack, boatLerpRate)
 	if boatLag < boatLagBack * 0.2 and boatRockback:
-		boatLerpRate = 0.0009
+		boatLerpRate = 0.004
 		boatRockback = false
-		print("yippe kaiye")
 	
 	headLag = move_toward(headLag, 0, boatLerpRate)
 	
@@ -53,26 +52,23 @@ func _physics_process(delta: float) -> void:
 	$Head/Path3D/PathFollow3D.progress_ratio = -$"../CanvasLayer/Control".get_global_mouse_position().x/screenWidth
 	move_and_slide()
 
-#func paddleRight(mag: int):
-	#forwardPaddle(1, mag)
-#
-#func paddleLeft(mag: int):
-	#forwardPaddle(-1, mag)
 
 func forwardPaddle(charge, dir, mag):
 	var rotateDividend: float = 40
-	var pushPower: float = 0.9
-	if dir == "up":
-		pushPower = -0.6
-	rotationalSpeed += charge * (PI/rotateDividend) * mag/1000
+	var pushPower: float = 1.5
+	#if dir == "Up":
+		#pushPower = -0.6
+	#if dir == "Right" or "Left":
+		#rotateDividend = 30
+		#pushPower = 0.2
+
+	rotationalSpeed += charge * (PI/rotateDividend) * mag/(rotateDividend * 25)
 	
 	pushVelocity += pushPower
 	
 	headLag += charge * (PI/40) * mag/300
 	
-	
-	boatLag += -charge * (PI/rotateDividend ) * mag/1000
+	boatLag += -charge * (PI/rotateDividend ) * mag/(rotateDividend * 30)
 	boatLagBack = (boatLag * -1) * 0.2
 	boatLerpRate = 0.002
 	boatRockback = true
-	print("paddle")
