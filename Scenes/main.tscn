@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://pm7l3k20fkv1"]
+[gd_scene load_steps=15 format=3 uid="uid://pm7l3k20fkv1"]
 
 [ext_resource type="Script" uid="uid://c5n5t76tntvc3" path="res://Script/playerCharacter.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://dmuyyt4o3ougc" path="res://3DModels/boat_prot.fbx" id="2_21xkr"]
@@ -41,7 +41,7 @@ as_normal_map = true
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lquwl"]
 render_priority = 0
 shader = ExtResource("2_jjvhh")
-shader_parameter/uAlbedo = Color(0.14509805, 0.13333334, 0.3019608, 1)
+shader_parameter/uAlbedo = Color(0.3416527, 0.32702437, 0.3084534, 1)
 shader_parameter/uTexureNormal = SubResource("NoiseTexture2D_h2yge")
 shader_parameter/uTexureNormal2 = SubResource("NoiseTexture2D_1bvp3")
 shader_parameter/uNormalMix = 0.40000000596046
@@ -49,6 +49,12 @@ shader_parameter/uWaveDirection = Vector2(1, 0)
 shader_parameter/uWaveDirection2 = Vector2(0, 1)
 shader_parameter/uTimeScale = 0.0130000006175
 shader_parameter/uWaveScale = 1.6
+
+[sub_resource type="Environment" id="Environment_kry3j"]
+background_mode = 1
+background_color = Color(0.0034552338, 0.006395377, 0.033865556, 1)
+fog_enabled = true
+fog_light_color = Color(0.16284272, 0.34576368, 0.40917102, 1)
 
 [node name="Main" type="Node3D"]
 
@@ -86,7 +92,7 @@ material = SubResource("ShaderMaterial_lquwl")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.30394995, 0.952688, 0, -0.952688, -0.30394995, 0, 10.101446, 0)
-light_color = Color(1, 0.82075924, 0.7988169, 1)
+light_color = Color(0.1828377, 0.5282172, 0.41893, 1)
 light_energy = 0.353
 light_indirect_energy = 1.33
 light_volumetric_fog_energy = 3.309
@@ -131,5 +137,8 @@ size = Vector3(79.05986, 7.881653, 16.866638)
 [node name="Enviroment6" type="CSGBox3D" parent="Enviro"]
 transform = Transform3D(0.10018801, 0, -0.99496853, 0, 1, 0, 0.99496853, 0, 0.10018801, 44.911682, -1.1561565, 58.992767)
 size = Vector3(79.05986, 7.881653, 16.866638)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kry3j")
 
 [connection signal="mouseEventObserved" from="CanvasLayer/Control" to="CharacterBody3D" method="forwardPaddle"]
