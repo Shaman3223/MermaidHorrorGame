@@ -1,15 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://pm7l3k20fkv1"]
+[gd_scene load_steps=14 format=3 uid="uid://pm7l3k20fkv1"]
 
 [ext_resource type="Script" uid="uid://c5n5t76tntvc3" path="res://Script/playerCharacter.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://dmuyyt4o3ougc" path="res://3DModels/boat_prot.fbx" id="2_21xkr"]
-[ext_resource type="PackedScene" uid="uid://caap1sl74c5c" path="res://Materials/boat_prot.tscn" id="2_hptm8"]
 [ext_resource type="Shader" uid="uid://08qo0nnjkiii" path="res://Shaders/water.gdshader" id="2_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://1n5avnwdn3yh" path="res://3DModels/paddle_prot.fbx" id="2_kry3j"]
-[ext_resource type="Material" uid="uid://djo8dhygdua3r" path="res://Materials/green01.tres" id="3_344ge"]
 [ext_resource type="PackedScene" uid="uid://cdwfi2ju7bjr0" path="res://Scenes/control.tscn" id="3_kry3j"]
-[ext_resource type="Material" uid="uid://bk4gc6ygc8pjg" path="res://Materials/green.tres" id="4_6bp64"]
-[ext_resource type="Material" uid="uid://coihkp36hdbee" path="res://Scenes/dark_blue.tres" id="6_21xkr"]
-[ext_resource type="PackedScene" uid="uid://b82hhi0hbtwox" path="res://3DModels/paddle01_prot.tscn" id="7_d1ilt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
 size = Vector3(4.6078796, 1, 1)
@@ -18,7 +13,7 @@ size = Vector3(4.6078796, 1, 1)
 bake_interval = 38.99
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 2, -1, -1.5, 0, 0, 0, 0, 0, 0, 1, -1, -2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, -1, 2, 0, 0, 0, 0, 0, 0, 2, -1, 1.5),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+"tilts": PackedFloat32Array(0, 0, 0.34906584, 1.3962634, 3.1415927)
 }
 point_count = 5
 
@@ -46,7 +41,7 @@ as_normal_map = true
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lquwl"]
 render_priority = 0
 shader = ExtResource("2_jjvhh")
-shader_parameter/uAlbedo = Color(0.05267971, 0.07892104, 0.16412362, 1)
+shader_parameter/uAlbedo = Color(0.14509805, 0.13333334, 0.3019608, 1)
 shader_parameter/uTexureNormal = SubResource("NoiseTexture2D_h2yge")
 shader_parameter/uTexureNormal2 = SubResource("NoiseTexture2D_1bvp3")
 shader_parameter/uNormalMix = 0.40000000596046
@@ -60,14 +55,8 @@ shader_parameter/uWaveScale = 1.6
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 script = ExtResource("1_8gbba")
 
-[node name="boat_prot2" parent="CharacterBody3D" instance=ExtResource("2_hptm8")]
-transform = Transform3D(1.8013266, 0, 0, 0, 1.9559952, 0, 0, 0, 1.870801, -0.46750903, 0.5156145, 0)
-
 [node name="boat_prot" parent="CharacterBody3D" instance=ExtResource("2_21xkr")]
 transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -0.465, 0.49, 0)
-visible = false
-material_override = ExtResource("3_344ge")
-material_overlay = ExtResource("3_344ge")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6732025, -0.32580757, 0)
@@ -80,66 +69,57 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2758827, 0)
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="Path3D" type="Path3D" parent="CharacterBody3D/Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.302, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.482, -1.1700721, 0)
 curve = SubResource("Curve3D_21xkr")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="CharacterBody3D/Head/Path3D"]
-transform = Transform3D(0.44719383, -6.996651e-08, -0.89442164, 1.5645529e-07, 0.9999214, 7.1053837e-15, 0.8943878, -1.3993305e-07, 0.44721076, 2, -1, 1.5)
-progress = 8.236068
+transform = Transform3D(0.447186, 0, 0.89442545, 0, 0.99991894, 0, -0.8943721, 0, 0.44721267, 1.6766727, -1.0945832, -1.7798927)
+progress = 0.44227684
 
 [node name="paddle_prot" parent="CharacterBody3D/Head/Path3D/PathFollow3D" instance=ExtResource("2_kry3j")]
-transform = Transform3D(0.43073484, 1.0837752e-08, -0.25390446, 1.0837759e-08, 0.5, 3.972782e-08, 0.2539045, -3.9727823e-08, 0.43073484, 0, 0, 0)
-visible = false
-material_override = ExtResource("4_6bp64")
-
-[node name="paddle_prot2" parent="CharacterBody3D/Head/Path3D/PathFollow3D" instance=ExtResource("7_d1ilt")]
-transform = Transform3D(0.4502089, 1.36029925e-08, -0.30769923, 1.4880797e-08, 0.49848762, 4.8144955e-08, 0.3076992, -4.401075e-08, 0.4502088, 0, 0, 0)
+transform = Transform3D(0.43081456, -0.109250456, -0.22904831, 0, 0.45129263, -0.21525554, 0.2537692, 0.18547046, 0.38884684, 0, 0, 0)
 
 [node name="Water" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.66382885, -1.9770615, -2.108818)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23077393, -0.50049996, -1.2306519)
 size = Vector3(257.42712, 0.001, 216.2555)
 material = SubResource("ShaderMaterial_lquwl")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.30394995, 0.952688, 0, -0.952688, -0.30394995, 0, 10.101446, 0)
-light_color = Color(0.6276516, 0.9523787, 0.7833981, 1)
+light_color = Color(1, 0.82075924, 0.7988169, 1)
 light_energy = 0.353
 light_indirect_energy = 1.33
-light_volumetric_fog_energy = 3.194
+light_volumetric_fog_energy = 3.309
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" parent="CanvasLayer" instance=ExtResource("3_kry3j")]
+min_swipe_distance = 150
 
 [node name="Enviro" type="Node3D" parent="."]
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="Enviro"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57, 0, 0)
-material_override = ExtResource("6_21xkr")
 use_collision = true
 radius = 15.0
 
 [node name="Enviroment" type="CSGBox3D" parent="Enviro"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9631882, 2.4982395, -26.687733)
-material_override = ExtResource("6_21xkr")
 use_collision = true
 size = Vector3(41.54355, 7.881653, 16.866638)
 
 [node name="Enviroment2" type="CSGBox3D" parent="Enviro"]
 transform = Transform3D(0.9894273, 0, -0.14502972, 0, 1, 0, 0.14502972, 0, 0.9894273, 29.192879, 2.4982395, -24.524885)
-material_override = ExtResource("6_21xkr")
 use_collision = true
 size = Vector3(41.54355, 7.881653, 16.866638)
 
 [node name="Enviroment3" type="CSGBox3D" parent="Enviro"]
 transform = Transform3D(0.8525216, 0, -0.522692, 0, 1, 0, 0.522692, 0, 0.8525216, 75.089005, 2.4982395, -2.7709627)
-material_override = ExtResource("6_21xkr")
 use_collision = true
 size = Vector3(79.05986, 7.881653, 16.866638)
 
 [node name="Enviroment5" type="CSGBox3D" parent="Enviro"]
 transform = Transform3D(0.09233579, 0, -0.995728, 0, 1, 0, 0.995728, 0, 0.09233579, 106.989044, 2.4982395, 49.86971)
-material_override = ExtResource("6_21xkr")
 use_collision = true
 size = Vector3(79.05986, 7.881653, 16.866638)
 
@@ -147,12 +127,9 @@ size = Vector3(79.05986, 7.881653, 16.866638)
 transform = Transform3D(0.9967438, 0, -0.0806339, 0, 1, 0, 0.0806339, 0, 0.9967438, 9.158783, -1.1561565, 23.928848)
 use_collision = true
 size = Vector3(79.05986, 7.881653, 16.866638)
-material = ExtResource("6_21xkr")
 
 [node name="Enviroment6" type="CSGBox3D" parent="Enviro"]
 transform = Transform3D(0.10018801, 0, -0.99496853, 0, 1, 0, 0.99496853, 0, 0.10018801, 44.911682, -1.1561565, 58.992767)
-material_override = ExtResource("6_21xkr")
 size = Vector3(79.05986, 7.881653, 16.866638)
 
-[connection signal="leftSide" from="CanvasLayer/Control" to="CharacterBody3D" method="paddleLeft"]
-[connection signal="rightSide" from="CanvasLayer/Control" to="CharacterBody3D" method="paddleRight"]
+[connection signal="mouseEventObserved" from="CanvasLayer/Control" to="CharacterBody3D" method="forwardPaddle"]
