@@ -8,7 +8,7 @@
 [ext_resource type="Material" uid="uid://djo8dhygdua3r" path="res://Materials/green01.tres" id="3_344ge"]
 [ext_resource type="PackedScene" uid="uid://cdwfi2ju7bjr0" path="res://Scenes/control.tscn" id="3_kry3j"]
 [ext_resource type="Material" uid="uid://bk4gc6ygc8pjg" path="res://Materials/green.tres" id="4_6bp64"]
-[ext_resource type="Material" uid="uid://coihkp36hdbee" path="res://Materials/dark_blue.tres" id="6_21xkr"]
+[ext_resource type="Material" uid="uid://coihkp36hdbee" path="res://Scenes/dark_blue.tres" id="6_21xkr"]
 [ext_resource type="PackedScene" uid="uid://b82hhi0hbtwox" path="res://3DModels/paddle01_prot.tscn" id="7_d1ilt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
