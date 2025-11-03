@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=3 uid="uid://ce5auqul0pn8t"]
+
+[ext_resource type="Script" uid="uid://cw0nxva6rjwml" path="res://Scenes/check_point.gd" id="1_oampm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ryujq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oampm"]
+emission_enabled = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_oampm"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mcmgj"]
+radius = 3.3582513
+
+[sub_resource type="Animation" id="Animation_oampm"]
+resource_name = "light up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:surface_material_override/0:emission")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 0.93333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(15.652, 6.567, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mcmgj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:surface_material_override/0:emission")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cdwub"]
+_data = {
+&"RESET": SubResource("Animation_mcmgj"),
+&"light up": SubResource("Animation_oampm")
+}
+
+[node name="CheckPoint" type="Node3D"]
+script = ExtResource("1_oampm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6947955, 0)
+mesh = SubResource("BoxMesh_ryujq")
+surface_material_override/0 = SubResource("StandardMaterial3D_oampm")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_oampm")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_mcmgj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_cdwub")
+}
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5134082, 0.5699309, 0)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
