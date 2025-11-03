@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://pm7l3k20fkv1"]
+[gd_scene load_steps=17 format=3 uid="uid://pm7l3k20fkv1"]
 
 [ext_resource type="Script" uid="uid://c5n5t76tntvc3" path="res://Script/playerCharacter.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://dmuyyt4o3ougc" path="res://3DModels/boat_prot.fbx" id="2_21xkr"]
 [ext_resource type="Shader" uid="uid://08qo0nnjkiii" path="res://Shaders/water.gdshader" id="2_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://1n5avnwdn3yh" path="res://3DModels/paddle_prot.fbx" id="2_kry3j"]
 [ext_resource type="PackedScene" uid="uid://cdwfi2ju7bjr0" path="res://Scenes/control.tscn" id="3_kry3j"]
+[ext_resource type="PackedScene" uid="uid://ce5auqul0pn8t" path="res://Scenes/check_point.tscn" id="6_21xkr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
 size = Vector3(4.6078796, 1, 1)
@@ -55,6 +56,9 @@ background_mode = 1
 background_color = Color(0.0034552338, 0.006395377, 0.033865556, 1)
 fog_enabled = true
 fog_light_color = Color(0.16284272, 0.34576368, 0.40917102, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_21xkr"]
+size = Vector3(18.751953, 4.880127, 30.006073)
 
 [node name="Main" type="Node3D"]
 
@@ -138,7 +142,18 @@ size = Vector3(79.05986, 7.881653, 16.866638)
 transform = Transform3D(0.10018801, 0, -0.99496853, 0, 1, 0, 0.99496853, 0, 0.10018801, 44.911682, -1.1561565, 58.992767)
 size = Vector3(79.05986, 7.881653, 16.866638)
 
+[node name="CheckPoint" parent="Enviro" instance=ExtResource("6_21xkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.6884, 0.8393462, 0)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_kry3j")
 
+[node name="KillArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.6048, 0, 34.690224)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KillArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.616211, 0.15344238, -10.533432)
+shape = SubResource("BoxShape3D_21xkr")
+
 [connection signal="mouseEventObserved" from="CanvasLayer/Control" to="CharacterBody3D" method="forwardPaddle"]
+[connection signal="body_entered" from="KillArea" to="CharacterBody3D" method="_on_kill_area_body_entered"]

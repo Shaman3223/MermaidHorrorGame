@@ -15,6 +15,8 @@ var boatRockback: bool = false
 
 var headLag: float = 0.0
 
+var lastCheckpoint: Node3D
+
 
 func _physics_process(delta: float) -> void:
 	velocity.z += 0.2 * delta
@@ -34,7 +36,7 @@ func _physics_process(delta: float) -> void:
 		#velocity.z = direction.z * SPEED
 	#else:
 	
-	pushVelocity = move_toward(pushVelocity, 0.0, 0.04 )
+	pushVelocity = move_toward(pushVelocity, 0.0, 0.08 )
 	
 	velocity.x = move_toward(velocity.x, 0.0, 0.1)
 	velocity.z = move_toward(velocity.z, 0.0, 0.1)
@@ -59,11 +61,14 @@ func forwardPaddle(charge, dir, mag):
 	
 	print(dir)
 	if dir == "Right":
-		rotateDividend = 23
+		rotateDividend = 30
+		pushPower = 0.3
 	elif dir == "Left":
-		rotateDividend = 23
+		rotateDividend = 30
+		pushPower = 0.3
 	elif dir == "Down":
 		rotateDividend = 40
+		pushPower = 0.9
 
 	rotationalSpeed += charge * (PI/rotateDividend) * mag/(rotateDividend * 25)
 	
@@ -75,3 +80,16 @@ func forwardPaddle(charge, dir, mag):
 	boatLagBack = (boatLag * -1) * 0.2
 	boatLerpRate = 0.002
 	boatRockback = true
+
+func die():
+	if lastCheckpoint != null:
+		global_position = lastCheckpoint.lastPosition
+	else:
+		#Take to title Sequence
+		pass
+	print("I have died")
+
+
+func _on_kill_area_body_entered(body: Node3D) -> void:
+	if body == self:
+		die()
