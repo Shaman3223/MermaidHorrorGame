@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Below The Lake"
+run/main_scene="uid://pm7l3k20fkv1"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -18,6 +19,7 @@ config/icon="res://icon.svg"
 
 folder_colors={
 "res://3DModels/": "orange",
+"res://Materials/": "yellow",
 "res://Scenes/": "teal",
 "res://Script/": "red",
 "res://Shaders/": "purple"

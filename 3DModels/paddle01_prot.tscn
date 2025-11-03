@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b82hhi0hbtwox"]
+
+[ext_resource type="PackedScene" uid="uid://1n5avnwdn3yh" path="res://3DModels/paddle_prot.fbx" id="1_3i46u"]
+[ext_resource type="Material" uid="uid://djo8dhygdua3r" path="res://Materials/green01.tres" id="2_rdka6"]
+
+[node name="paddle_prot" instance=ExtResource("1_3i46u")]
+
+[node name="Cube" parent="." index="0"]
+material_override = ExtResource("2_rdka6")
