@@ -1,26 +1,14 @@
-[gd_scene load_steps=21 format=3 uid="uid://pm7l3k20fkv1"]
+[gd_scene load_steps=17 format=3 uid="uid://pm7l3k20fkv1"]
 
-[ext_resource type="Script" uid="uid://cewraoujrf1fr" path="res://Script/playerCharacter03.gd" id="1_344ge"]
-[ext_resource type="PackedScene" uid="uid://dmuyyt4o3ougc" path="res://3DModels/boat_prot.fbx" id="2_21xkr"]
+[ext_resource type="PackedScene" uid="uid://bhio7k0sdbeev" path="res://Scenes/player.tscn" id="1_21xkr"]
 [ext_resource type="Shader" uid="uid://08qo0nnjkiii" path="res://Shaders/water.gdshader" id="2_jjvhh"]
-[ext_resource type="PackedScene" uid="uid://1n5avnwdn3yh" path="res://3DModels/paddle_prot.fbx" id="2_kry3j"]
 [ext_resource type="PackedScene" uid="uid://cdwfi2ju7bjr0" path="res://Scenes/control.tscn" id="3_kry3j"]
 [ext_resource type="PackedScene" uid="uid://ce5auqul0pn8t" path="res://Scenes/check_point.tscn" id="6_21xkr"]
-[ext_resource type="Shader" uid="uid://yvgemnay0w2o" path="res://Shaders/pixelation.gdshader" id="7_6bp64"]
-[ext_resource type="PackedScene" uid="uid://cdet5l6wmgm7t" path="res://Shaders/pixelation.tscn" id="8_344ge"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
-size = Vector3(4.6078796, 1, 1)
-
-[sub_resource type="Curve3D" id="Curve3D_21xkr"]
-bake_interval = 38.99
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 2, -1, -1.5, 0, 0, 0, 0, 0, 0, 1, -1, -2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, -1, 2, 0, 0, 0, 0, 0, 0, 2, -1, 1.5),
-"tilts": PackedFloat32Array(0, 0, 0.34906584, 1.3962634, 3.1415927)
-}
-point_count = 5
+[ext_resource type="Shader" path="res://Shaders/pixelation.gdshader" id="7_6bp64"]
+[ext_resource type="PackedScene" path="res://Shaders/pixelation.tscn" id="8_344ge"]
 
 [sub_resource type="Gradient" id="Gradient_ig7tw"]
+offsets = PackedFloat32Array(0.11129032, 0.33548388)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_0xm2m"]
 frequency = 0.028
@@ -44,13 +32,13 @@ as_normal_map = true
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lquwl"]
 render_priority = 0
 shader = ExtResource("2_jjvhh")
-shader_parameter/uAlbedo = Color(0.3416527, 0.32702437, 0.3084534, 1)
+shader_parameter/uAlbedo = Color(0.24867004, 0.23625347, 0.22496565, 1)
 shader_parameter/uTexureNormal = SubResource("NoiseTexture2D_h2yge")
 shader_parameter/uTexureNormal2 = SubResource("NoiseTexture2D_1bvp3")
-shader_parameter/uNormalMix = 0.40000000596046
+shader_parameter/uNormalMix = 0.60000000894069
 shader_parameter/uWaveDirection = Vector2(1, 0)
 shader_parameter/uWaveDirection2 = Vector2(0, 1)
-shader_parameter/uTimeScale = 0.0130000006175
+shader_parameter/uTimeScale = 0.010000000475
 shader_parameter/uWaveScale = 1.6
 
 [sub_resource type="Environment" id="Environment_kry3j"]
@@ -69,35 +57,9 @@ shader = ExtResource("7_6bp64")
 
 [node name="Main" type="Node3D"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-transform = Transform3D(0.6506417, 0, -0.7593849, 0, 1, 0, 0.7593849, 0, 0.6506417, 63.568115, 0, 19.194921)
-script = ExtResource("1_344ge")
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_21xkr")]
 
-[node name="boat_prot" parent="CharacterBody3D" instance=ExtResource("2_21xkr")]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -0.465, 0.49, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6732025, -0.32580757, 0)
-shape = SubResource("BoxShape3D_0xm2m")
-
-[node name="Head" type="Node3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2758827, 0)
-
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.5078256, 0, 0)
-
-[node name="Path3D" type="Path3D" parent="CharacterBody3D/Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.482, -1.1700721, 0)
-curve = SubResource("Curve3D_21xkr")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="CharacterBody3D/Head/Path3D"]
-transform = Transform3D(0.447186, 0, 0.89442545, 0, 0.99991894, 0, -0.8943721, 0, 0.44721267, 1.6766727, -1.0945832, -1.7798927)
-progress = 0.44227684
-
-[node name="paddle_prot" parent="CharacterBody3D/Head/Path3D/PathFollow3D" instance=ExtResource("2_kry3j")]
-transform = Transform3D(0.43081456, -0.109250456, -0.22904831, 0, 0.45129263, -0.21525554, 0.2537692, 0.18547046, 0.38884684, 0, 0, 0)
-
-[node name="Water" type="CSGBox3D" parent="."]
+[node name="Water" type="CSGBox3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23077393, -0.50049996, -1.2306519)
 size = Vector3(257.42712, 0.001, 216.2555)
 material = SubResource("ShaderMaterial_lquwl")
@@ -112,7 +74,7 @@ light_volumetric_fog_energy = 3.309
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" parent="CanvasLayer" instance=ExtResource("3_kry3j")]
-min_swipe_distance = 150
+min_swipe_distance = 250
 
 [node name="Enviro" type="Node3D" parent="."]
 
@@ -192,4 +154,3 @@ mesh = SubResource("QuadMesh_6bp64")
 transform = Transform3D(0.43515253, -0.31656232, 0.8428705, -1.1104438e-08, 0.9361517, 0.35159653, -0.90035677, -0.15299813, 0.40736875, 5.4505067, 8.201745, 5.3995037)
 
 [connection signal="mouseEventObserved" from="CanvasLayer/Control" to="CharacterBody3D" method="forwardPaddle"]
-[connection signal="body_entered" from="KillArea" to="CharacterBody3D" method="_on_kill_area_body_entered"]

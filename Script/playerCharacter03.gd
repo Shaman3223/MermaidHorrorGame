@@ -74,24 +74,18 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 #paddling
-func forwardPaddle(charge, dir, mag):
+func forwardPaddle(charge: int, dir: Vector2, mag: float):
 	#charge = length of paddle, dir = right left down
-	var rotateDividend: float = 40
-	var pushPower: float = 0.8
+
 
 #adjust tilt intensity 
-	if dir == "Right":
-		rotateDividend = 30
-		pushPower = 0.3
-		target_tilt_x = -0.05
-	elif dir == "Left":
-		rotateDividend = 30
-		pushPower = 0.3
-		target_tilt_x = 0.05
-	elif dir == "Down":
-		rotateDividend = 40
-		pushPower = 0.9
-		target_tilt_x = 0.0
+	var rotateDividend: float = 40.0 - abs(dir.x/600)
+	var pushPower: float = 0.8 * (dir.y/1000)
+	
+	if abs(dir.y) > abs(dir.x):
+		tilt_x = 0.05 * charge
+	else:
+		tilt_x = 0.0
 
 	queued_rotation_speed = charge * (PI/rotateDividend) * mag/(rotateDividend * 300)
 	pushVelocity += pushPower

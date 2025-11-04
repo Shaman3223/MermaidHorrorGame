@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://bhio7k0sdbeev"]
+
+[ext_resource type="Script" uid="uid://cewraoujrf1fr" path="res://Script/playerCharacter03.gd" id="1_6t5aa"]
+[ext_resource type="PackedScene" uid="uid://dmuyyt4o3ougc" path="res://3DModels/boat_prot.fbx" id="2_vgqql"]
+[ext_resource type="PackedScene" uid="uid://1n5avnwdn3yh" path="res://3DModels/paddle_prot.fbx" id="3_fkybt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
+size = Vector3(3.162838, 1, 2.019043)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6t5aa"]
+size = Vector3(1.3008385, 1, 0.7062988)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vgqql"]
+size = Vector3(0.5538616, 1, 0.7062988)
+
+[sub_resource type="Curve3D" id="Curve3D_21xkr"]
+bake_interval = 36.4
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 2, -1, -1.5, 0, 0, 0, 2, 0, 1.5, 1, -1, -2, 0, 0, 0, 5, 0, -20, 0, 1.5, 0, 0, 0, -20, 0, 0, -20, 1, -1, 2, 0, 0, 0, 0, 0, 0, 2, -1, 1.5),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+up_vector_enabled = false
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_6t5aa")
+
+[node name="boat_prot" parent="." instance=ExtResource("2_vgqql")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -0.465, 0.49, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14940071, 0.13367164, -0.0033991337)
+shape = SubResource("BoxShape3D_0xm2m")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.84840864, 0, -0.5293419, 0, 1, 0, 0.5293419, 0, 0.84840864, -2.1750717, 0.13367164, 0.4791389)
+shape = SubResource("BoxShape3D_6t5aa")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.8480481, 0, 0.52991927, 0, 1, 0, -0.52991927, 0, 0.8480481, -2.1750717, 0.13367164, -0.41068155)
+shape = SubResource("BoxShape3D_6t5aa")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.8182063, 0.13367164, -0.03530693)
+shape = SubResource("BoxShape3D_vgqql")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2758827, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.5078256, 0, 0)
+
+[node name="Path3D" type="Path3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.482, -1.1700721, 0)
+curve = SubResource("Curve3D_21xkr")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Head/Path3D"]
+transform = Transform3D(-0.9990035, 0, -0.041670475, 0, 0.9998526, 0, 0.04166905, 0, -0.99903774, 1.8752931, -1.0353357, 1.597689)
+progress = 8.73587
+
+[node name="paddle_prot" parent="Head/Path3D/PathFollow3D" instance=ExtResource("3_fkybt")]
+transform = Transform3D(0.43081456, -0.109250456, -0.2290483, 0, 0.45129263, -0.21525553, 0.2537692, 0.18547046, 0.3888468, 0, 0, 0)
