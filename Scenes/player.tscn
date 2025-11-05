@@ -55,8 +55,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.482, -1.1700721, 0)
 curve = SubResource("Curve3D_21xkr")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Head/Path3D"]
-transform = Transform3D(-0.9990035, 0, -0.041670475, 0, 0.9998526, 0, 0.04166905, 0, -0.99903774, 1.8752931, -1.0353357, 1.597689)
-progress = 8.73587
+transform = Transform3D(0.44715863, 0, 0.89433616, 0, 0.99984723, 0, -0.8943174, 0, 0.44716802, 2, -1, -1.5)
+loop = false
 
 [node name="paddle_prot" parent="Head/Path3D/PathFollow3D" instance=ExtResource("3_fkybt")]
 transform = Transform3D(0.43081456, -0.109250456, -0.2290483, 0, 0.45129263, -0.21525553, 0.2537692, 0.18547046, 0.3888468, 0, 0, 0)

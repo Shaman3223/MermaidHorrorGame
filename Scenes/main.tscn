@@ -4,7 +4,7 @@
 [ext_resource type="Shader" uid="uid://08qo0nnjkiii" path="res://Shaders/water.gdshader" id="2_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://cdwfi2ju7bjr0" path="res://Scenes/control.tscn" id="3_kry3j"]
 [ext_resource type="PackedScene" uid="uid://ce5auqul0pn8t" path="res://Scenes/check_point.tscn" id="6_21xkr"]
-[ext_resource type="Shader" path="res://Shaders/pixelation.gdshader" id="7_6bp64"]
+[ext_resource type="Shader" uid="uid://yvgemnay0w2o" path="res://Shaders/pixelation.gdshader" id="7_6bp64"]
 [ext_resource type="PackedScene" path="res://Shaders/pixelation.tscn" id="8_344ge"]
 
 [sub_resource type="Gradient" id="Gradient_ig7tw"]

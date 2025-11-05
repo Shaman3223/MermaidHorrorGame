@@ -68,8 +68,7 @@ func _physics_process(delta: float) -> void:
 	tilt_x = move_toward(tilt_x, target_tilt_x + wobble_x, 0.01)
 	$boat_prot.rotation.x = tilt_x
 
-	var screenWidth = get_viewport().size.x
-	$Head/Path3D/PathFollow3D.progress_ratio = -$"../CanvasLayer/Control".get_global_mouse_position().x/screenWidth
+	movePaddleWMouse()
 
 	move_and_slide()
 
@@ -79,8 +78,8 @@ func forwardPaddle(charge: int, dir: Vector2, mag: float):
 
 
 #adjust tilt intensity 
-	var rotateDividend: float = 40.0 - abs(dir.x/600)
-	var pushPower: float = 0.8 * (dir.y/1000)
+	var rotateDividend: float = 45.0 - abs(dir.x/600)
+	var pushPower: float = 0.9 * (dir.y/1000)
 	
 	if abs(dir.y) > abs(dir.x):
 		tilt_x = 0.05 * charge
@@ -88,7 +87,8 @@ func forwardPaddle(charge: int, dir: Vector2, mag: float):
 		tilt_x = 0.0
 
 	queued_rotation_speed = charge * (PI/rotateDividend) * mag/(rotateDividend * 300)
-	pushVelocity += pushPower
+	if pushVelocity < 30.0:
+		pushVelocity += pushPower
 	headLag += charge * (PI/40) * mag/300
 	boatLag = 0.0
 
@@ -105,5 +105,25 @@ func die():
 	print("I have died")
 
 func _on_kill_area_body_entered(body: Node3D) -> void:
+	#Just For Testing
 	if body == self:
 		die()
+
+func movePaddleWMouse():
+	var control: Control = getControl()
+	if !control:
+		return
+	var screenWidth: float = get_viewport().size.x
+	var paddleParent: PathFollow3D = $Head/Path3D/PathFollow3D
+	var delta: float = -control.get_local_mouse_position().x/screenWidth
+	paddleParent.progress_ratio = wrapf(delta, 0, 1.0)
+
+func getControl() -> Control:
+	var control: Control = get_parent().get_node("CanvasLayer").get_node("Control")
+	if control:
+		return control
+	else :
+		return null
+
+func checkpointGained():
+	getControl().checkpointGained()

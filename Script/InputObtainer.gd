@@ -3,9 +3,10 @@ extends Control
 var start_pos:Vector2
 @export var min_swipe_distance := 100
 var lastSwipePosition: Vector2
+var madeMinimum: bool = true
 
 signal mouseEventObserved(charge: int, dir: Vector2,magnitude: int)
-signal shakeMagnitude(magnitude)
+signal shake
 var lastDirection: String = "Down"
 var lastCharge: int = 1
 
@@ -17,6 +18,17 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent):
+	if event is InputEventMouseMotion:
+		if madeMinimum:
+			lastSwipePosition = event.position
+			madeMinimum = false
+		if (abs(lastSwipePosition.length() - event.position.length()) ) > min_swipe_distance and !madeMinimum:
+			madeMinimum = true
+			print("shake")
+			shake.emit()
+	
+	
+	
 	if event is InputEventScreenTouch or event is InputEventMouseButton:
 		if event.is_pressed():
 			start_pos = event.position
@@ -59,3 +71,7 @@ func detectDragForBoat(delta: Vector2):
 	print(direction)
 	
 	mouseEventObserved.emit(lastCharge,delta,delta.length())
+
+func checkpointGained():
+	$Label.text = "Checkpoint"
+	$AnimationPlayer.play("gained")
