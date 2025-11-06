@@ -113,10 +113,18 @@ func movePaddleWMouse():
 	var control: Control = getControl()
 	if !control:
 		return
-	var screenWidth: float = get_viewport().size.x
-	var paddleParent: PathFollow3D = $Head/Path3D/PathFollow3D
-	var delta: float = -control.get_local_mouse_position().x/screenWidth
-	paddleParent.progress_ratio = wrapf(delta, 0, 1.0)
+
+	var screen_width: float = get_viewport().size.x
+	var paddle_parent: PathFollow3D = $Head/Path3D/PathFollow3D
+
+	# Convert mouse X position to a normalized 0–1 ratio
+	var mouse_ratio: float = 1.0 - clamp(control.get_local_mouse_position().x / screen_width, 0.0, 1.0)
+
+	# Optional: invert or offset if movement is reversed
+	paddle_parent.progress_ratio = clamp(mouse_ratio, 0.05, 0.95)
+
+	print(paddle_parent.progress_ratio)
+
 
 func getControl() -> Control:
 	var control: Control = get_parent().get_node("CanvasLayer").get_node("Control")
@@ -126,4 +134,4 @@ func getControl() -> Control:
 		return null
 
 func checkpointGained():
-	getControl().checkpointGained()
+	getControl().flashText("Checkpoint Found")

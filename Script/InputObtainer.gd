@@ -72,6 +72,6 @@ func detectDragForBoat(delta: Vector2):
 	
 	mouseEventObserved.emit(lastCharge,delta,delta.length())
 
-func checkpointGained():
-	$Label.text = "Checkpoint"
+func flashText(text: String):
+	$Label.text = text
 	$AnimationPlayer.play("gained")
