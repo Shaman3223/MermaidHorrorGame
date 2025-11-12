@@ -3,6 +3,11 @@ extends CharacterBody3D
 #constants
 const SPEED = 5.0
 
+@export var can_paddle: bool = true
+@export var minimumShakes: int = 10
+var isInQTE: bool = false
+
+var shakes: int = 0
 #rotation/turning
 var rotationalSpeed: float = 0.0
 var target_rotation_speed: float = 0.0
@@ -28,6 +33,9 @@ var wobble_amplitude: float = 0.0
 #checkpoint
 var lastCheckpoint: Node3D
 
+func _ready() -> void:
+	quickTimeEvent()
+
 func _physics_process(delta: float) -> void:
 	velocity.z += 0.2 * delta
 
@@ -48,9 +56,9 @@ func _physics_process(delta: float) -> void:
 	$boat_prot.rotation.y = boatLag
 
 #graudally reduce velocity
-	pushVelocity = move_toward(pushVelocity, 0.0, 0.08)
-	velocity.x = move_toward(velocity.x, 0.0, 0.01)
-	velocity.z = move_toward(velocity.z, 0.0, 0.01)
+	pushVelocity = move_toward(pushVelocity, 0.0, 0.1)
+	velocity.x = move_toward(velocity.x, 0.0, 0.03)
+	velocity.z = move_toward(velocity.z, 0.0, 0.03)
 
 #dampen lag
 	boatLag = move_toward(boatLag, 0.0, 0.02)
@@ -75,7 +83,8 @@ func _physics_process(delta: float) -> void:
 #paddling
 func forwardPaddle(charge: int, dir: Vector2, mag: float):
 	#charge = length of paddle, dir = right left down
-
+	if !can_paddle:
+		return
 
 #adjust tilt intensity 
 	var rotateDividend: float = 45.0 - abs(dir.x/600)
@@ -97,6 +106,8 @@ func forwardPaddle(charge: int, dir: Vector2, mag: float):
 	target_tilt_x = 0.0
 	wobble_amplitude = 0.02
 	wobble_timer = wobble_duration
+	
+	createNewPaddleSoundPlayer(mag)
 
 #reset to last checkpoint 
 func die():
@@ -113,6 +124,9 @@ func movePaddleWMouse():
 	var control: Control = getControl()
 	if !control:
 		return
+		
+	if !can_paddle:
+		return
 
 	var screen_width: float = get_viewport().size.x
 	var paddle_parent: PathFollow3D = $Head/Path3D/PathFollow3D
@@ -123,7 +137,6 @@ func movePaddleWMouse():
 	# Optional: invert or offset if movement is reversed
 	paddle_parent.progress_ratio = clamp(mouse_ratio, 0.05, 0.95)
 
-	print(paddle_parent.progress_ratio)
 
 
 func getControl() -> Control:
@@ -135,3 +148,27 @@ func getControl() -> Control:
 
 func checkpointGained():
 	getControl().flashText("Checkpoint Found")
+
+func quickTimeEvent():
+	isInQTE = true
+	$AnimationPlayer.play("rightSideQTE")
+
+func _on_control_shake() -> void:
+	if isInQTE:
+		shakes += 1
+		if shakes >= minimumShakes:
+			$AnimationPlayer.play("RESET")
+			isInQTE = false
+			shakes = 0
+
+func createNewPaddleSoundPlayer(magnitude: float):
+	var paddleSounds: AudioStreamPlayer = load("res://Scenes/paddleSounds.tscn").instantiate()
+	add_child(paddleSounds)
+	
+	print(magnitude)
+	var setdb = linear_to_db((magnitude * 0.05)/3000.0)
+	paddleSounds.volume_db = setdb
+	paddleSounds.play()
+	
+	await paddleSounds.finished
+	paddleSounds.queue_free()

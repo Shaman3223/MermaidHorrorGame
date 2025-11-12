@@ -11,7 +11,7 @@
 offsets = PackedFloat32Array(0.11129032, 0.33548388)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_0xm2m"]
-frequency = 0.028
+frequency = 0.0741
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_h2yge"]
 noise = SubResource("FastNoiseLite_0xm2m")
@@ -44,6 +44,7 @@ shader_parameter/uWaveScale = 1.6
 [sub_resource type="Environment" id="Environment_kry3j"]
 background_mode = 1
 background_color = Color(0.0034552338, 0.006395377, 0.033865556, 1)
+ambient_light_sky_contribution = 0.23
 fog_enabled = true
 fog_light_color = Color(0.16284272, 0.34576368, 0.40917102, 1)
 
@@ -67,7 +68,7 @@ material = SubResource("ShaderMaterial_lquwl")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.30394995, 0.952688, 0, -0.952688, -0.30394995, 0, 10.101446, 0)
 light_color = Color(0.1828377, 0.5282172, 0.41893, 1)
-light_energy = 0.353
+light_energy = 0.096
 light_indirect_energy = 1.33
 light_volumetric_fog_energy = 3.309
 
@@ -153,4 +154,6 @@ mesh = SubResource("QuadMesh_6bp64")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.43515253, -0.31656232, 0.8428705, -1.1104438e-08, 0.9361517, 0.35159653, -0.90035677, -0.15299813, 0.40736875, 5.4505067, 8.201745, 5.3995037)
 
+[connection signal="mouseEventObserved" from="CanvasLayer/Control" to="CharacterBody3D" method="paddleSounds"]
 [connection signal="mouseEventObserved" from="CanvasLayer/Control" to="CharacterBody3D" method="forwardPaddle"]
+[connection signal="shake" from="CanvasLayer/Control" to="CharacterBody3D" method="_on_control_shake"]

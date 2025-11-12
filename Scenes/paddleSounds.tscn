@@ -1,0 +1,21 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8dysuu25svo1"]
+
+[ext_resource type="AudioStream" uid="uid://bwi3o867xxnxn" path="res://Sounds/PaddleSounds/Paddle0-01.wav" id="1_kku3b"]
+[ext_resource type="AudioStream" uid="uid://ntqwjyqu32oc" path="res://Sounds/PaddleSounds/Paddle0-02.wav" id="2_ybm72"]
+[ext_resource type="AudioStream" uid="uid://c00nm44ji1glc" path="res://Sounds/PaddleSounds/Paddle0-03.wav" id="3_om4ap"]
+[ext_resource type="AudioStream" uid="uid://uq1ynddfpq2i" path="res://Sounds/PaddleSounds/Paddle0-04.wav" id="4_cyvsb"]
+[ext_resource type="AudioStream" uid="uid://dii7q3oreliip" path="res://Sounds/PaddleSounds/Paddle0-05.wav" id="5_36lk2"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ukyrk"]
+random_pitch = 1.2
+random_volume_offset_db = 1.16
+streams_count = 5
+stream_0/stream = ExtResource("1_kku3b")
+stream_1/stream = ExtResource("2_ybm72")
+stream_2/stream = ExtResource("3_om4ap")
+stream_3/stream = ExtResource("4_cyvsb")
+stream_4/stream = ExtResource("5_36lk2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = SubResource("AudioStreamRandomizer_ukyrk")
+volume_db = -20.0

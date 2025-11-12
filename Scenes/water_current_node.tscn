@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://dqt0gox8nisiu"]
+
+[ext_resource type="Shader" uid="uid://08qo0nnjkiii" path="res://Shaders/water.gdshader" id="1_qyh38"]
+
+[sub_resource type="Gradient" id="Gradient_ig7tw"]
+offsets = PackedFloat32Array(0.11129032, 0.33548388)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0xm2m"]
+frequency = 0.0741
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_h2yge"]
+noise = SubResource("FastNoiseLite_0xm2m")
+color_ramp = SubResource("Gradient_ig7tw")
+seamless = true
+in_3d_space = true
+as_normal_map = true
+bump_strength = 1.8
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_h2yge"]
+frequency = 0.0367
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1bvp3"]
+noise = SubResource("FastNoiseLite_h2yge")
+in_3d_space = true
+as_normal_map = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6bp64"]
+render_priority = 0
+shader = ExtResource("1_qyh38")
+shader_parameter/uAlbedo = Color(0.7729228, 0.7379525, 0.7029821, 1)
+shader_parameter/uTexureNormal = SubResource("NoiseTexture2D_h2yge")
+shader_parameter/uTexureNormal2 = SubResource("NoiseTexture2D_1bvp3")
+shader_parameter/uNormalMix = 0.60000000894069
+shader_parameter/uWaveDirection = Vector2(1, 0)
+shader_parameter/uWaveDirection2 = Vector2(0, 1)
+shader_parameter/uTimeScale = 0.050000002375
+shader_parameter/uWaveScale = 1.6
+
+[node name="WaterCurrentNode" type="Node3D"]
+
+[node name="Current" type="CSGBox3D" parent="."]
+size = Vector3(80.16962, 0.001, 18.940125)
+material = SubResource("ShaderMaterial_6bp64")

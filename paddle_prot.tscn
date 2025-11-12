@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://boeijo2aww7j3"]
+
+[ext_resource type="PackedScene" uid="uid://1n5avnwdn3yh" path="res://3DModels/paddle_prot.fbx" id="1_ndjs2"]
+
+[node name="paddle_prot" instance=ExtResource("1_ndjs2")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bhio7k0sdbeev"]
+[gd_scene load_steps=11 format=3 uid="uid://bhio7k0sdbeev"]
 
 [ext_resource type="Script" uid="uid://cewraoujrf1fr" path="res://Script/playerCharacter03.gd" id="1_6t5aa"]
 [ext_resource type="PackedScene" uid="uid://dmuyyt4o3ougc" path="res://3DModels/boat_prot.fbx" id="2_vgqql"]
@@ -21,6 +21,66 @@ _data = {
 }
 point_count = 5
 up_vector_enabled = false
+
+[sub_resource type="Animation" id="Animation_vgqql"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5707964, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/Camera3D:fov")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [75.0]
+}
+
+[sub_resource type="Animation" id="Animation_6t5aa"]
+resource_name = "rightSideQTE"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.8122524, 3.9999998),
+"update": 0,
+"values": [Vector3(0, 1.5707964, 0), Vector3(-0.61086524, 1.3002703, -0.05235988)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/Camera3D:fov")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.96666664),
+"transitions": PackedFloat32Array(0.40612623, 0.15389302),
+"update": 0,
+"values": [75.0, 44.2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fkybt"]
+_data = {
+&"RESET": SubResource("Animation_vgqql"),
+&"rightSideQTE": SubResource("Animation_6t5aa")
+}
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_6t5aa")
@@ -55,9 +115,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.482, -1.1700721, 0)
 curve = SubResource("Curve3D_21xkr")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Head/Path3D"]
-transform = Transform3D(-0.99856144, 0, -0.051209345, 0, 0.99984527, 0, 0.051208366, 0, -0.9985805, 2, -1, 1.5)
+transform = Transform3D(-0.99856216, 0, -0.051209345, 0, 0.99984527, 0, 0.051208403, 0, -0.9985805, 2, -1, 1.5)
 progress = 9.513856
 loop = false
 
 [node name="paddle_prot" parent="Head/Path3D/PathFollow3D" instance=ExtResource("3_fkybt")]
 transform = Transform3D(0.43081456, -0.109250456, -0.2290483, 0, 0.45129263, -0.21525553, 0.2537692, 0.18547046, 0.3888468, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_fkybt")
+}
