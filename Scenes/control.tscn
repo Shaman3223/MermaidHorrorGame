@@ -1,8 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://cdwfi2ju7bjr0"]
+[gd_scene load_steps=33 format=3 uid="uid://cdwfi2ju7bjr0"]
 
 [ext_resource type="Script" uid="uid://dyiry3nk68tm0" path="res://Script/InputObtainer.gd" id="1_0fbet"]
 [ext_resource type="FontFile" uid="uid://blrbs4w6ixwqg" path="res://PixelifySans-Regular.ttf" id="2_cgmvo"]
 [ext_resource type="Texture2D" uid="uid://6u73621sjs14" path="res://Sprites/Sprite-0011-Sheet.png" id="3_vh8u0"]
+[ext_resource type="AudioStream" uid="uid://bplgwqjwej2yg" path="res://Sounds/PaperSounds/zapsplat_foley_paper_sheet_a4_fold_in_half_002_44389.mp3" id="4_dqysy"]
+[ext_resource type="AudioStream" uid="uid://c78sjj4bdevw6" path="res://Sounds/PaperSounds/zapsplat_foley_sheet_of_paper_a4_fold_002_73778.mp3" id="5_1tcje"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vh8u0"]
 font = ExtResource("2_cgmvo")
@@ -69,6 +71,8 @@ _data = {
 &"RESET": SubResource("Animation_vh8u0"),
 &"gained": SubResource("Animation_cgmvo")
 }
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_btyrf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wpaqk"]
 atlas = ExtResource("3_vh8u0")
@@ -195,6 +199,101 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="Animation" id="Animation_wpaqk"]
+resource_name = "goUp"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(531.5, 1500), Vector2(531.5, 320)]
+}
+
+[sub_resource type="Animation" id="Animation_btyrf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(531.5, 303)]
+}
+
+[sub_resource type="Animation" id="Animation_dqysy"]
+resource_name = "goDown"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(531.5, 303), Vector2(531.5, 1500)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1tcje"]
+_data = {
+&"RESET": SubResource("Animation_btyrf"),
+&"goDown": SubResource("Animation_dqysy"),
+&"goUp": SubResource("Animation_wpaqk")
+}
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fx7jt"]
+random_pitch = 1.2
+streams_count = 2
+stream_0/stream = ExtResource("4_dqysy")
+stream_1/stream = ExtResource("5_1tcje")
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -223,28 +322,54 @@ libraries = {
 &"": SubResource("AnimationLibrary_wpaqk")
 }
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+[node name="Map" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -384.0
-offset_top = -384.0
-offset_right = 384.0
-offset_bottom = 384.0
+offset_left = -428.5
+offset_top = -417.0
+offset_right = 428.5
+offset_bottom = 417.00073
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_btyrf")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Map"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.00003
+offset_top = -455.0
+offset_right = 150.0
+offset_bottom = 145.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.5, 1.5)
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="Map/SubViewportContainer"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(768, 768)
+size = Vector2i(600, 600)
 render_target_update_mode = 4
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SubViewportContainer/SubViewport"]
-position = Vector2(292.66666, 300)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Map/SubViewportContainer/SubViewport"]
+modulate = Color(0.7294118, 1, 0.7882353, 1)
+position = Vector2(326.66666, 342)
 sprite_frames = SubResource("SpriteFrames_ikxuy")
-animation = &"reverse"
+frame = 7
+frame_progress = 1.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Map/SubViewportContainer"]
+libraries = {
+&"": SubResource("AnimationLibrary_1tcje")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Map/SubViewportContainer"]
+stream = SubResource("AudioStreamRandomizer_fx7jt")
+volume_db = -15.0

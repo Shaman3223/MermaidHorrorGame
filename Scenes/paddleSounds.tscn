@@ -18,4 +18,4 @@ stream_4/stream = ExtResource("5_36lk2")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
 stream = SubResource("AudioStreamRandomizer_ukyrk")
-volume_db = -20.0
+volume_db = -10.0

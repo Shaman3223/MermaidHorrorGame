@@ -14,7 +14,7 @@ var mapOn: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	closeMap()
+	pass
 
 
 
@@ -88,10 +88,12 @@ func toggleMap():
 	
 
 func openMap():
-	$SubViewportContainer.show()
-	$SubViewportContainer/SubViewport/AnimatedSprite2D.play("default")
+	$Map/SubViewportContainer.show()
+	$Map/SubViewportContainer/AnimationPlayer.play("goUp")
+	$Map/SubViewportContainer/SubViewport/AnimatedSprite2D.play("default")
 
 func closeMap():
-	$SubViewportContainer/SubViewport/AnimatedSprite2D.play("reverse")
-	await $SubViewportContainer/SubViewport/AnimatedSprite2D.animation_finished
-	$SubViewportContainer.hide()
+	$Map/SubViewportContainer/SubViewport/AnimatedSprite2D.play("reverse")
+	$Map/SubViewportContainer/AnimationPlayer.play("goDown")
+	await $Map/SubViewportContainer/SubViewport/AnimatedSprite2D.animation_finished
+	$Map/SubViewportContainer.hide()
