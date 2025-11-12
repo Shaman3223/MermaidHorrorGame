@@ -34,9 +34,12 @@ var wobble_amplitude: float = 0.0
 var lastCheckpoint: Node3D
 
 func _ready() -> void:
-	quickTimeEvent()
+	pass
 
 func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_accept"):
+		getControl().toggleMap()
+	
 	velocity.z += 0.2 * delta
 
 	forward_dir = Vector3(
@@ -136,6 +139,7 @@ func movePaddleWMouse():
 
 	# Optional: invert or offset if movement is reversed
 	paddle_parent.progress_ratio = clamp(mouse_ratio, 0.05, 0.95)
+
 
 
 

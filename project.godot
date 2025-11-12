@@ -33,6 +33,7 @@ folder_colors={
 "res://Script/": "red",
 "res://Shaders/": "purple",
 "res://Sounds/": "blue",
+"res://Sprites/": "green",
 "res://tileTextures/": "gray"
 }
 

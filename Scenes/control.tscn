@@ -1,12 +1,40 @@
-[gd_scene load_steps=7 format=3 uid="uid://cdwfi2ju7bjr0"]
+[gd_scene load_steps=25 format=3 uid="uid://cdwfi2ju7bjr0"]
 
 [ext_resource type="Script" uid="uid://dyiry3nk68tm0" path="res://Script/InputObtainer.gd" id="1_0fbet"]
 [ext_resource type="FontFile" uid="uid://blrbs4w6ixwqg" path="res://PixelifySans-Regular.ttf" id="2_cgmvo"]
+[ext_resource type="Texture2D" uid="uid://6u73621sjs14" path="res://Sprites/Sprite-0011-Sheet.png" id="3_vh8u0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vh8u0"]
 font = ExtResource("2_cgmvo")
 font_size = 65
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_vh8u0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_cgmvo"]
 resource_name = "gained"
@@ -36,38 +64,136 @@ tracks/1/keys = {
 "values": [true, false, true, false, true, false, true, false]
 }
 
-[sub_resource type="Animation" id="Animation_vh8u0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label:label_settings:font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Label:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wpaqk"]
 _data = {
 &"RESET": SubResource("Animation_vh8u0"),
 &"gained": SubResource("Animation_cgmvo")
 }
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpaqk"]
+atlas = ExtResource("3_vh8u0")
+region = Rect2(0, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btyrf"]
+atlas = ExtResource("3_vh8u0")
+region = Rect2(1080, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqysy"]
+atlas = ExtResource("3_vh8u0")
+region = Rect2(2160, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tcje"]
+atlas = ExtResource("3_vh8u0")
+region = Rect2(3240, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxodi"]
+atlas = ExtResource("3_vh8u0")
+region = Rect2(4320, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fx7jt"]
+atlas = ExtResource("3_vh8u0")
+region = Rect2(5400, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mft5f"]
+atlas = ExtResource("3_vh8u0")
+region = Rect2(6480, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtfct"]
+atlas = ExtResource("3_vh8u0")
+region = Rect2(7560, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yuog"]
+atlas = ExtResource("3_vh8u0")
+region = Rect2(7560, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwcvj"]
+atlas = ExtResource("3_vh8u0")
+region = Rect2(6480, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vphrd"]
+atlas = ExtResource("3_vh8u0")
+region = Rect2(5400, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi5fq"]
+atlas = ExtResource("3_vh8u0")
+region = Rect2(4320, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5sn0"]
+atlas = ExtResource("3_vh8u0")
+region = Rect2(3240, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbjms"]
+atlas = ExtResource("3_vh8u0")
+region = Rect2(2160, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2exy"]
+atlas = ExtResource("3_vh8u0")
+region = Rect2(1080, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nikr"]
+atlas = ExtResource("3_vh8u0")
+region = Rect2(0, 0, 1080, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ikxuy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpaqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btyrf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqysy")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_1tcje")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxodi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fx7jt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mft5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtfct")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0yuog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwcvj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vphrd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gi5fq")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_s5sn0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbjms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2exy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nikr")
+}],
+"loop": false,
+"name": &"reverse",
+"speed": 10.0
+}]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -96,3 +222,29 @@ label_settings = SubResource("LabelSettings_vh8u0")
 libraries = {
 &"": SubResource("AnimationLibrary_wpaqk")
 }
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -384.0
+offset_top = -384.0
+offset_right = 384.0
+offset_bottom = 384.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(768, 768)
+render_target_update_mode = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SubViewportContainer/SubViewport"]
+position = Vector2(292.66666, 300)
+sprite_frames = SubResource("SpriteFrames_ikxuy")
+animation = &"reverse"
