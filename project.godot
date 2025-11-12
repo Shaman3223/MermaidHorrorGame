@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 window/size/viewport_width=1920
 window/size/viewport_height=1440
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
+
 [file_customization]
 
 folder_colors={
@@ -28,7 +32,8 @@ folder_colors={
 "res://Scenes/": "teal",
 "res://Script/": "red",
 "res://Shaders/": "purple",
-"res://Sounds/": "blue"
+"res://Sounds/": "blue",
+"res://tileTextures/": "gray"
 }
 
 [rendering]
