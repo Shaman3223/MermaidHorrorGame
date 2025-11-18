@@ -1,8 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://bhio7k0sdbeev"]
+[gd_scene load_steps=17 format=3 uid="uid://bhio7k0sdbeev"]
 
 [ext_resource type="Script" uid="uid://cewraoujrf1fr" path="res://Script/playerCharacter03.gd" id="1_6t5aa"]
 [ext_resource type="PackedScene" uid="uid://dmuyyt4o3ougc" path="res://3DModels/boat_prot.fbx" id="2_vgqql"]
 [ext_resource type="PackedScene" uid="uid://1n5avnwdn3yh" path="res://3DModels/paddle_prot.fbx" id="3_fkybt"]
+[ext_resource type="AudioStream" uid="uid://kb3lt7sy52a5" path="res://Sounds/boatRock/boatSnatch-01.mp3" id="4_8erm5"]
+[ext_resource type="AudioStream" uid="uid://dlrqnb77nc1n6" path="res://Sounds/boatRock/boatSnatch-02.mp3" id="5_f1ek2"]
+[ext_resource type="AudioStream" uid="uid://e41kxfqas4j" path="res://Sounds/boatRock/boatSnatch-03.mp3" id="6_tx1dd"]
+[ext_resource type="AudioStream" uid="uid://bq8k4kto8jssu" path="res://Sounds/boatRock/boatSnatch-04.mp3" id="7_gymyn"]
+[ext_resource type="AudioStream" uid="uid://pf7m06b37k05" path="res://Sounds/boatRock/boatSnatch-05.mp3" id="8_pu2lt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
 size = Vector3(3.162838, 1, 2.019043)
@@ -82,6 +87,14 @@ _data = {
 &"rightSideQTE": SubResource("Animation_6t5aa")
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ukyrk"]
+streams_count = 5
+stream_0/stream = ExtResource("4_8erm5")
+stream_1/stream = ExtResource("5_f1ek2")
+stream_2/stream = ExtResource("6_tx1dd")
+stream_3/stream = ExtResource("7_gymyn")
+stream_4/stream = ExtResource("8_pu2lt")
+
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_6t5aa")
 
@@ -105,7 +118,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.8
 shape = SubResource("BoxShape3D_vgqql")
 
 [node name="Head" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2758827, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.276, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.5078256, 0, 0)
@@ -115,7 +128,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.482, -1.1700721, 0)
 curve = SubResource("Curve3D_21xkr")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Head/Path3D"]
-transform = Transform3D(-0.99856216, 0, -0.051209345, 0, 0.99984527, 0, 0.051208403, 0, -0.9985805, 2, -1, 1.5)
+transform = Transform3D(-0.9985628, 0, -0.051209345, 0, 0.99984527, 0, 0.051208436, 0, -0.9985805, 2, -1, 1.5)
 progress = 9.513856
 loop = false
 
@@ -126,3 +139,7 @@ transform = Transform3D(0.43081456, -0.109250456, -0.2290483, 0, 0.45129263, -0.
 libraries = {
 &"": SubResource("AnimationLibrary_fkybt")
 }
+
+[node name="BoatSnatch" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_ukyrk")
+pitch_scale = 1.1

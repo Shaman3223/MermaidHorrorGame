@@ -17,8 +17,6 @@ func _ready() -> void:
 	pass
 
 
-
-
 func _input(event: InputEvent):
 	if event is InputEventMouseMotion:
 		if madeMinimum:
@@ -26,7 +24,6 @@ func _input(event: InputEvent):
 			madeMinimum = false
 		if (abs(lastSwipePosition.length() - event.position.length()) ) > min_swipe_distance and !madeMinimum:
 			madeMinimum = true
-			print("shake")
 			shake.emit()
 	
 	
@@ -57,20 +54,20 @@ func detectDragForBoat(delta: Vector2):
 	if abs(delta.x) < abs(delta.y):
 		if delta.y < 0:
 			lastDirection = "Up"
-			print("Swipe Up")
+			#print("Swipe Up")
 		else:
 			lastDirection = "Down"
-			print("Swipe Down")
+			#print("Swipe Down")
 	else:
 		if delta.x < 0:
 			lastDirection = "Left"
-			print("Swipe Left")
+			#print("Swipe Left")
 		else:
 			lastDirection = "Right"
-			print("Swipe Right")
+			#print("Swipe Right")
 	
 	var direction: Vector2 = delta
-	print(direction)
+	#print(direction)
 	
 	mouseEventObserved.emit(lastCharge,delta,delta.length())
 
@@ -88,12 +85,22 @@ func toggleMap():
 	
 
 func openMap():
+	$Compass.show()
 	$Map/SubViewportContainer.show()
 	$Map/SubViewportContainer/AnimationPlayer.play("goUp")
 	$Map/SubViewportContainer/SubViewport/AnimatedSprite2D.play("default")
 
 func closeMap():
+	$Compass.hide()
 	$Map/SubViewportContainer/SubViewport/AnimatedSprite2D.play("reverse")
 	$Map/SubViewportContainer/AnimationPlayer.play("goDown")
 	await $Map/SubViewportContainer/SubViewport/AnimatedSprite2D.animation_finished
 	$Map/SubViewportContainer.hide()
+
+func compass():
+	var player: Node = get_parent().get_parent().get_node("CharacterBody3D")
+	
+	if !player:
+		return
+	
+	$Compass.rotation = wrap(player.rotation.y, 0.0, TAU)

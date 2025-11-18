@@ -37,8 +37,15 @@ func _ready() -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
+	
 	if Input.is_action_just_pressed("ui_accept"):
 		getControl().toggleMap()
+	
+	if getControl().mapOn == true:
+		$Head/Camera3D.rotation.x = -PI/4
+		getControl().compass()
+	else:
+		$Head/Camera3D.rotation.x = move_toward($Head/Camera3D.rotation.x, 0.0, 0.1)
 	
 	velocity.z += 0.2 * delta
 
@@ -80,12 +87,15 @@ func _physics_process(delta: float) -> void:
 	$boat_prot.rotation.x = tilt_x
 
 	movePaddleWMouse()
+	moveHeadWMouse()
 
 	move_and_slide()
 
 #paddling
 func forwardPaddle(charge: int, dir: Vector2, mag: float):
 	#charge = length of paddle, dir = right left down
+	if getControl().mapOn:
+		return
 	if !can_paddle:
 		return
 
@@ -110,6 +120,7 @@ func forwardPaddle(charge: int, dir: Vector2, mag: float):
 	wobble_amplitude = 0.02
 	wobble_timer = wobble_duration
 	
+	
 	createNewPaddleSoundPlayer(mag)
 
 #reset to last checkpoint 
@@ -127,7 +138,8 @@ func movePaddleWMouse():
 	var control: Control = getControl()
 	if !control:
 		return
-		
+	if getControl().mapOn:
+		return
 	if !can_paddle:
 		return
 
@@ -140,7 +152,9 @@ func movePaddleWMouse():
 	# Optional: invert or offset if movement is reversed
 	paddle_parent.progress_ratio = clamp(mouse_ratio, 0.05, 0.95)
 
-
+func moveHeadWMouse():
+	var screen_width: float = get_viewport().size.x
+	$Head.position.x = abs(clamp(getControl().get_local_mouse_position().x / screen_width, 0.0, 1.0) - 0.5)/ 4
 
 
 func getControl() -> Control:
@@ -154,6 +168,7 @@ func checkpointGained():
 	getControl().flashText("Checkpoint Found")
 
 func quickTimeEvent():
+	$BoatSnatch.play()
 	isInQTE = true
 	$AnimationPlayer.play("rightSideQTE")
 
@@ -162,6 +177,7 @@ func _on_control_shake() -> void:
 		shakes += 1
 		if shakes >= minimumShakes:
 			$AnimationPlayer.play("RESET")
+			$BoatSnatch.play()
 			isInQTE = false
 			shakes = 0
 
@@ -169,8 +185,7 @@ func createNewPaddleSoundPlayer(magnitude: float):
 	var paddleSounds: AudioStreamPlayer = load("res://Scenes/paddleSounds.tscn").instantiate()
 	add_child(paddleSounds)
 	
-	print(magnitude)
-	var setdb = linear_to_db((magnitude * 0.05)/3000.0)
+	var setdb = linear_to_db((magnitude * 0.05)/200.0)
 	paddleSounds.volume_db = setdb
 	paddleSounds.play()
 	
