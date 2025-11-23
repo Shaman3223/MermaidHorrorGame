@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://w7bmh5kfe3s2"]
+[gd_scene load_steps=39 format=3 uid="uid://w7bmh5kfe3s2"]
 
 [ext_resource type="Script" uid="uid://ded83riab41bj" path="res://Scenes/main_menu.gd" id="1_5egv6"]
 [ext_resource type="PackedScene" uid="uid://dmuyyt4o3ougc" path="res://3DModels/boat_prot.fbx" id="1_vr1f0"]
@@ -47,6 +47,68 @@ shader_parameter/uWaveDirection = Vector2(1, 0)
 shader_parameter/uWaveDirection2 = Vector2(0, 1)
 shader_parameter/uTimeScale = 0.010000000475
 shader_parameter/uWaveScale = 1.6
+
+[sub_resource type="Animation" id="Animation_8dnnj"]
+resource_name = "waterbreathe"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.23077393, 0.6418487, 6.153966), Vector3(-0.231, 0.678, 6.154), Vector3(-0.23077393, 0.6418487, 6.153966)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../boat_prot:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.9, 4),
+"transitions": PackedFloat32Array(3.4822042, 1, 1),
+"update": 0,
+"values": [Vector3(-3.0110943, 0, 0), Vector3(-3.0194197, 0, 0), Vector3(-3.0110943, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_m3bi6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.23077393, 0.6418487, 6.153966)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../boat_prot:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-3.0110943, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wyh8j"]
+_data = {
+&"RESET": SubResource("Animation_m3bi6"),
+&"waterbreathe": SubResource("Animation_8dnnj")
+}
 
 [sub_resource type="Animation" id="Animation_5egv6"]
 resource_name = "fadeIn"
@@ -203,7 +265,7 @@ texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_
 script = ExtResource("1_5egv6")
 
 [node name="boat_prot" parent="." instance=ExtResource("1_vr1f0")]
-transform = Transform3D(1.8, 0, 0, 0, -1.7846948, 0.23423085, 0, -0.23423085, -1.7846948, -0.465, 0.7139752, 6.378552)
+transform = Transform3D(1.8, 0, 0, 0, -1.7846948, 0.23423085, 0, -0.23423085, -1.7846948, -0.465, 0.7139752, 6.1096454)
 
 [node name="paddle_prot" parent="." instance=ExtResource("2_t1dhk")]
 transform = Transform3D(0.22026765, -0.42242977, -0.15177353, 0.30773115, 0.019036608, 0.39362296, -0.3267777, -0.26681578, 0.2683759, 0, 0.969645, 4.510533)
@@ -212,6 +274,13 @@ transform = Transform3D(0.22026765, -0.42242977, -0.15177353, 0.30773115, 0.0190
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23077393, 0.6418487, 6.153966)
 size = Vector3(257.42712, 0.001, 216.2555)
 material = SubResource("ShaderMaterial_84iac")
+
+[node name="bkgAnimator" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Water")
+libraries = {
+&"": SubResource("AnimationLibrary_wyh8j")
+}
+autoplay = "waterbreathe"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.30394995, 0.952688, 0, -0.952688, -0.30394995, 0, 10.101446, 0)
