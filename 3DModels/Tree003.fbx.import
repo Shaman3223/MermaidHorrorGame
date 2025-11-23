@@ -3,17 +3,17 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c8yqmac4c71c"
-path="res://.godot/imported/Tree002.fbx-44b3447c76845b8b5f81341d98940756.scn"
+uid="uid://la2vlainkro1"
+path="res://.godot/imported/Tree003.fbx-d12f0f2107ee7ee1185c3f22dc662440.scn"
 
 [deps]
 
-source_file="res://3DModels/Tree002.fbx"
-dest_files=["res://.godot/imported/Tree002.fbx-44b3447c76845b8b5f81341d98940756.scn"]
+source_file="res://3DModels/Tree003.fbx"
+dest_files=["res://.godot/imported/Tree003.fbx-d12f0f2107ee7ee1185c3f22dc662440.scn"]
 
 [params]
 
-nodes/root_type="MeshInstance3D"
+nodes/root_type=""
 nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true

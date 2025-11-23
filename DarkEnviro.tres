@@ -2,6 +2,8 @@
 
 [resource]
 background_mode = 1
-background_color = Color(0.662826, 0.7374823, 0.93463624, 1)
+background_color = Color(0.23555064, 0.5186316, 0.6783716, 1)
 ambient_light_sky_contribution = 0.23
+fog_enabled = true
 fog_light_color = Color(0.16284272, 0.34576368, 0.40917102, 1)
+fog_density = 0.002
