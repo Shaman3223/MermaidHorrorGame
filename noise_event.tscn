@@ -76,10 +76,8 @@ radius = 17.529785
 
 [node name="NoiseEvent" type="Node3D"]
 script = ExtResource("1_77lm1")
-isSafe = false
 endOnCompletion = true
 dangerRadius = 5.0
-folderName = "splash"
 sirenSounds = Array[AudioStream]([ExtResource("7_q2wn1")])
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

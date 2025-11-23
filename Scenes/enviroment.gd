@@ -16,7 +16,8 @@ func isPlayerInArea(body: Node3D, area: Area3D):
 
 func spawn_noise_event(area: Area3D):
 	var noise : NoiseEvent = noiseEventScene.instantiate()
-	noise.isSafe = false
+	noise.isSafe = NoiseEvent.safety.RANDOM
+	noise.dangerRadius = 20.0
 	add_child(noise)
 
 	var shape: Shape3D = area.get_node("CollisionShape3D").shape

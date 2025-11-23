@@ -12,6 +12,8 @@ var lastCharge: int = 1
 
 var mapOn: bool = false
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -86,16 +88,16 @@ func toggleMap():
 
 func openMap():
 	$Compass.show()
-	$Map/SubViewportContainer.show()
-	$Map/SubViewportContainer/AnimationPlayer.play("goUp")
-	$Map/SubViewportContainer/SubViewport/AnimatedSprite2D.play("default")
+	%SubViewportContainer.show()
+	%AnimationPlayer.play("goUp")
+	%AnimatedSprite2D.play("default")
 
 func closeMap():
 	$Compass.hide()
-	$Map/SubViewportContainer/SubViewport/AnimatedSprite2D.play("reverse")
-	$Map/SubViewportContainer/AnimationPlayer.play("goDown")
-	await $Map/SubViewportContainer/SubViewport/AnimatedSprite2D.animation_finished
-	$Map/SubViewportContainer.hide()
+	%AnimatedSprite2D.play("reverse")
+	%AnimationPlayer.play("goDown")
+	await %AnimatedSprite2D.animation_finished
+	%SubViewportContainer.hide()
 
 func compass():
 	var player: Node = get_parent().get_parent().get_node("CharacterBody3D")

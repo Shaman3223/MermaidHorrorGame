@@ -30,23 +30,14 @@ var wobble_timer: float = 0.0
 var wobble_duration: float = 0.5
 var wobble_amplitude: float = 0.0
 
-#checkpoint
-var lastCheckpoint: Node3D
+@onready var lastCheckpoint: CheckPoint
 
 func _ready() -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
 	
-	if Input.is_action_just_pressed("ui_accept"):
-		getControl().toggleMap()
-	
-	if getControl().mapOn == true:
-		$Head/Camera3D.rotation.x = -PI/4
-		getControl().compass()
-	else:
-		$Head/Camera3D.rotation.x = move_toward($Head/Camera3D.rotation.x, 0.0, 0.1)
-	
+	mapUIToggleMethod()
 	velocity.z += 0.2 * delta
 
 	forward_dir = Vector3(
@@ -91,7 +82,6 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-#paddling
 func forwardPaddle(charge: int, dir: Vector2, mag: float):
 	#charge = length of paddle, dir = right left down
 	if getControl().mapOn:
@@ -123,7 +113,6 @@ func forwardPaddle(charge: int, dir: Vector2, mag: float):
 	
 	createNewPaddleSoundPlayer(mag)
 
-#reset to last checkpoint 
 func die():
 	if lastCheckpoint != null:
 		global_position = lastCheckpoint.lastPosition
@@ -153,6 +142,9 @@ func movePaddleWMouse():
 	paddle_parent.progress_ratio = clamp(mouse_ratio, 0.05, 0.95)
 
 func moveHeadWMouse():
+	if getControl().mapOn == true:
+		return
+	
 	var screen_width: float = get_viewport().size.x
 	$Head.position.x = abs(clamp(getControl().get_local_mouse_position().x / screen_width, 0.0, 1.0) - 0.5)/ 4
 
@@ -165,9 +157,14 @@ func getControl() -> Control:
 		return null
 
 func checkpointGained():
+	
 	getControl().flashText("Checkpoint Found")
 
 func quickTimeEvent():
+	if getControl().mapOn == true:
+		getControl().toggleMap()
+	
+	getControl().flashText("Shake Mouse")
 	$BoatSnatch.play()
 	isInQTE = true
 	$AnimationPlayer.play("rightSideQTE")
@@ -176,10 +173,13 @@ func _on_control_shake() -> void:
 	if isInQTE:
 		shakes += 1
 		if shakes >= minimumShakes:
-			$AnimationPlayer.play("RESET")
-			$BoatSnatch.play()
-			isInQTE = false
-			shakes = 0
+			exitQTE()
+
+func exitQTE():
+	$AnimationPlayer.play("RESET")
+	$BoatSnatch.play()
+	isInQTE = false
+	shakes = 0
 
 func createNewPaddleSoundPlayer(magnitude: float):
 	var paddleSounds: AudioStreamPlayer = load("res://Scenes/paddleSounds.tscn").instantiate()
@@ -191,3 +191,16 @@ func createNewPaddleSoundPlayer(magnitude: float):
 	
 	await paddleSounds.finished
 	paddleSounds.queue_free()
+
+func mapUIToggleMethod():
+	if isInQTE:
+		return
+	
+	if Input.is_action_just_pressed("ui_accept"):
+		getControl().toggleMap()
+	
+	if getControl().mapOn == true:
+		$Head/Camera3D.rotation.x = move_toward($Head/Camera3D.rotation.x, -PI/4, 0.5)
+		getControl().compass()
+	else:
+		$Head/Camera3D.rotation.x = move_toward($Head/Camera3D.rotation.x, 0.0, 0.1)

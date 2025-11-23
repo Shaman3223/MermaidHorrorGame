@@ -16,15 +16,21 @@ func setBKGVolume(value: float):
 func tempQuiet():
 	setBKGVolume(-80.0)
 	$AudioStreamPlayer/Timer.start()
-	$DeathTimer.start()
+	$QTETimer.start()
 	await $AudioStreamPlayer/Timer.timeout
 	setBKGVolume(0.0)
 
 func _physics_process(delta: float) -> void:
 	bkgStreamPlayer.volume_db = move_toward(bkgStreamPlayer.volume_db, BKGVolume, 1.0)
 
-func _on_death_timer_timeout() -> void:
+func QTE_timeout() -> void:
 	if lastSirenEvent.isPlayerClose():
 		player.quickTimeEvent()
+		$DeathTimer.start()
 	else:
 		print("safe")
+
+func _on_death_timer_timeout() -> void:
+	if player.isInQTE:
+		player.die() 
+		player.exitQTE()

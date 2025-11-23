@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://pm7l3k20fkv1"]
+[gd_scene load_steps=35 format=3 uid="uid://pm7l3k20fkv1"]
 
 [ext_resource type="PackedScene" uid="uid://bhio7k0sdbeev" path="res://Scenes/player.tscn" id="1_21xkr"]
 [ext_resource type="Script" uid="uid://dlyr1hc50om2i" path="res://Scenes/main.gd" id="1_d1ilt"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://cmmrwmy320vue" path="res://Scenes/enviroment.gd" id="8_6iyac"]
 [ext_resource type="PackedScene" uid="uid://cdet5l6wmgm7t" path="res://Shaders/pixelation.tscn" id="8_344ge"]
 [ext_resource type="AudioStream" uid="uid://br2ggeqbkl7qc" path="res://Sounds/zapsplat_nature_ambience_rainforest_insects_crickets_distant_waterfall_summer_night_time_eastern_australia_78201.mp3" id="9_ynf5e"]
+[ext_resource type="PackedScene" uid="uid://ce5auqul0pn8t" path="res://Scenes/check_point.tscn" id="11_fdnlq"]
 
 [sub_resource type="Gradient" id="Gradient_ig7tw"]
 offsets = PackedFloat32Array(0.11129032, 0.33548388)
@@ -204,7 +205,9 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="NoiseEvent" parent="Enviroment" instance=ExtResource("7_hptm8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 611.9791, 0.65881634, -409.79346)
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 675.74963, 0.65881634, -439.41055)
+isSafe = 1
+folderName = "frog"
 
 [node name="NoiseEventSpawner" type="Area3D" parent="Enviroment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 69.436)
@@ -222,6 +225,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.659, 27.263)
 shape = SubResource("SphereShape3D_fdnlq")
 debug_color = Color(0.90252525, 0.00014593244, 0.752917, 0.9490196)
 
+[node name="CheckPoint" parent="Enviroment" instance=ExtResource("11_fdnlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 693.8078, 0, -413.36133)
+
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(-8.742278e-06, -200, -8.742278e-06, 0, -8.742278e-06, 200, -200, 8.742278e-06, 3.8213708e-13, 0, 0.82293797, 0)
 texture = ExtResource("7_ynf5e")
@@ -234,6 +240,10 @@ autoplay = true
 wait_time = 8.0
 one_shot = true
 
+[node name="QTETimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
 [node name="DeathTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
@@ -241,4 +251,5 @@ one_shot = true
 [connection signal="mouseEventObserved" from="CanvasLayer/Control" to="CharacterBody3D" method="paddleSounds"]
 [connection signal="mouseEventObserved" from="CanvasLayer/Control" to="CharacterBody3D" method="forwardPaddle"]
 [connection signal="shake" from="CanvasLayer/Control" to="CharacterBody3D" method="_on_control_shake"]
+[connection signal="timeout" from="QTETimer" to="." method="QTE_timeout"]
 [connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]

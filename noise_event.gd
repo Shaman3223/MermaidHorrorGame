@@ -1,10 +1,17 @@
 class_name NoiseEvent extends Node3D
 
-@export var isSafe: bool = true
+@export var isSafe: safety = safety.RANDOM
+
+enum safety{
+	ALWAYS_SAFE,
+	ALWAYS_DANGEROUS,
+	RANDOM
+}
+
 @export var endOnCompletion: bool = false
 @export var dangerRadius: float = 17.0
 @export var activationTime: float = 10.0
-@export var folderName: String 
+@export var folderName: String = "splash"
 
 @export var animalSounds: Array[AudioStream]
 @export var sirenSounds:  Array[AudioStream]
@@ -35,27 +42,43 @@ func _ready() -> void:
 	$Area3D/CollisionShape3D.shape.radius = dangerRadius
 
 func _on_interval_timeout() -> void:
-	var chance: bool = bool(randi_range(0,1))
-	emitEvent(chance)
+	emitEvent()
 	if endOnCompletion:
 		await $GPUParticles3D.finished
 		queue_free()
 
-func emitEvent(isSiren: bool):
+func emitEvent():
 	print("I am screetching" + self.name)
 	$AudioStreamPlayer3D.pitch_scale = randf_range(0.9,1.05)
-	if isSiren and not isSafe:
-		$AudioStreamPlayer3D.stream = sirenSounds[randi_range(0,sirenSounds.size())-1]
-		$GPUParticles3D.emitting = true
-		$AudioStreamPlayer3D.play()
-		var mainScene = get_parent().get_parent()
-		if mainScene:
-			mainScene.tempQuiet()
-			mainScene.lastSirenEvent = self
-	elif !isSiren:
-		$AudioStreamPlayer3D.stream = animalSounds[randi_range(0,animalSounds.size())-1]
-		$GPUParticles3D.emitting = true
-		$AudioStreamPlayer3D.play()
+	match isSafe:
+		safety.ALWAYS_SAFE:
+			playAnimalSound()
+		safety.ALWAYS_DANGEROUS:
+			playSirenSound()
+		safety.RANDOM:
+			var isSiren: bool = bool(randi_range(0,1))
+			if isSiren:
+				playSirenSound()
+			elif !isSiren:
+				playAnimalSound()
+
+
+func playSirenSound():
+	$AudioStreamPlayer3D.stream = sirenSounds[randi_range(0,sirenSounds.size())-1]
+	$GPUParticles3D.emitting = true
+	$AudioStreamPlayer3D.play()
+	var mainScene = get_parent().get_parent()
+	if mainScene:
+		mainScene.tempQuiet()
+		mainScene.lastSirenEvent = self
+
+func playAnimalSound():
+	if animalSounds.size() < 1:
+		print("animal sounds did not load")
+		return
+	$AudioStreamPlayer3D.stream = animalSounds[randi_range(0,animalSounds.size())-1]
+	$GPUParticles3D.emitting = true
+	$AudioStreamPlayer3D.play()
 
 func isPlayerClose() -> bool:
 	for bodies in $Area3D.get_overlapping_bodies():
