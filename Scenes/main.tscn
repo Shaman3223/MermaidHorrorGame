@@ -147,7 +147,7 @@ radius = 33.82169
 script = ExtResource("1_d1ilt")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_21xkr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 692.7274, 1.1035833, -415.79773)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 550.9337, 1.1035833, -415.79773)
 axis_lock_linear_y = true
 minimumShakes = 25
 
