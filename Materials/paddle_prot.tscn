@@ -1,5 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dyyjpb74co45o"]
+[gd_scene load_steps=3 format=3 uid="uid://dyyjpb74co45o"]
 
-[ext_resource type="PackedScene" uid="uid://dmuyyt4o3ougc" path="res://3DModels/boat_prot.fbx" id="1_j150t"]
+[ext_resource type="PackedScene" uid="uid://1n5avnwdn3yh" path="res://3DModels/paddle_prot.fbx" id="1_tk85c"]
+[ext_resource type="Material" uid="uid://2ikxi2f00c2a" path="res://Materials/brown.tres" id="2_okihr"]
 
-[node name="boat_prot" instance=ExtResource("1_j150t")]
+[node name="paddle_prot" instance=ExtResource("1_tk85c")]
+
+[node name="Cube" parent="." index="0"]
+material_override = ExtResource("2_okihr")
