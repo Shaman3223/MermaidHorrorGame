@@ -1,4 +1,4 @@
-[gd_scene load_steps=144 format=3 uid="uid://pm7l3k20fkv1"]
+[gd_scene load_steps=175 format=3 uid="uid://pm7l3k20fkv1"]
 
 [ext_resource type="PackedScene" uid="uid://bhio7k0sdbeev" path="res://Scenes/player.tscn" id="1_21xkr"]
 [ext_resource type="Script" uid="uid://dlyr1hc50om2i" path="res://Scenes/main.gd" id="1_d1ilt"]
@@ -554,6 +554,130 @@ radius = 16.309061
 [sub_resource type="Resource" id="Resource_xjjvj"]
 script = ExtResource("24_cbgmd")
 radius = 16.309061
+
+[sub_resource type="Resource" id="Resource_jab21"]
+script = ExtResource("24_cbgmd")
+radius = 12.80117
+
+[sub_resource type="Resource" id="Resource_8dylv"]
+script = ExtResource("24_cbgmd")
+radius = 11.607757
+
+[sub_resource type="Resource" id="Resource_qv1an"]
+script = ExtResource("24_cbgmd")
+radius = 10.817352
+
+[sub_resource type="Resource" id="Resource_ja2pg"]
+script = ExtResource("24_cbgmd")
+radius = 10.817352
+
+[sub_resource type="Resource" id="Resource_0wopu"]
+script = ExtResource("24_cbgmd")
+radius = 10.817352
+
+[sub_resource type="Resource" id="Resource_na2ur"]
+script = ExtResource("24_cbgmd")
+radius = 10.817352
+
+[sub_resource type="Resource" id="Resource_rlvdk"]
+script = ExtResource("24_cbgmd")
+radius = 10.817352
+
+[sub_resource type="Resource" id="Resource_t6wb6"]
+script = ExtResource("24_cbgmd")
+radius = 12.876234
+
+[sub_resource type="Resource" id="Resource_fvjqb"]
+script = ExtResource("24_cbgmd")
+radius = 15.158644
+
+[sub_resource type="Resource" id="Resource_b05pg"]
+script = ExtResource("24_cbgmd")
+radius = 15.158644
+
+[sub_resource type="Resource" id="Resource_bdqux"]
+script = ExtResource("24_cbgmd")
+radius = 15.158644
+
+[sub_resource type="Resource" id="Resource_e1jjv"]
+script = ExtResource("24_cbgmd")
+radius = 18.316925
+
+[sub_resource type="Resource" id="Resource_stool"]
+script = ExtResource("24_cbgmd")
+radius = 27.676981
+
+[sub_resource type="Resource" id="Resource_ci23i"]
+script = ExtResource("24_cbgmd")
+radius = 21.031403
+
+[sub_resource type="Resource" id="Resource_myryv"]
+script = ExtResource("24_cbgmd")
+radius = 22.616716
+
+[sub_resource type="Resource" id="Resource_bpr0e"]
+script = ExtResource("24_cbgmd")
+radius = 21.438524
+
+[sub_resource type="Resource" id="Resource_14mkc"]
+script = ExtResource("24_cbgmd")
+radius = 17.949371
+
+[sub_resource type="Resource" id="Resource_l78ku"]
+script = ExtResource("24_cbgmd")
+radius = 17.949371
+
+[sub_resource type="Resource" id="Resource_hfu3o"]
+script = ExtResource("24_cbgmd")
+radius = 17.949371
+
+[sub_resource type="Resource" id="Resource_adgm5"]
+script = ExtResource("24_cbgmd")
+radius = 17.949371
+
+[sub_resource type="Resource" id="Resource_qxkn4"]
+script = ExtResource("24_cbgmd")
+radius = 17.949371
+
+[sub_resource type="Resource" id="Resource_130ps"]
+script = ExtResource("24_cbgmd")
+radius = 21.084671
+
+[sub_resource type="Resource" id="Resource_odn5n"]
+script = ExtResource("24_cbgmd")
+radius = 29.376434
+
+[sub_resource type="Resource" id="Resource_b12iu"]
+script = ExtResource("24_cbgmd")
+radius = 36.183346
+
+[sub_resource type="Resource" id="Resource_gf7g1"]
+script = ExtResource("24_cbgmd")
+radius = 15.527415
+
+[sub_resource type="Resource" id="Resource_102yd"]
+script = ExtResource("24_cbgmd")
+radius = 15.527415
+
+[sub_resource type="Resource" id="Resource_rtmaq"]
+script = ExtResource("24_cbgmd")
+radius = 15.527415
+
+[sub_resource type="Resource" id="Resource_eqnci"]
+script = ExtResource("24_cbgmd")
+radius = 15.527415
+
+[sub_resource type="Resource" id="Resource_ojylq"]
+script = ExtResource("24_cbgmd")
+radius = 15.527415
+
+[sub_resource type="Resource" id="Resource_fle1e"]
+script = ExtResource("24_cbgmd")
+radius = 15.527415
+
+[sub_resource type="Resource" id="Resource_r1tr8"]
+script = ExtResource("24_cbgmd")
+radius = 36.183346
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_d1ilt")
@@ -1203,6 +1327,192 @@ transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.8443
 script = ExtResource("21_e08e2")
 negative = true
 shape = SubResource("Resource_xjjvj")
+
+[node name="ScatterShape91" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, 241.37524, 0, -247.0769)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_jab21")
+
+[node name="ScatterShape92" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, 220.47247, 0, -254.52171)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_8dylv")
+
+[node name="ScatterShape93" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, 201.28772, 0, -259.38947)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_qv1an")
+
+[node name="ScatterShape94" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, 183.39153, 0, -265.6889)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_ja2pg")
+
+[node name="ScatterShape95" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, 164.36607, 0, -270.47595)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_0wopu")
+
+[node name="ScatterShape96" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, 145.70886, 0, -276.7359)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_na2ur")
+
+[node name="ScatterShape97" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, 129.38377, 0, -286.67822)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_rlvdk")
+
+[node name="ScatterShape98" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, 116.61831, 0, -302.75778)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_t6wb6")
+
+[node name="ScatterShape99" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, -20.902802, 0, 158.6123)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_fvjqb")
+
+[node name="ScatterShape100" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, -23.050537, 0, 183.95558)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_b05pg")
+
+[node name="ScatterShape101" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, -26.057373, 0, 209.72838)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_bdqux")
+
+[node name="ScatterShape102" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, -24.339188, 0, 235.93074)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_e1jjv")
+
+[node name="ScatterShape103" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, -29.49376, 0, 272.44223)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_stool")
+
+[node name="ScatterShape104" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, -65.399826, 0, 296.19547)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_ci23i")
+
+[node name="ScatterShape105" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, -98.1756, 0, 309.82135)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_myryv")
+
+[node name="ScatterShape106" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, -136.84366, 0, 315.5295)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_bpr0e")
+
+[node name="ScatterShape107" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, -169.25119, 0, 322.71072)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_14mkc")
+
+[node name="ScatterShape108" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, -198.16017, 0, 331.365)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_l78ku")
+
+[node name="ScatterShape109" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, -224.36574, 0, 340.679)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_hfu3o")
+
+[node name="ScatterShape110" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, -250.5713, 0, 352.99246)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_adgm5")
+
+[node name="ScatterShape111" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, -279.5033, 0, 371.15192)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_qxkn4")
+
+[node name="ScatterShape112" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, -306.798, 0, 388.9067)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_130ps")
+
+[node name="ScatterShape113" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, -343.3676, 0, 402.68655)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_odn5n")
+
+[node name="ScatterShape114" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, -396.10205, 0, 410.63647)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_b12iu")
+
+[node name="ScatterShape116" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, 2.381195, 0, 292.44733)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_gf7g1")
+
+[node name="ScatterShape117" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, 14.740036, 0, 316.9403)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_102yd")
+
+[node name="ScatterShape118" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, 19.234146, 0, 343.23093)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_rtmaq")
+
+[node name="ScatterShape119" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, 21.931229, 0, 371.16507)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_eqnci")
+
+[node name="ScatterShape120" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, 20.004745, 0, 398.136)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_ojylq")
+
+[node name="ScatterShape121" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, 13.647339, 0, 424.26306)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_fle1e")
+
+[node name="ScatterShape115" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, -446.7165, 0, 436.0762)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_r1tr8")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(-8.742278e-06, -200, -8.742278e-06, 0, -8.742278e-06, 200, -200, 8.742278e-06, 3.8213708e-13, -0.30312347, 0.82383823, 0.7507858)
