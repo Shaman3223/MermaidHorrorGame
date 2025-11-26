@@ -1,6 +1,7 @@
 class_name NoiseEvent extends Node3D
 
 @export var isSafe: safety = safety.RANDOM
+@export var isProximityActivated: bool = true
 
 enum safety{
 	ALWAYS_SAFE,
@@ -10,6 +11,7 @@ enum safety{
 
 @export var endOnCompletion: bool = false
 @export var dangerRadius: float = 17.0
+@export var activationRadius: float = 10.0
 @export var activationTime: float = 10.0
 @export var folderName: String = "splash"
 
@@ -38,17 +40,16 @@ func _ready() -> void:
 	print("hola como estats")
 	animalSounds = load_mp3_folder(folderName)
 	$Interval.wait_time = activationTime
-	$Interval.start()
+	if not isProximityActivated:
+		$Interval.start()
 	$Area3D/CollisionShape3D.shape.radius = dangerRadius
+	$ActivationRadius/CollisionShape3D.shape.radius = activationRadius
 
 func _on_interval_timeout() -> void:
 	emitEvent()
-	if endOnCompletion:
-		await $GPUParticles3D.finished
-		queue_free()
 
 func emitEvent():
-	print("I am screetching" + self.name)
+	print("I am screetching " + self.name)
 	$AudioStreamPlayer3D.pitch_scale = randf_range(0.9,1.05)
 	match isSafe:
 		safety.ALWAYS_SAFE:
@@ -61,6 +62,9 @@ func emitEvent():
 				playSirenSound()
 			elif !isSiren:
 				playAnimalSound()
+	if endOnCompletion:
+		await $GPUParticles3D.finished
+		queue_free()
 
 
 func playSirenSound():
@@ -85,3 +89,7 @@ func isPlayerClose() -> bool:
 		if bodies is CharacterBody3D:
 			return true
 	return false
+
+func _on_activation_radius_body_entered(body: Node3D) -> void:
+	if body is CharacterBody3D and isProximityActivated:
+		emitEvent()
