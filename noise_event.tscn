@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b5d68t82bb0eu"]
+[gd_scene load_steps=24 format=3 uid="uid://b5d68t82bb0eu"]
 
 [ext_resource type="Script" uid="uid://cdosy8in6j1au" path="res://noise_event.gd" id="1_77lm1"]
 [ext_resource type="AudioStream" uid="uid://diykxkone73r7" path="res://Sounds/waterSplash1.mp3" id="2_pd817"]
@@ -21,9 +21,21 @@ gradient = SubResource("Gradient_op3io")
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_ww047"]
 gradient = SubResource("Gradient_754gx")
 
+[sub_resource type="Curve" id="Curve_8sbet"]
+_limits = [-2.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="CurveTexture" id="CurveTexture_8sbet"]
+curve = SubResource("Curve_8sbet")
+
+[sub_resource type="Curve" id="Curve_d67mf"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_op3io"]
+curve = SubResource("Curve_d67mf")
 
 [sub_resource type="CurveTexture" id="CurveTexture_q2wn1"]
 
@@ -74,8 +86,12 @@ outer_radius = 1.23
 height = 0.93359375
 radius = 17.529785
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_op3io"]
+radius = 8.659668
+
 [node name="NoiseEvent" type="Node3D"]
 script = ExtResource("1_77lm1")
+isProximityActivated = false
 endOnCompletion = true
 dangerRadius = 5.0
 sirenSounds = Array[AudioStream]([ExtResource("7_q2wn1")])
@@ -107,5 +123,12 @@ wait_time = 10.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5332031, 0)
 shape = SubResource("CylinderShape3D_pd817")
 
+[node name="ActivationRadius" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ActivationRadius"]
+shape = SubResource("CylinderShape3D_op3io")
+debug_color = Color(0.13081512, 0.62731904, 0.4560246, 0.41960785)
+
 [connection signal="timeout" from="Interval" to="." method="_on_interval_timeout"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="ActivationRadius" to="." method="_on_activation_radius_body_entered"]

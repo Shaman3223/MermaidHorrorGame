@@ -78,6 +78,9 @@ func flashText(text: String):
 	$AnimationPlayer.play("gained")
 
 func toggleMap():
+	$Letter.hide()
+	$Label2/AnimationPlayer.stop()
+	$Label2.hide()
 	if mapOn:
 		closeMap()
 		mapOn = false
