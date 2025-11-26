@@ -616,8 +616,9 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="NoiseEvent" parent="Enviroment" instance=ExtResource("7_hptm8")]
-transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 675.74963, 0.65881634, -439.41055)
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 499.74963, 0.65881634, -389.41055)
 isSafe = 1
+dangerRadius = 10.0
 folderName = "frog"
 
 [node name="NoiseEventSpawner" type="Area3D" parent="Enviroment"]
