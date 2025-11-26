@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://wjyejxvmqi5d"]
+[gd_scene load_steps=5 format=3 uid="uid://wjyejxvmqi5d"]
 
 [ext_resource type="PackedScene" uid="uid://la2vlainkro1" path="res://3DModels/Tree003.fbx" id="1_im82g"]
 [ext_resource type="Texture2D" uid="uid://bxhkw6wtlxidi" path="res://3DModels/trunk.png" id="2_kb58w"]
@@ -6,7 +6,17 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_31ylw"]
 albedo_texture = ExtResource("2_kb58w")
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_kb58w"]
+radius = 3.0547712
+
 [node name="Tree003" instance=ExtResource("1_im82g")]
 
 [node name="Tree_0" parent="group2/group5" index="1"]
 surface_material_override/0 = SubResource("StandardMaterial3D_31ylw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="group2/group5" index="2"]
+transform = Transform3D(-0.15059263, 0, -0.51306146, 0, 0.5347057, 0, 0.51306146, 0, -0.15059263, 1.0628524, -2.0319533, -3.621084)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="group2/group5/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.124540806, -0.97262096, -0.8785026)
+shape = SubResource("SphereShape3D_kb58w")
