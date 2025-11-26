@@ -6,13 +6,14 @@ func _ready() -> void:
 	for area in get_children():
 		if area is Area3D and area.name.contains("Noise"):
 			area.body_entered.connect(isPlayerInArea.bind(area))
+		if area is Area3D and area.name.contains("Chase"):
+			area.body_entered.connect(startChase.bind(area))
 
 
 func isPlayerInArea(body: Node3D, area: Area3D):
 	if body is CharacterBody3D:
 		spawn_noise_event(area)
 		print("area entered")
-
 
 func spawn_noise_event(area: Area3D):
 	var noise : NoiseEvent = noiseEventScene.instantiate()
@@ -60,3 +61,26 @@ func spawn_noise_event(area: Area3D):
 
 	# ASSIGN POSITION ---------------------------------------------------
 	noise.global_position = pos
+
+
+func startChase(body: Node3D, area: Area3D):
+	if body is CharacterBody3D:
+		spawnChaseEvent(body)
+
+
+func spawnChaseEvent(player: CharacterBody3D):
+	var chaseEvent = load("res://Scenes/chase_event.tscn").instantiate()
+	
+	add_child(chaseEvent)
+	chaseEvent.global_position = player.global_position
+	chaseEvent.setChaseObject(player)
+	
+	var untilChase: Timer = Timer.new()
+	untilChase.wait_time = 1.0
+	add_child(untilChase)
+	untilChase.start()
+	
+	await untilChase.timeout
+	
+	chaseEvent.chasing = true
+	

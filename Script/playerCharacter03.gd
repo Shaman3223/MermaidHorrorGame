@@ -166,6 +166,7 @@ func quickTimeEvent():
 	
 	getControl().flashText("Shake Mouse")
 	$BoatSnatch.play()
+	minimumShakes += 10
 	isInQTE = true
 	$AnimationPlayer.play("rightSideQTE")
 

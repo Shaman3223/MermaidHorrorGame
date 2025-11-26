@@ -34,3 +34,7 @@ func _on_death_timer_timeout() -> void:
 	if player.isInQTE:
 		player.die() 
 		player.exitQTE()
+
+
+func playerEntered(body: Node3D) -> void:
+	pass # Replace with function body.

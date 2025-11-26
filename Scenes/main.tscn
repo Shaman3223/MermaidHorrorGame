@@ -1,4 +1,4 @@
-[gd_scene load_steps=144 format=3 uid="uid://pm7l3k20fkv1"]
+[gd_scene load_steps=146 format=3 uid="uid://pm7l3k20fkv1"]
 
 [ext_resource type="PackedScene" uid="uid://bhio7k0sdbeev" path="res://Scenes/player.tscn" id="1_21xkr"]
 [ext_resource type="Script" uid="uid://dlyr1hc50om2i" path="res://Scenes/main.gd" id="1_d1ilt"]
@@ -26,6 +26,7 @@
 [ext_resource type="Script" uid="uid://c0nmdvvsn1uyk" path="res://addons/proton_scatter/src/scatter_shape.gd" id="21_e08e2"]
 [ext_resource type="Script" uid="uid://c2kiury8ppgbs" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="23_u50mg"]
 [ext_resource type="Script" uid="uid://d3bh3km8un54m" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="24_cbgmd"]
+[ext_resource type="Script" uid="uid://bcrkkcc3j0ai0" path="res://Scenes/chaseSequence.gd" id="25_1w6v2"]
 
 [sub_resource type="Gradient" id="Gradient_ig7tw"]
 offsets = PackedFloat32Array(0.11129032, 0.33548388)
@@ -554,6 +555,9 @@ radius = 16.309061
 [sub_resource type="Resource" id="Resource_xjjvj"]
 script = ExtResource("24_cbgmd")
 radius = 16.309061
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ueoa1"]
+radius = 30.756
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_d1ilt")
@@ -1204,6 +1208,14 @@ script = ExtResource("21_e08e2")
 negative = true
 shape = SubResource("Resource_xjjvj")
 
+[node name="ChaseEventSpawner" type="Area3D" parent="Enviroment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 284.08636, -4.340519, -370.65283)
+script = ExtResource("25_1w6v2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enviroment/ChaseEventSpawner"]
+shape = SubResource("SphereShape3D_ueoa1")
+debug_color = Color(0.67058825, 0.50980395, 0.03137255, 1)
+
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(-8.742278e-06, -200, -8.742278e-06, 0, -8.742278e-06, 200, -200, 8.742278e-06, 3.8213708e-13, -0.30312347, 0.82383823, 0.7507858)
 texture = ExtResource("7_ynf5e")
@@ -1226,5 +1238,6 @@ one_shot = true
 
 [connection signal="mouseEventObserved" from="CanvasLayer/Control" to="CharacterBody3D" method="forwardPaddle"]
 [connection signal="shake" from="CanvasLayer/Control" to="CharacterBody3D" method="_on_control_shake"]
+[connection signal="body_entered" from="Enviroment/ChaseEventSpawner" to="Enviroment/ChaseEventSpawner" method="_on_body_entered"]
 [connection signal="timeout" from="QTETimer" to="." method="QTE_timeout"]
 [connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]
