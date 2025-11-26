@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cdwfi2ju7bjr0"]
+[gd_scene load_steps=42 format=3 uid="uid://cdwfi2ju7bjr0"]
 
 [ext_resource type="Script" uid="uid://dyiry3nk68tm0" path="res://Script/InputObtainer.gd" id="1_0fbet"]
 [ext_resource type="FontFile" uid="uid://blrbs4w6ixwqg" path="res://PixelifySans-Regular.ttf" id="2_cgmvo"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bplgwqjwej2yg" path="res://Sounds/PaperSounds/zapsplat_foley_paper_sheet_a4_fold_in_half_002_44389.mp3" id="4_dqysy"]
 [ext_resource type="AudioStream" uid="uid://c78sjj4bdevw6" path="res://Sounds/PaperSounds/zapsplat_foley_sheet_of_paper_a4_fold_002_73778.mp3" id="5_1tcje"]
 [ext_resource type="Texture2D" uid="uid://dq067lv4dn6nh" path="res://Sprites/Star.png" id="6_dqysy"]
+[ext_resource type="Texture2D" uid="uid://bf1doy12dm0ab" path="res://Sprites/Sprite-0015.png" id="7_1tcje"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vh8u0"]
 font = ExtResource("2_cgmvo")
@@ -73,33 +74,6 @@ _data = {
 &"gained": SubResource("Animation_cgmvo")
 }
 
-[sub_resource type="Animation" id="Animation_1tcje"]
-resource_name = "fadeout"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
 [sub_resource type="Animation" id="Animation_vxodi"]
 length = 0.001
 tracks/0/type = "value"
@@ -125,6 +99,33 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_1tcje"]
+resource_name = "fadeout"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fx7jt"]
@@ -355,6 +356,47 @@ streams_count = 2
 stream_0/stream = ExtResource("4_dqysy")
 stream_1/stream = ExtResource("5_1tcje")
 
+[sub_resource type="LabelSettings" id="LabelSettings_1tcje"]
+font = ExtResource("2_cgmvo")
+font_size = 65
+
+[sub_resource type="Animation" id="Animation_fx7jt"]
+resource_name = "flash"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.7, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_mft5f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qtfct"]
+_data = {
+&"RESET": SubResource("Animation_mft5f"),
+&"flash": SubResource("Animation_fx7jt")
+}
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -461,3 +503,37 @@ pivot_offset = Vector2(256, 256)
 texture = ExtResource("6_dqysy")
 stretch_mode = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="Letter" type="TextureRect" parent="."]
+modulate = Color(0.7294118, 1, 0.7882353, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 52.0
+offset_right = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_1tcje")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -288.0
+offset_top = -105.0
+offset_right = 288.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Press [SPACE BAR] to look at Map"
+label_settings = SubResource("LabelSettings_1tcje")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label2"]
+libraries = {
+&"": SubResource("AnimationLibrary_qtfct")
+}
+autoplay = "flash"

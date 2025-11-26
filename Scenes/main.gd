@@ -1,5 +1,6 @@
 extends Node3D
 var BKGVolume: float = 0
+var MaxBKGVolume: float = 80.0
 @onready var bkgStreamPlayer: AudioStreamPlayer = $AudioStreamPlayer
 
 var lastSirenEvent: Node3D
@@ -8,6 +9,7 @@ var lastSirenEvent: Node3D
 
 
 func _ready() -> void:
+	$AudioStreamPlayer/Randomizer.start()
 	$Sprite3D.hide()
 
 func setBKGVolume(value: float):
@@ -21,7 +23,13 @@ func tempQuiet():
 	setBKGVolume(0.0)
 
 func _physics_process(delta: float) -> void:
-	bkgStreamPlayer.volume_db = move_toward(bkgStreamPlayer.volume_db, BKGVolume, 1.0)
+	bkgStreamPlayer.volume_db = move_toward(bkgStreamPlayer.volume_db, BKGVolume, 0.1)
+
+func _on_randomizer_timeout() -> void:
+	if $AudioStreamPlayer/Timer.is_stopped():
+		setBKGVolume(randf_range(-20.0, 0.0))
+
+
 
 func QTE_timeout() -> void:
 	if lastSirenEvent.isPlayerClose():
