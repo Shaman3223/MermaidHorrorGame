@@ -7,7 +7,7 @@ func _ready() -> void:
 		button.mouse_entered.connect(playUINoise)
 		button.pressed.connect(playStartNoise)
 
-const maingame := preload("res://Scenes/main.tscn")
+var maingame = load("res://Scenes/main.tscn")
 
 func playUINoise():
 	$ui.play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b5d68t82bb0eu"]
+[gd_scene load_steps=24 format=3 uid="uid://w3lo8yox103h"]
 
 [ext_resource type="Script" uid="uid://cdosy8in6j1au" path="res://noise_event.gd" id="1_77lm1"]
 [ext_resource type="AudioStream" uid="uid://diykxkone73r7" path="res://Sounds/waterSplash1.mp3" id="2_pd817"]
@@ -86,10 +86,12 @@ outer_radius = 1.23
 height = 0.93359375
 radius = 17.529785
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_5f1b2"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_op3io"]
+radius = 8.659668
 
 [node name="NoiseEvent" type="Node3D"]
 script = ExtResource("1_77lm1")
+isProximityActivated = false
 endOnCompletion = true
 dangerRadius = 5.0
 sirenSounds = Array[AudioStream]([ExtResource("7_q2wn1")])
@@ -124,8 +126,8 @@ shape = SubResource("CylinderShape3D_pd817")
 [node name="ActivationRadius" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ActivationRadius"]
-shape = SubResource("CylinderShape3D_5f1b2")
-debug_color = Color(0, 0.64600456, 0.25438324, 0.41960785)
+shape = SubResource("CylinderShape3D_op3io")
+debug_color = Color(0.13081512, 0.62731904, 0.4560246, 0.41960785)
 
 [connection signal="timeout" from="Interval" to="." method="_on_interval_timeout"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
