@@ -91,7 +91,7 @@ func forwardPaddle(charge: int, dir: Vector2, mag: float):
 
 #adjust tilt intensity 
 	var rotateDividend: float = 45.0 - abs(dir.x/600)
-	var pushPower: float = 0.9 * (dir.y/1000)
+	var pushPower: float = 1.9 * (dir.y/1000)
 	
 	if abs(dir.y) > abs(dir.x):
 		tilt_x = 0.05 * charge
