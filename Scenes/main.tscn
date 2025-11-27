@@ -1216,6 +1216,9 @@ script = ExtResource("25_1w6v2")
 shape = SubResource("SphereShape3D_ueoa1")
 debug_color = Color(0.67058825, 0.50980395, 0.03137255, 1)
 
+[node name="CheckPoint2" parent="Enviroment" instance=ExtResource("11_fdnlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 456.8551, 0, -382.5659)
+
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(-8.742278e-06, -200, -8.742278e-06, 0, -8.742278e-06, 200, -200, 8.742278e-06, 3.8213708e-13, -0.30312347, 0.82383823, 0.7507858)
 texture = ExtResource("7_ynf5e")
