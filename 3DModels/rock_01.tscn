@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3h75fcdsaq1d"]
+
+[ext_resource type="PackedScene" uid="uid://sgnowkwnbifg" path="res://3DModels/rock01.fbx" id="1_3t6ul"]
+[ext_resource type="Texture2D" uid="uid://kyut6vnttu5h" path="res://3DModels/GRYDIRT2.JPG" id="2_jts3n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lt3cj"]
+albedo_texture = ExtResource("2_jts3n")
+
+[node name="rock01" instance=ExtResource("1_3t6ul")]
+
+[node name="Cube_001" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_lt3cj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
