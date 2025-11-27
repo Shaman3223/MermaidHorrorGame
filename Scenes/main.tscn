@@ -30,6 +30,7 @@
 [ext_resource type="Script" uid="uid://c0nmdvvsn1uyk" path="res://addons/proton_scatter/src/scatter_shape.gd" id="21_e08e2"]
 [ext_resource type="Script" uid="uid://c2kiury8ppgbs" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="23_u50mg"]
 [ext_resource type="Script" uid="uid://d3bh3km8un54m" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="24_cbgmd"]
+[ext_resource type="Script" uid="uid://bcrkkcc3j0ai0" path="res://Scenes/chaseSequence.gd" id="25_1w6v2"]
 
 [sub_resource type="Gradient" id="Gradient_ig7tw"]
 offsets = PackedFloat32Array(0.11129032, 0.33548388)
@@ -2182,5 +2183,6 @@ transform = Transform3D(-1.3681662, 0, 6.0122943, 0, 6.166, 0, -6.0122943, 0, -1
 
 [connection signal="mouseEventObserved" from="CanvasLayer/Control" to="CharacterBody3D" method="forwardPaddle"]
 [connection signal="shake" from="CanvasLayer/Control" to="CharacterBody3D" method="_on_control_shake"]
+[connection signal="body_entered" from="Enviroment/ChaseEventSpawner" to="Enviroment/ChaseEventSpawner" method="_on_body_entered"]
 [connection signal="timeout" from="QTETimer" to="." method="QTE_timeout"]
 [connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]
