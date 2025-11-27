@@ -1,4 +1,4 @@
-[gd_scene load_steps=186 format=3 uid="uid://pm7l3k20fkv1"]
+[gd_scene load_steps=190 format=3 uid="uid://pm7l3k20fkv1"]
 
 [ext_resource type="PackedScene" uid="uid://bhio7k0sdbeev" path="res://Scenes/player.tscn" id="1_21xkr"]
 [ext_resource type="Script" uid="uid://dlyr1hc50om2i" path="res://Scenes/main.gd" id="1_d1ilt"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cubxt7y8n4au5" path="res://3DModels/log.tscn" id="14_ueoa1"]
 [ext_resource type="Script" uid="uid://cvic3bvoj6bbv" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="15_1w6v2"]
 [ext_resource type="PackedScene" uid="uid://hrlq8eib5q50" path="res://3DModels/lilypad.tscn" id="15_6vcvc"]
+[ext_resource type="Texture2D" uid="uid://chv71kc3sel1y" path="res://3DModels/Screenshot 2025-11-26 221058.png" id="15_hpc6h"]
 [ext_resource type="PackedScene" uid="uid://caqxfqurbp3ku" path="res://addons/proton_scatter/demos/assets/pine_tree.tscn" id="16_7k868"]
 [ext_resource type="Script" uid="uid://y3sym0glg0uw" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="16_ueoa1"]
 [ext_resource type="Script" uid="uid://caewab10oua0" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="17_6vcvc"]
@@ -30,7 +31,7 @@
 [ext_resource type="Script" uid="uid://c0nmdvvsn1uyk" path="res://addons/proton_scatter/src/scatter_shape.gd" id="21_e08e2"]
 [ext_resource type="Script" uid="uid://c2kiury8ppgbs" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="23_u50mg"]
 [ext_resource type="Script" uid="uid://d3bh3km8un54m" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="24_cbgmd"]
-[ext_resource type="Script" uid="uid://bcrkkcc3j0ai0" path="res://Scenes/chaseSequence.gd" id="25_1w6v2"]
+[ext_resource type="Texture2D" uid="uid://bmyld4fp0usjy" path="res://3DModels/AdobeStock_941312354.png" id="32_kltya"]
 
 [sub_resource type="Gradient" id="Gradient_ig7tw"]
 offsets = PackedFloat32Array(0.11129032, 0.33548388)
@@ -163,9 +164,12 @@ radius = 33.82169
 
 [sub_resource type="TorusMesh" id="TorusMesh_ueoa1"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kltya"]
+albedo_texture = ExtResource("15_hpc6h")
+
 [sub_resource type="BoxMesh" id="BoxMesh_6vcvc"]
 
-[sub_resource type="Resource" id="Resource_7k868"]
+[sub_resource type="Resource" id="Resource_hpc6h"]
 script = ExtResource("16_ueoa1")
 amount = 8000
 override_global_seed = true
@@ -173,7 +177,7 @@ custom_seed = 2
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_hpc6h"]
+[sub_resource type="Resource" id="Resource_kltya"]
 script = ExtResource("17_6vcvc")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
@@ -182,25 +186,25 @@ override_global_seed = true
 custom_seed = 1
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_kltya"]
+[sub_resource type="Resource" id="Resource_jab21"]
 script = ExtResource("18_7k868")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_jab21"]
+[sub_resource type="Resource" id="Resource_dllok"]
 script = ExtResource("19_hpc6h")
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
 
-[sub_resource type="Resource" id="Resource_dllok"]
+[sub_resource type="Resource" id="Resource_0t4jf"]
 script = ExtResource("20_u50mg")
 terrain_node = NodePath("../Terrain3D")
 
-[sub_resource type="Resource" id="Resource_0t4jf"]
+[sub_resource type="Resource" id="Resource_daoo8"]
 script = ExtResource("14_cbgmd")
-stack = Array[ExtResource("15_1w6v2")]([SubResource("Resource_7k868"), SubResource("Resource_hpc6h"), SubResource("Resource_kltya"), SubResource("Resource_jab21"), SubResource("Resource_dllok")])
+stack = Array[ExtResource("15_1w6v2")]([SubResource("Resource_hpc6h"), SubResource("Resource_kltya"), SubResource("Resource_jab21"), SubResource("Resource_dllok"), SubResource("Resource_0t4jf")])
 
 [sub_resource type="Resource" id="Resource_1w6v2"]
 script = ExtResource("23_u50mg")
@@ -708,6 +712,10 @@ radius = 12.865252
 script = ExtResource("24_cbgmd")
 radius = 12.865252
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e08e2"]
+shading_mode = 0
+albedo_color = Color(1.9943656, 2.0331757, 1.8546493, 1)
+
 [node name="Main" type="Node3D"]
 script = ExtResource("1_d1ilt")
 
@@ -937,6 +945,7 @@ skeleton = NodePath("../../../CharacterBody3D/Water2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Enviroment/Rocks/MeshInstance3D"]
 transform = Transform3D(0.8900988, 0.039731026, -0.45403203, -0.05570478, 0.99820787, -0.021855049, 0.45235023, 0.044744976, 0.8907165, 2.4087253, -8.469846, 0.34001446)
+material_override = SubResource("StandardMaterial3D_kltya")
 mesh = SubResource("BoxMesh_6vcvc")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Enviroment/Rocks/MeshInstance3D"]
@@ -1373,7 +1382,7 @@ transform = Transform3D(33.155, 0, 0, 0, 33.155, 0, 0, 0, 33.155, 52.90298, -56.
 [node name="ProtonScatter" type="Node3D" parent="Enviroment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0170689, 0)
 script = ExtResource("13_u50mg")
-modifier_stack = SubResource("Resource_0t4jf")
+modifier_stack = SubResource("Resource_daoo8")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(5, 5, 5)
 metadata/_custom_type_script = "uid://drwtt23j22axe"
@@ -2181,8 +2190,24 @@ transform = Transform3D(0.94586396, 0, 6.0930204, 0, 6.166001, 0, -6.0930204, 0,
 [node name="CheckPoint2" parent="." instance=ExtResource("11_fdnlq")]
 transform = Transform3D(-1.3681662, 0, 6.0122943, 0, 6.166, 0, -6.0122943, 0, -1.3681662, -148.60541, 0.692, -378.0701)
 
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(3.17024, 0, -2.7473106, 0, 4.1950135, 0, 2.7473106, 0, 3.17024, -246.18697, 907.86066, 717.92035)
+visible = false
+modulate = Color(18.892002, 18.892002, 18.892002, 1)
+billboard = 1
+texture = ExtResource("32_kltya")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Sprite3D2"]
+transform = Transform3D(0.23837829, 0, -7.450581e-09, 0, 0.23837827, 0, 7.450581e-09, 0, 0.23837829, 8.435379, 0, -5.7773285)
+light_energy = 20.51
+omni_range = 75.898
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -219.05423, 646.8237, 296.0084)
+radius = 33.38259
+material = SubResource("StandardMaterial3D_e08e2")
+
 [connection signal="mouseEventObserved" from="CanvasLayer/Control" to="CharacterBody3D" method="forwardPaddle"]
 [connection signal="shake" from="CanvasLayer/Control" to="CharacterBody3D" method="_on_control_shake"]
-[connection signal="body_entered" from="Enviroment/ChaseEventSpawner" to="Enviroment/ChaseEventSpawner" method="_on_body_entered"]
 [connection signal="timeout" from="QTETimer" to="." method="QTE_timeout"]
 [connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]
