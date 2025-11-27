@@ -14,8 +14,8 @@ uniform float grass_height = 1.0;
 
 // Wind settings
 uniform vec2 wind_direction = vec2(1, -0.5);
-uniform float wind_speed = 1.0;
-uniform float wind_strength = 2.0;
+uniform float wind_speed = 0.0;
+uniform float wind_strength = 0.0;
 uniform float noise_scale = 20.0;
 
 instance uniform float camera_bend_strength : hint_range(0.0, 3.0) = 0.2;
@@ -29,7 +29,7 @@ void vertex() {
 	vec4 world_pos = MODEL_MATRIX * vec4(VERTEX, 1.0);
 	vec2 uv = world_pos.xz / (noise_scale + 1e-2);
 	vec2 panning_uv = uv + fract(TIME * wind_direction * wind_speed);
-	float wind = texture(texture_noise, panning_uv).r * 2.0 - 0.4;
+
 	color = texture(texture_noise, uv).r;
 	
 	vec2 wind_offset = -wind_direction * wind_strength * influence * wind;
