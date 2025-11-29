@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bhio7k0sdbeev"]
+[gd_scene load_steps=21 format=3 uid="uid://bhio7k0sdbeev"]
 
 [ext_resource type="Script" uid="uid://cewraoujrf1fr" path="res://Script/playerCharacter03.gd" id="1_6t5aa"]
 [ext_resource type="PackedScene" uid="uid://dmuyyt4o3ougc" path="res://3DModels/boat_prot.fbx" id="2_vgqql"]
@@ -84,9 +84,14 @@ tracks/1/keys = {
 "values": [75.0, 44.2]
 }
 
+[sub_resource type="Animation" id="Animation_gymyn"]
+resource_name = "going in house"
+length = 10.0
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fkybt"]
 _data = {
 &"RESET": SubResource("Animation_vgqql"),
+&"going in house": SubResource("Animation_gymyn"),
 &"rightSideQTE": SubResource("Animation_6t5aa")
 }
 
@@ -133,7 +138,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.482, -1.1700721, 0)
 curve = SubResource("Curve3D_21xkr")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Head/Path3D"]
-transform = Transform3D(-0.9985634, 0, -0.051209345, 0, 0.99984527, 0, 0.051208466, 0, -0.9985805, 2, -1, 1.5)
+transform = Transform3D(-0.9985641, 0, -0.051209345, 0, 0.99984527, 0, 0.051208504, 0, -0.9985805, 2, -1, 1.5)
 progress = 9.513856
 loop = false
 

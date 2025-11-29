@@ -205,3 +205,12 @@ func mapUIToggleMethod():
 		getControl().compass()
 	else:
 		$Head/Camera3D.rotation.x = move_toward($Head/Camera3D.rotation.x, 0.0, 0.1)
+
+func setEndingGameValues():
+	$Head/Path3D.hide()
+	if getControl().mapOn == true:
+		getControl().closeMap()
+	can_paddle = false
+	
+	
+	print()

@@ -133,7 +133,7 @@ one_shot = true
 transform = Transform3D(5.173352, 0, 3.3549943, 0, 6.166, 0, -3.3549943, 0, 5.173352, 316.88452, 0.692, -363.70175)
 
 [node name="CheckPoint5" parent="." instance=ExtResource("11_fdnlq")]
-transform = Transform3D(5.173352, 0, 3.3549943, 0, 6.166, 0, -3.3549943, 0, 5.173352, 522.8575, 0.692, -396.00845)
+transform = Transform3D(5.173352, 0, 3.3549943, 0, 6.166, 0, -3.3549943, 0, 5.173352, 522.8575, 0.692, -384.7197)
 
 [node name="CheckPoint3" parent="." instance=ExtResource("11_fdnlq")]
 transform = Transform3D(-0.217448, 0, 6.1621647, 0, 6.166, 0, -6.1621647, 0, -0.217448, 286.4574, 0.692, -60.767197)
