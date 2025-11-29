@@ -1,15 +1,12 @@
 extends Node3D
 
 @export var chaseObject: Node3D
-@export var speed: float = 5.0
+@export var speed: float = 25.0
 @export var chasing: bool = false
-@export var expireTime: float = 20.0
-@export var scream: bool = false
-
-@onready var lorettaAnimator: AnimationPlayer = $LorettaNormalizer
+@export var expireTime: float = 5.0
+@export var scream: bool = true
 
 func _ready() -> void:
-	lorettaAnimator.play("swim")
 	$Timer.wait_time = expireTime
 	$Timer.start()
 
@@ -23,11 +20,9 @@ func startChase():
 		$Scream.play()
 
 func _physics_process(delta: float) -> void:
-	
 	if chaseObject == null or not chasing:
 		return
 	
-	look_at(chaseObject.global_position)
 	# Get direction toward the chaseObject
 	var direction: Vector3 = (chaseObject.global_transform.origin - global_transform.origin).normalized()
 
@@ -43,7 +38,5 @@ func _on_kill_area_body_entered(body: Node3D) -> void:
 func _on_timer_timeout() -> void:
 	if scream:
 		await $Scream.finished
-	
-	lorettaAnimator.play("sink")
-	await  lorettaAnimator.animation_finished
+		queue_free()
 	queue_free() # Replace with function body.

@@ -4,6 +4,8 @@ var BKGVolume: float = 0
 
 var lastSirenEvent: Node3D
 
+const mainMenu = preload("res://Scenes/main_menu.tscn")
+
 @onready var player: CharacterBody3D = $CharacterBody3D
 
 
@@ -42,6 +44,5 @@ func playerEntered(body: Node3D) -> void:
 
 
 func _on_character_body_3d_we_have_finished_the_game() -> void:
-	var mainMenu: PackedScene = load("res://Scenes/main_menu.tscn")
 	get_tree().change_scene_to_packed(mainMenu)
 	print("switched to main menu")
