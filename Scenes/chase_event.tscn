@@ -1,19 +1,194 @@
-[gd_scene load_steps=6 format=3 uid="uid://4aendtl2pd72"]
+[gd_scene load_steps=11 format=3 uid="uid://4aendtl2pd72"]
 
 [ext_resource type="Script" uid="uid://bmk0vtbjj3tkn" path="res://chase_event.gd" id="1_yclqn"]
 [ext_resource type="AudioStream" uid="uid://c4mqvyd4fs757" path="res://Sounds/TurnAroundSiren.mp3" id="2_svwi7"]
 [ext_resource type="AudioStream" uid="uid://b4kow2m02u8ac" path="res://Sounds/-01.mp3" id="3_svwi7"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_x6ffy"]
+[ext_resource type="PackedScene" uid="uid://y0fa6txecmxu" path="res://3DModels/moreSirenStuff/loretta_swimming.fbx" id="4_7lsl7"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_sjy6h"]
 radius = 3.0
 
+[sub_resource type="Animation" id="Animation_7lsl7"]
+resource_name = "tread"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("loretta_swimming/AnimationPlayer:active")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("loretta_swimming/AnimationPlayer:current_animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Armature|loretta_tread"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("loretta_swimming:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 1.0068762, 1.9333333),
+"transitions": PackedFloat32Array(1.2311444, 1, 1.319508, 1),
+"update": 0,
+"values": [Vector3(0, -9.81, 0), Vector3(0, -10.05, 0), Vector3(0, -9.81, 0), Vector3(0, -10.05, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("loretta_swimming:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5707964, -0.286234), Vector3(0, 1.5707964, -0.2443461)]
+}
+
+[sub_resource type="Animation" id="Animation_1kdn0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("loretta_swimming/AnimationPlayer:current_animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("loretta_swimming/AnimationPlayer:active")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("loretta_swimming:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -9.81, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("loretta_swimming:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5707964, -0.286234)]
+}
+
+[sub_resource type="Animation" id="Animation_m65wf"]
+resource_name = "sink"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("loretta_swimming:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 3),
+"transitions": PackedFloat32Array(2.4622865, 1.25, 1),
+"update": 0,
+"values": [Vector3(0, -9.81, 0), Vector3(3.54, -6.76, 0), Vector3(13.45, -26.56, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("loretta_swimming:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5707964, -0.286234), Vector3(0, 1.5707964, -0.92676985), Vector3(0, 1.5707964, -1.9338248)]
+}
+
+[sub_resource type="Animation" id="Animation_quo7q"]
+resource_name = "swim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("loretta_swimming/AnimationPlayer:current_animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Armature|loretta_swim"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("loretta_swimming:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -5.75, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("loretta_swimming:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5707964, 0.08028515)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m65wf"]
+_data = {
+&"RESET": SubResource("Animation_1kdn0"),
+&"sink": SubResource("Animation_m65wf"),
+&"swim": SubResource("Animation_quo7q"),
+&"tread": SubResource("Animation_7lsl7")
+}
+
 [node name="chase_event" type="Node3D"]
 script = ExtResource("1_yclqn")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_x6ffy")
 
 [node name="Taunt" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_svwi7")
@@ -25,11 +200,68 @@ volume_db = 20.0
 shape = SubResource("SphereShape3D_sjy6h")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 20.0
 
 [node name="Scream" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_svwi7")
 volume_db = 20.0
 
+[node name="LorettaNormalizer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_m65wf")
+}
+
+[node name="loretta_swimming" parent="." instance=ExtResource("4_7lsl7")]
+transform = Transform3D(-3.3546357e-09, -9.873229e-10, 0.08, -0.022587316, 0.076745115, 0, -0.076745115, -0.022587316, -3.496911e-09, 0, -9.81, 0)
+
+[node name="Skeleton3D" parent="loretta_swimming/Armature" index="0"]
+bones/0/position = Vector3(0.0046891845, -0.00020489933, -0.15825813)
+bones/0/rotation = Quaternion(0.4756987, 0.52317375, -0.5231735, 0.47569895)
+bones/1/rotation = Quaternion(-2.0122943e-09, 7.1947746e-08, -0.019934643, 0.99980134)
+bones/2/rotation = Quaternion(-1.1930466e-08, 1.160957e-07, 0.0951496, 0.9954631)
+bones/3/rotation = Quaternion(1.6032692e-08, -4.0593473e-08, -0.07965037, 0.9968229)
+bones/4/rotation = Quaternion(-4.0608924e-08, -4.3399353e-08, 0.279005, 0.9602897)
+bones/5/rotation = Quaternion(-3.1712695e-08, 7.715652e-08, 0.13401943, 0.9909787)
+bones/6/rotation = Quaternion(-0.04555428, -0.03715161, 0.1943457, 0.97917026)
+bones/8/position = Vector3(0.0033987875, 0.0825769, 0.027315803)
+bones/8/rotation = Quaternion(0.5111606, 0.5502075, -0.26435003, 0.6050667)
+bones/9/rotation = Quaternion(-0.039344117, 0.09463695, -0.06921747, 0.992323)
+bones/10/rotation = Quaternion(0.06747645, 0.37893373, -0.34578505, 0.8557388)
+bones/11/rotation = Quaternion(0.22465777, -0.5161384, 0.100183666, 0.82042265)
+bones/14/rotation = Quaternion(0.45339042, -0.46558493, 0.011542804, 0.75995696)
+bones/16/position = Vector3(0.0044778716, 0.079892404, -0.027635574)
+bones/16/rotation = Quaternion(-0.4562416, -0.46131426, -0.31296146, 0.693605)
+bones/18/rotation = Quaternion(0.12473055, 0.13163248, 0.48510256, 0.8554477)
+bones/19/rotation = Quaternion(0.08650567, -0.23721203, -0.2200075, 0.9422547)
+bones/20/rotation = Quaternion(0.06837752, 0.9485838, 0.2829608, 0.12428383)
+bones/22/rotation = Quaternion(0.15637888, 0.3104216, 0.11815192, 0.9301744)
+bones/24/rotation = Quaternion(-0.07933004, -0.13271196, -0.82399744, 0.5450896)
+bones/25/rotation = Quaternion(4.2436488e-07, 1.2770437e-07, -0.49041378, 0.8714898)
+bones/26/rotation = Quaternion(0.18888175, 0.021600483, -0.20651871, 0.95979536)
+bones/28/position = Vector3(0.024242887, 0.08092396, 0.0033530416)
+bones/29/rotation = Quaternion(-0.051813945, -0.013327565, 0.15795505, 0.98599595)
+bones/34/position = Vector3(0.024253571, 0.08069018, -0.005268566)
+bones/34/rotation = Quaternion(0.571658, -0.48874894, 0.58571553, -0.3021077)
+bones/35/rotation = Quaternion(-0.14029989, 0.05300437, -0.075800285, 0.98577935)
+bones/40/rotation = Quaternion(-1.966976e-07, -4.431664e-08, 0.92505664, 0.3798292)
+bones/42/rotation = Quaternion(-9.5040235e-08, -8.5997414e-08, 0.92505664, 0.37982923)
+bones/44/rotation = Quaternion(-7.367622e-08, -3.144428e-08, 0.90951747, 0.41566572)
+bones/46/rotation = Quaternion(1.2214534e-08, -1.0258191e-07, 0.9748807, 0.2227278)
+bones/48/position = Vector3(0.0047021047, -0.00020489929, -0.15844935)
+bones/48/rotation = Quaternion(-0.5079721, 0.4918986, 0.49189857, 0.50797224)
+bones/51/rotation = Quaternion(-3.5925005e-09, 1.0949063e-07, 0.096166156, 0.9953653)
+bones/52/rotation = Quaternion(-2.1850491e-08, 7.230743e-08, 0.1326788, 0.9911592)
+bones/53/rotation = Quaternion(3.4810977e-08, 7.056981e-08, -0.10154853, 0.9948306)
+bones/54/rotation = Quaternion(1.6590506e-07, 4.94844e-08, -0.34537143, 0.9384661)
+
+[node name="lpFemale_casual_G_007" parent="loretta_swimming/Armature/Skeleton3D" index="0"]
+transform = Transform3D(1.0000001, -7.1054265e-15, 2.9802319e-08, 7.1054274e-15, 1, 7.1054274e-15, -2.9802322e-08, -7.1054274e-15, 1, -0.00017226487, 0.000421045, -5.07012e-05)
+"blend_shapes/Key 1" = 0.4575472
+
+[node name="Cube" parent="loretta_swimming" index="1"]
+visible = false
+
 [connection signal="body_entered" from="KillArea" to="." method="_on_kill_area_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[editable path="loretta_swimming"]

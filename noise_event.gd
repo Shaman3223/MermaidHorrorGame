@@ -78,9 +78,10 @@ func emitEvent():
 func playSirenSound():
 	var sirenSoundLibrary: Array = load_mp3_folder("siren")
 	$AudioStreamPlayer3D.stream = sirenSoundLibrary[randi_range(0, sirenSoundLibrary.size() - 1)]
-	print(sirenSoundLibrary.size())
+
 	$GPUParticles3D.emitting = true
 	$AudioStreamPlayer3D.play()
+	
 	var mainScene = get_parent().get_parent()
 	if mainScene is mainGame:
 		mainScene.tempQuiet()

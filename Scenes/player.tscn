@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://e41kxfqas4j" path="res://Sounds/boatRock/boatSnatch-03.mp3" id="6_tx1dd"]
 [ext_resource type="AudioStream" uid="uid://bq8k4kto8jssu" path="res://Sounds/boatRock/boatSnatch-04.mp3" id="7_gymyn"]
 [ext_resource type="AudioStream" uid="uid://pf7m06b37k05" path="res://Sounds/boatRock/boatSnatch-05.mp3" id="8_pu2lt"]
-[ext_resource type="AudioStream" uid="uid://b822vt8b541o3" path="res://Sounds/61015__kayyy__splash.wav" id="11_gymyn"]
+[ext_resource type="AudioStream" path="res://Sounds/61015__kayyy__splash.wav" id="11_gymyn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
 size = Vector3(3.162838, 1, 2.019043)
@@ -57,6 +57,10 @@ tracks/1/keys = {
 "values": [75.0]
 }
 
+[sub_resource type="Animation" id="Animation_gymyn"]
+resource_name = "going in house"
+length = 10.0
+
 [sub_resource type="Animation" id="Animation_6t5aa"]
 resource_name = "rightSideQTE"
 tracks/0/type = "value"
@@ -83,10 +87,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [75.0, 44.2]
 }
-
-[sub_resource type="Animation" id="Animation_gymyn"]
-resource_name = "going in house"
-length = 10.0
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fkybt"]
 _data = {
@@ -138,7 +138,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.482, -1.1700721, 0)
 curve = SubResource("Curve3D_21xkr")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Head/Path3D"]
-transform = Transform3D(-0.9985645, 0, -0.051209345, 0, 0.99984527, 0, 0.051208522, 0, -0.9985805, 2, -1, 1.5)
+transform = Transform3D(-0.99856466, 0, -0.051209345, 0, 0.99984527, 0, 0.05120853, 0, -0.9985805, 2, -1, 1.5)
 progress = 9.513856
 loop = false
 
