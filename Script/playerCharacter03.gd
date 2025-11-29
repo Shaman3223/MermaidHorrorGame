@@ -1,9 +1,10 @@
 extends CharacterBody3D
+
 #constants
 const SPEED = 5.0
 
 @export var can_paddle: bool = true
-@export var minimumShakes: int = 2
+@export var minimumShakes: int = 10
 var isInQTE: bool = false
 
 var shakes: int = 0
@@ -178,7 +179,6 @@ func _on_control_shake() -> void:
 func exitQTE():
 	$AnimationPlayer.play("RESET")
 	$BoatSnatch.play()
-	$SirenWaterSplah.play()
 	isInQTE = false
 	shakes = 0
 
