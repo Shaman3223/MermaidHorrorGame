@@ -1,9 +1,10 @@
 extends CharacterBody3D
+
 #constants
 const SPEED = 5.0
 
 @export var can_paddle: bool = true
-@export var minimumShakes: int = 2
+@export var minimumShakes: int = 10
 var isInQTE: bool = false
 
 var shakes: int = 0
@@ -92,7 +93,7 @@ func forwardPaddle(charge: int, dir: Vector2, mag: float):
 
 #adjust tilt intensity 
 	var rotateDividend: float = 45.0 - abs(dir.x/600)
-	var pushPower: float = 1.9 * (dir.y/1000)
+	var pushPower: float = 1.1 * (dir.y/1000)
 	
 	if abs(dir.y) > abs(dir.x):
 		tilt_x = 0.05 * charge
@@ -180,7 +181,6 @@ func _on_control_shake() -> void:
 func exitQTE():
 	$AnimationPlayer.play("RESET")
 	$BoatSnatch.play()
-	$SirenWaterSplah.play()
 	isInQTE = false
 	shakes = 0
 

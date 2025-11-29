@@ -13,7 +13,6 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 			return
 		
 		$AnimationPlayer.play("light up")
-		$AudioStreamPlayer3D.play()
 		body.lastCheckpoint = self
 		body.checkpointGained()
 		lastPosition = body.global_position
