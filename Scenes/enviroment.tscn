@@ -1,4 +1,4 @@
-[gd_scene load_steps=170 format=3 uid="uid://dbl7sltilltm1"]
+[gd_scene load_steps=171 format=3 uid="uid://dbl7sltilltm1"]
 
 [ext_resource type="Script" uid="uid://cmmrwmy320vue" path="res://Scenes/enviroment.gd" id="1_o6dcl"]
 [ext_resource type="Texture2D" uid="uid://b7aebl0e1v2ab" path="res://tileTextures/ATF_8.png" id="2_eg0ho"]
@@ -662,6 +662,9 @@ radius = 12.865252
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_eg0ho"]
 radius = 30.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fbmo1"]
+radius = 50.0
 
 [node name="Enviroment" type="Node3D"]
 script = ExtResource("1_o6dcl")
@@ -2060,5 +2063,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -513, 0, 474)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HomeSweetHome"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.10022, 3.0799618, -1.9029541)
 shape = SubResource("SphereShape3D_eg0ho")
+
+[node name="ChaseSpawner" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 131.5279, 0, -487.6539)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChaseSpawner"]
+shape = SubResource("SphereShape3D_fbmo1")
+debug_color = Color(0.63911223, 0.5257247, 0, 0.41960785)
 
 [connection signal="body_entered" from="HomeSweetHome" to="." method="PlayerHasReachedEnd"]

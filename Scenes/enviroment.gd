@@ -82,7 +82,7 @@ func spawnChaseEvent(player: CharacterBody3D):
 	
 	await untilChase.timeout
 	
-	chaseEvent.chasing = true
+	chaseEvent.startChase()
 
 
 func PlayerHasReachedEnd(body: Node3D):

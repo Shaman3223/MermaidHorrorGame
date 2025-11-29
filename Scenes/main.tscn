@@ -144,6 +144,7 @@ transform = Transform3D(0.94586396, 0, 6.0930204, 0, 6.166001, 0, -6.0930204, 0,
 [node name="CheckPoint2" parent="." instance=ExtResource("11_fdnlq")]
 transform = Transform3D(-1.3681662, 0, 6.0122943, 0, 6.166, 0, -6.0122943, 0, -1.3681662, -148.60541, 0.692, -378.0701)
 
+[connection signal="weHaveFinishedTheGame" from="CharacterBody3D" to="." method="_on_character_body_3d_we_have_finished_the_game"]
 [connection signal="mouseEventObserved" from="CanvasLayer/Control" to="CharacterBody3D" method="forwardPaddle"]
 [connection signal="shake" from="CanvasLayer/Control" to="CharacterBody3D" method="_on_control_shake"]
 [connection signal="timeout" from="QTETimer" to="." method="QTE_timeout"]

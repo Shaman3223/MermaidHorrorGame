@@ -31,6 +31,8 @@ var wobble_amplitude: float = 0.0
 
 @onready var lastCheckpoint: CheckPoint
 
+signal weHaveFinishedTheGame
+
 func _ready() -> void:
 	pass
 
@@ -212,5 +214,4 @@ func setEndingGameValues():
 		getControl().closeMap()
 	can_paddle = false
 	
-	
-	print()
+	weHaveFinishedTheGame.emit()

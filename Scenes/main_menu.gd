@@ -25,7 +25,7 @@ func goToGame():
 
 func _on_start_pressed() -> void:
 	fadeIn()
-	await $CanvasLayer/Control/AnimationPlayer.animation_finished
+	await $start.finished
 	goToGame()
 
 func quit_game():
