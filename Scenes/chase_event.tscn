@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://4aendtl2pd72"]
+[gd_scene load_steps=6 format=3 uid="uid://4aendtl2pd72"]
 
-[ext_resource type="Script" path="res://chase_event.gd" id="1_yclqn"]
-[ext_resource type="AudioStream" path="res://Sounds/TurnAroundSiren.mp3" id="2_svwi7"]
+[ext_resource type="Script" uid="uid://bmk0vtbjj3tkn" path="res://chase_event.gd" id="1_yclqn"]
+[ext_resource type="AudioStream" uid="uid://c4mqvyd4fs757" path="res://Sounds/TurnAroundSiren.mp3" id="2_svwi7"]
+[ext_resource type="AudioStream" uid="uid://b4kow2m02u8ac" path="res://Sounds/-01.mp3" id="3_svwi7"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_x6ffy"]
 
@@ -23,4 +24,12 @@ volume_db = 20.0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="KillArea"]
 shape = SubResource("SphereShape3D_sjy6h")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Scream" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_svwi7")
+volume_db = 20.0
+
 [connection signal="body_entered" from="KillArea" to="." method="_on_kill_area_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -74,6 +74,7 @@ func detectDragForBoat(delta: Vector2):
 	mouseEventObserved.emit(lastCharge,delta,delta.length())
 
 func flashText(text: String):
+	$AnimationPlayer.stop()
 	$Label.text = text
 	$AnimationPlayer.play("gained")
 

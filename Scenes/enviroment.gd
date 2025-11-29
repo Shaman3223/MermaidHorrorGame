@@ -82,5 +82,10 @@ func spawnChaseEvent(player: CharacterBody3D):
 	
 	await untilChase.timeout
 	
-	chaseEvent.chasing = true
-	
+	chaseEvent.startChase()
+
+
+func PlayerHasReachedEnd(body: Node3D):
+	if body is CharacterBody3D:
+		body.setEndingGameValues()
+	print("congrats fn")
