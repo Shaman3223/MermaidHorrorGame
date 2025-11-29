@@ -144,6 +144,27 @@ transform = Transform3D(0.94586396, 0, 6.0930204, 0, 6.166001, 0, -6.0930204, 0,
 [node name="CheckPoint2" parent="." instance=ExtResource("11_fdnlq")]
 transform = Transform3D(-1.3681662, 0, 6.0122943, 0, 6.166, 0, -6.0122943, 0, -1.3681662, -148.60541, 0.692, -378.0701)
 
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(3.17024, 0, -2.7473106, 0, 4.1950135, 0, 2.7473106, 0, 3.17024, -246.18697, 907.86066, 717.92035)
+visible = false
+modulate = Color(18.892002, 18.892002, 18.892002, 1)
+billboard = 1
+texture = ExtResource("32_kltya")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Sprite3D2"]
+transform = Transform3D(0.23837829, 0, -7.450581e-09, 0, 0.23837827, 0, 7.450581e-09, 0, 0.23837829, 8.435379, 0, -5.7773285)
+light_energy = 20.51
+omni_range = 75.898
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -219.05423, 646.8237, 296.0084)
+radius = 33.38259
+material = SubResource("StandardMaterial3D_e08e2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9325823, 0, 0.36095747, 0, 1, 0, -0.36095747, 0, 0.9325823, -498.6624, 6.093378, 467.0863)
+mesh = ExtResource("32_e08e2")
+
 [connection signal="mouseEventObserved" from="CanvasLayer/Control" to="CharacterBody3D" method="forwardPaddle"]
 [connection signal="shake" from="CanvasLayer/Control" to="CharacterBody3D" method="_on_control_shake"]
 [connection signal="timeout" from="QTETimer" to="." method="QTE_timeout"]
