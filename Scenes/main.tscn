@@ -1,4 +1,4 @@
-[gd_scene load_steps=190 format=3 uid="uid://pm7l3k20fkv1"]
+[gd_scene load_steps=192 format=3 uid="uid://pm7l3k20fkv1"]
 
 [ext_resource type="PackedScene" uid="uid://bhio7k0sdbeev" path="res://Scenes/player.tscn" id="1_21xkr"]
 [ext_resource type="Script" uid="uid://dlyr1hc50om2i" path="res://Scenes/main.gd" id="1_d1ilt"]
@@ -20,7 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://cubxt7y8n4au5" path="res://3DModels/log.tscn" id="14_ueoa1"]
 [ext_resource type="Script" uid="uid://cvic3bvoj6bbv" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="15_1w6v2"]
 [ext_resource type="PackedScene" uid="uid://hrlq8eib5q50" path="res://3DModels/lilypad.tscn" id="15_6vcvc"]
-[ext_resource type="Texture2D" uid="uid://chv71kc3sel1y" path="res://3DModels/Screenshot 2025-11-26 221058.png" id="15_hpc6h"]
 [ext_resource type="PackedScene" uid="uid://caqxfqurbp3ku" path="res://addons/proton_scatter/demos/assets/pine_tree.tscn" id="16_7k868"]
 [ext_resource type="Script" uid="uid://y3sym0glg0uw" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="16_ueoa1"]
 [ext_resource type="Script" uid="uid://caewab10oua0" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="17_6vcvc"]
@@ -31,6 +30,7 @@
 [ext_resource type="Script" uid="uid://c0nmdvvsn1uyk" path="res://addons/proton_scatter/src/scatter_shape.gd" id="21_e08e2"]
 [ext_resource type="Script" uid="uid://c2kiury8ppgbs" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="23_u50mg"]
 [ext_resource type="Script" uid="uid://d3bh3km8un54m" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="24_cbgmd"]
+[ext_resource type="ArrayMesh" uid="uid://radlariwxl56" path="res://3DModels/Full house prop.obj" id="32_e08e2"]
 [ext_resource type="Texture2D" uid="uid://bmyld4fp0usjy" path="res://3DModels/AdobeStock_941312354.png" id="32_kltya"]
 
 [sub_resource type="Gradient" id="Gradient_ig7tw"]
@@ -164,8 +164,11 @@ radius = 33.82169
 
 [sub_resource type="TorusMesh" id="TorusMesh_ueoa1"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hpc6h"]
+load_path = "res://.godot/imported/Screenshot 2025-11-26 221058.png-f98945797bb3c261e2048d97d7b9a4ee.s3tc.ctex"
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kltya"]
-albedo_texture = ExtResource("15_hpc6h")
+albedo_texture = SubResource("CompressedTexture2D_hpc6h")
 
 [sub_resource type="BoxMesh" id="BoxMesh_6vcvc"]
 
@@ -669,6 +672,10 @@ script = ExtResource("24_cbgmd")
 radius = 35.03243
 
 [sub_resource type="Resource" id="Resource_102yd"]
+script = ExtResource("24_cbgmd")
+radius = 35.03243
+
+[sub_resource type="Resource" id="Resource_gax0l"]
 script = ExtResource("24_cbgmd")
 radius = 35.03243
 
@@ -2094,6 +2101,12 @@ script = ExtResource("21_e08e2")
 negative = true
 shape = SubResource("Resource_102yd")
 
+[node name="ScatterShape127" type="Node3D" parent="Enviroment/ProtonScatter"]
+transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, -490.65854, 0, 462.7635)
+script = ExtResource("21_e08e2")
+negative = true
+shape = SubResource("Resource_gax0l")
+
 [node name="ScatterShape116" type="Node3D" parent="Enviroment/ProtonScatter"]
 transform = Transform3D(0.84435606, 0, 0.5357826, 0, 1, 0, -0.5357826, 0, 0.84435606, 109.73422, 0, -309.33893)
 script = ExtResource("21_e08e2")
@@ -2206,6 +2219,10 @@ omni_range = 75.898
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -219.05423, 646.8237, 296.0084)
 radius = 33.38259
 material = SubResource("StandardMaterial3D_e08e2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9325823, 0, 0.36095747, 0, 1, 0, -0.36095747, 0, 0.9325823, -498.6624, 6.093378, 467.0863)
+mesh = ExtResource("32_e08e2")
 
 [connection signal="mouseEventObserved" from="CanvasLayer/Control" to="CharacterBody3D" method="forwardPaddle"]
 [connection signal="shake" from="CanvasLayer/Control" to="CharacterBody3D" method="_on_control_shake"]
