@@ -1,9 +1,10 @@
-[gd_scene load_steps=53 format=4 uid="uid://w7bmh5kfe3s2"]
+[gd_scene load_steps=55 format=4 uid="uid://w7bmh5kfe3s2"]
 
 [ext_resource type="Script" uid="uid://ded83riab41bj" path="res://Scenes/main_menu.gd" id="1_5egv6"]
 [ext_resource type="PackedScene" uid="uid://dmuyyt4o3ougc" path="res://3DModels/boat_prot.fbx" id="1_vr1f0"]
 [ext_resource type="PackedScene" uid="uid://1n5avnwdn3yh" path="res://3DModels/paddle_prot.fbx" id="2_t1dhk"]
 [ext_resource type="Shader" uid="uid://08qo0nnjkiii" path="res://Shaders/water.gdshader" id="3_5egv6"]
+[ext_resource type="Environment" uid="uid://dnytyrjka8ux5" path="res://DarkEnviro2.tres" id="4_tt8ml"]
 [ext_resource type="FontFile" uid="uid://blrbs4w6ixwqg" path="res://PixelifySans-Regular.ttf" id="4_vtepg"]
 [ext_resource type="Texture2D" uid="uid://dmxfrejbef7ox" path="res://Sprites/LorettaLogo.png" id="5_5egv6"]
 [ext_resource type="Environment" uid="uid://o3kuyw8lgv3a" path="res://DarkEnviro.tres" id="5_8dnnj"]
@@ -26,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://vc7eo65mgk5e" path="res://3DModels/house_tex/untitled_Part21_diff.png" id="24_tt8ml"]
 [ext_resource type="Texture2D" uid="uid://lqt5g75ru1li" path="res://3DModels/house_tex/untitled_Part28_diff.png" id="25_fmarx"]
 [ext_resource type="PackedScene" uid="uid://dgaxelu75ks8n" path="res://3DModels/house_tex/house01.glb" id="26_hkdq0"]
+[ext_resource type="PackedScene" uid="uid://cjnd5xapw1ad6" path="res://3DModels/boat/boat_02.fbx" id="27_ne6ao"]
 
 [sub_resource type="Gradient" id="Gradient_6dk6o"]
 offsets = PackedFloat32Array(0.11129032, 0.33548388)
@@ -52,10 +54,10 @@ as_normal_map = true
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_84iac"]
 render_priority = 0
 shader = ExtResource("3_5egv6")
-shader_parameter/uAlbedo = Color(0.24867004, 0.23625347, 0.22496565, 1)
+shader_parameter/uAlbedo = Color(0.14889044, 0.17932618, 0.227514, 1)
 shader_parameter/uTexureNormal = SubResource("NoiseTexture2D_h2yge")
 shader_parameter/uTexureNormal2 = SubResource("NoiseTexture2D_1bvp3")
-shader_parameter/uNormalMix = 0.60000000894069
+shader_parameter/uNormalMix = 0.80000001192092
 shader_parameter/uWaveDirection = Vector2(1, 0)
 shader_parameter/uWaveDirection2 = Vector2(0, 1)
 shader_parameter/uTimeScale = 0.010000000475
@@ -475,6 +477,7 @@ transform = Transform3D(0.3224388, -0.29155007, -0.24704595, 0.24201567, -0.0943
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.82206774, 0.07634348, -0.56424844, 0.041092273, 0.9804319, 0.19252196, 0.56790495, -0.18145233, 0.8028443, -9.913666, 4.3447666, 85.78991)
+environment = ExtResource("4_tt8ml")
 
 [node name="Water" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23077393, 0.6418487, 6.153966)
@@ -489,9 +492,9 @@ libraries = {
 autoplay = "waterbreathe"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.30394995, 0.952688, 0, -0.952688, -0.30394995, 0, 10.101446, 0)
+transform = Transform3D(1, 0, 0, 0, -0.30394995, 0.952688, 0, -0.952688, -0.30394995, 0, 13.212227, 0)
 light_color = Color(0.1828377, 0.5282172, 0.41893, 1)
-light_energy = 0.096
+light_energy = 0.0
 light_indirect_energy = 1.33
 light_volumetric_fog_energy = 3.309
 
@@ -629,7 +632,7 @@ volume_db = 5.0
 pitch_scale = 0.7
 
 [node name="Enviroment" parent="." instance=ExtResource("12_t1dhk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001083374, 0, 0.020996094)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0062179565, 0.0617218, 0.12239838)
 
 [node name="FullHouseProp" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.7223698, 0.083355315, 0.7393726, 0.1340996, 1.0282155, 0.015096825, -0.7318725, 0.10612496, -0.72700655, -258.8468, 14.762888, 314.77774)
@@ -645,6 +648,9 @@ skeleton = NodePath("")
 [node name="house01" parent="." instance=ExtResource("26_hkdq0")]
 transform = Transform3D(-0.26562715, 0, -0.49299312, 0, 0.56, 0, 0.49299312, 0, -0.26562715, 461.5057, 6.9118843, -430.64215)
 visible = false
+
+[node name="boat_02" parent="." instance=ExtResource("27_ne6ao")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.242897, 259.81665, -607.47595)
 
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Credits" to="." method="toggleCredits"]
