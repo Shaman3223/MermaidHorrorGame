@@ -5,7 +5,7 @@
 [ext_resource type="Shader" uid="uid://08qo0nnjkiii" path="res://Shaders/water.gdshader" id="2_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://5dbiancy5euq" path="res://Scenes/control copy.tscn" id="4_cbgmd"]
 [ext_resource type="Environment" uid="uid://o3kuyw8lgv3a" path="res://DarkEnviro.tres" id="4_ynf5e"]
-[ext_resource type="Shader" path="res://Shaders/pixelation01.gdshader" id="6_7k868"]
+[ext_resource type="Shader" uid="uid://bwob34qicq1l8" path="res://Shaders/pixelation01.gdshader" id="6_7k868"]
 [ext_resource type="Texture2D" uid="uid://bla1qw6m3sce" path="res://Sprites/SirenMapPlain.png" id="7_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://cdet5l6wmgm7t" path="res://Shaders/pixelation.tscn" id="8_344ge"]
 [ext_resource type="PackedScene" uid="uid://dbl7sltilltm1" path="res://Scenes/enviroment.tscn" id="8_d1ilt"]
@@ -124,7 +124,7 @@ wait_time = 3.0
 one_shot = true
 
 [node name="DeathTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.0
 one_shot = true
 
 [node name="CheckPoint" parent="." instance=ExtResource("11_fdnlq")]
