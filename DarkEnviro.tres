@@ -15,6 +15,7 @@ sky_material = SubResource("ProceduralSkyMaterial_jfhlf")
 [resource]
 background_mode = 2
 background_color = Color(0.23555064, 0.5186316, 0.6783716, 1)
+background_energy_multiplier = 1.18
 sky = SubResource("Sky_qatdi")
 ambient_light_sky_contribution = 0.23
 fog_enabled = true
