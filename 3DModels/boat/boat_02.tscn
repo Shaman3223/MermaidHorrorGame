@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5bied63eiob1"]
+
+[ext_resource type="PackedScene" uid="uid://cjnd5xapw1ad6" path="res://3DModels/boat/boat_02.fbx" id="1_35tsf"]
+
+[node name="boat_02" instance=ExtResource("1_35tsf")]
+
+[node name="Light" parent="." index="2"]
+visible = false
