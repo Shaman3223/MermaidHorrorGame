@@ -62,6 +62,9 @@ func _physics_process(delta: float) -> void:
 	pushVelocity = move_toward(pushVelocity, 0.0, 0.1)
 	velocity.x = move_toward(velocity.x, 0.0, 0.03)
 	velocity.z = move_toward(velocity.z, 0.0, 0.03)
+	if isInQTE:
+		velocity.x = move_toward(velocity.x, 0.0, 2.0)
+		velocity.z = move_toward(velocity.z, 0.0, 2.0)
 
 #dampen lag
 	boatLag = move_toward(boatLag, 0.0, 0.02)
@@ -170,7 +173,13 @@ func quickTimeEvent():
 	$BoatSnatch.play()
 	minimumShakes += 10
 	isInQTE = true
-	$AnimationPlayer.play("rightSideQTE")
+	var rnd = randi_range(0,1)
+	match rnd:
+		0:
+			$AnimationPlayer.play("leftSideQTE")
+		1:
+			$AnimationPlayer.play("rightSideQTE")
+	
 
 func _on_control_shake() -> void:
 	if isInQTE:

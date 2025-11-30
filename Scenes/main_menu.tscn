@@ -11,7 +11,7 @@
 [ext_resource type="Shader" uid="uid://yvgemnay0w2o" path="res://Shaders/pixelation.gdshader" id="6_m3bi6"]
 [ext_resource type="PackedScene" uid="uid://cdet5l6wmgm7t" path="res://Shaders/pixelation.tscn" id="7_wyh8j"]
 [ext_resource type="AudioStream" uid="uid://br2ggeqbkl7qc" path="res://Sounds/zapsplat_nature_ambience_rainforest_insects_crickets_distant_waterfall_summer_night_time_eastern_australia_78201.mp3" id="10_16hvj"]
-[ext_resource type="PackedScene" uid="uid://dbl7sltilltm1" path="res://Scenes/enviroment.tscn" id="12_t1dhk"]
+[ext_resource type="PackedScene" uid="uid://bwrwm6mdywte2" path="res://Scenes/enviroment.tscn" id="12_t1dhk"]
 [ext_resource type="AudioStream" uid="uid://chguqg26c32e7" path="res://Sounds/582602__nezuai__ui-sound-3.wav" id="12_vtepg"]
 [ext_resource type="AudioStream" uid="uid://de053p2ncmnhi" path="res://Sounds/577025__nezuai__ui-sound-2.wav" id="13_8dnnj"]
 [ext_resource type="ArrayMesh" uid="uid://dnub7rrijcktb" path="res://Full house prop.obj" id="14_ehtkc"]

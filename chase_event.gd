@@ -23,6 +23,7 @@ func _physics_process(delta: float) -> void:
 	if chaseObject == null or not chasing:
 		return
 	
+	look_at(chaseObject.position)
 	# Get direction toward the chaseObject
 	var direction: Vector3 = (chaseObject.global_transform.origin - global_transform.origin).normalized()
 
