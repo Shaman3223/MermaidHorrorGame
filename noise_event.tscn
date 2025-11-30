@@ -1,8 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://b5d68t82bb0eu"]
+[gd_scene load_steps=23 format=3 uid="uid://b5d68t82bb0eu"]
 
 [ext_resource type="Script" uid="uid://cdosy8in6j1au" path="res://noise_event.gd" id="1_77lm1"]
 [ext_resource type="AudioStream" uid="uid://diykxkone73r7" path="res://Sounds/waterSplash1.mp3" id="2_pd817"]
-[ext_resource type="AudioStream" uid="uid://d3uoyajvf6bo3" path="res://Sounds/siren/fakefrogsound.mp3" id="7_q2wn1"]
 
 [sub_resource type="Curve" id="Curve_5bwql"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.99361014, 1), 0.0, 0.0, 0, 0]
@@ -92,7 +91,6 @@ radius = 17.529785
 script = ExtResource("1_77lm1")
 endOnCompletion = true
 dangerRadius = 5.0
-sirenSounds = Array[AudioStream]([ExtResource("7_q2wn1")])
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
