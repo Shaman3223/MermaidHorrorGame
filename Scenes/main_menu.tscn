@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=4 uid="uid://w7bmh5kfe3s2"]
+[gd_scene load_steps=66 format=4 uid="uid://w7bmh5kfe3s2"]
 
 [ext_resource type="Script" uid="uid://ded83riab41bj" path="res://Scenes/main_menu.gd" id="1_5egv6"]
 [ext_resource type="PackedScene" uid="uid://dmuyyt4o3ougc" path="res://3DModels/boat_prot.fbx" id="1_vr1f0"]
@@ -550,6 +550,115 @@ shading_mode = 0
 albedo_color = Color(4.954765, 4.954765, 4.451973, 1)
 disable_receive_shadows = true
 
+[sub_resource type="Animation" id="Animation_hkdq0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorldEnvironment:environment:sky:sky_material:sky_horizon_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.84774035, 0.7306629, 0.782854, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WorldEnvironment:environment:sky:sky_material:sky_top_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.28304183, 0.3889769, 0.52916557, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WorldEnvironment:environment:fog_light_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.16284272, 0.34576368, 0.40917102, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Water:material:shader_parameter/uAlbedo")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.14889044, 0.17932618, 0.227514, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fmarx"]
+resource_name = "sky_anim"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorldEnvironment:environment:sky:sky_material:sky_horizon_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.84774035, 0.7306629, 0.782854, 1), Color(0.98148113, 0.27637056, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WorldEnvironment:environment:sky:sky_material:sky_top_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.28304183, 0.3889769, 0.52916557, 1), Color(1.5047112, 0, 0.2557108, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WorldEnvironment:environment:fog_light_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.16284272, 0.34576368, 0.40917102, 1), Color(0.41240463, 0.27473682, 0.288839, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Water:material:shader_parameter/uAlbedo")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.14889044, 0.17932618, 0.227514, 1), Color(0.41467577, 0, 0.050624155, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xcoo4"]
+_data = {
+&"RESET": SubResource("Animation_hkdq0"),
+&"sky_anim": SubResource("Animation_fmarx")
+}
+
 [node name="MainMenu" type="Node3D"]
 script = ExtResource("1_5egv6")
 
@@ -752,6 +861,12 @@ skeleton = NodePath("")
 transform = Transform3D(40.475, 0, 0, 0, 40.475, 0, 0, 0, 40.475, -44.684097, 182.3884, -508.2445)
 mesh = SubResource("SphereMesh_fmarx")
 surface_material_override/0 = SubResource("StandardMaterial3D_hkdq0")
+
+[node name="envAnimator" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xcoo4")
+}
+speed_scale = 1.19
 
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Credits" to="." method="toggleCredits"]
