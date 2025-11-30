@@ -5,7 +5,7 @@
 [ext_resource type="Shader" uid="uid://08qo0nnjkiii" path="res://Shaders/water.gdshader" id="2_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://5dbiancy5euq" path="res://Scenes/control copy.tscn" id="4_cbgmd"]
 [ext_resource type="Environment" uid="uid://o3kuyw8lgv3a" path="res://DarkEnviro.tres" id="4_ynf5e"]
-[ext_resource type="Shader" uid="uid://bwob34qicq1l8" path="res://Shaders/pixelation01.gdshader" id="6_7k868"]
+[ext_resource type="Shader" path="res://Shaders/pixelation01.gdshader" id="6_7k868"]
 [ext_resource type="Texture2D" uid="uid://bla1qw6m3sce" path="res://Sprites/SirenMapPlain.png" id="7_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://cdet5l6wmgm7t" path="res://Shaders/pixelation.tscn" id="8_344ge"]
 [ext_resource type="PackedScene" uid="uid://dbl7sltilltm1" path="res://Scenes/enviroment.tscn" id="8_d1ilt"]
@@ -106,8 +106,6 @@ mesh = SubResource("QuadMesh_6bp64")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.43515253, -0.31656232, 0.8428705, -1.1104438e-08, 0.9361517, 0.35159653, -0.90035677, -0.15299813, 0.40736875, 5.4505067, 8.201745, 5.3995037)
 
-[node name="Enviroment" parent="." instance=ExtResource("8_d1ilt")]
-
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(-8.742278e-06, -200, -8.742278e-06, 0, -8.742278e-06, 200, -200, 8.742278e-06, 3.8213708e-13, -0.30312347, 0.82383823, 0.7507858)
 visible = false
@@ -143,6 +141,8 @@ transform = Transform3D(0.94586396, 0, 6.0930204, 0, 6.166001, 0, -6.0930204, 0,
 
 [node name="CheckPoint2" parent="." instance=ExtResource("11_fdnlq")]
 transform = Transform3D(-1.3681662, 0, 6.0122943, 0, 6.166, 0, -6.0122943, 0, -1.3681662, -148.60541, 0.692, -378.0701)
+
+[node name="Enviroment" parent="." instance=ExtResource("8_d1ilt")]
 
 [connection signal="weHaveFinishedTheGame" from="CharacterBody3D" to="." method="_on_character_body_3d_we_have_finished_the_game"]
 [connection signal="mouseEventObserved" from="CanvasLayer/Control" to="CharacterBody3D" method="forwardPaddle"]
