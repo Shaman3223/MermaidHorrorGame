@@ -20,7 +20,7 @@ func fadeIn():
 
 func goToGame():
 	# Replace the current scene with the loaded main game
-	get_tree().change_scene_to_packed(maingame)
+	get_tree().change_scene_to_packed(load("res://Scenes/main.tscn"))
 	print("switched to main game")
 
 func _on_start_pressed() -> void:
