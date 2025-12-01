@@ -27,15 +27,21 @@ func _physics_process(delta: float) -> void:
 
 func QTE_timeout() -> void:
 	if lastSirenEvent.isPlayerClose():
+		
 		player.quickTimeEvent()
 	else:
 		print("safe")
 
 func _on_character_body_3d_entered_qte() -> void:
 	$DeathTimer.start() # Replace with function body.
+	
 
 func _on_death_timer_timeout() -> void:
 	if player.isInQTE:
+		$EndOfGameAnimator.play("fade to red")
+		await $EndOfGameAnimator.animation_finished
+		$EndOfGameAnimator.play("RESET")
+		player.getControl().fadein()
 		player.die() 
 		player.exitQTE()
 
@@ -46,6 +52,7 @@ func playerEntered(body: Node3D) -> void:
 
 func _on_character_body_3d_we_have_finished_the_game() -> void:
 	$EndOfGameAnimator.play("this is it")
+	player.immortal = true
 	await $EndOfGameAnimator.animation_finished
 	get_tree().change_scene_to_packed(mainMenu)
 	

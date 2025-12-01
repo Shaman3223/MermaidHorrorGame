@@ -931,7 +931,7 @@ metadata/_edit_lock_ = true
 
 [node name="NoiseEvent" parent="." instance=ExtResource("3_jun3y")]
 transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 499.74963, 0.65881634, -381.41055)
-isSafe = 0
+isSafe = 1
 isProximityActivated = true
 endOnCompletion = false
 dangerRadius = 10.0
