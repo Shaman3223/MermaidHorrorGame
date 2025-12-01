@@ -817,7 +817,15 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_vtepg")
 theme_override_font_sizes/font_size = 20
-text = "this is a game where we made a game and we did a game. word is bond."
+text = "Salvation Rushdan / dodeca_digital: Programming/Illustration/Texturing
+
+Benji Lising / benktek01: Programming/Techart
+
+WolfyCaliber: 3D Modeling
+
+Sarah Chene: 3D Modeling
+
+Jenna Zimanski: 3D Modeling"
 editable = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
