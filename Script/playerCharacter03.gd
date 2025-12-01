@@ -89,6 +89,7 @@ func _physics_process(delta: float) -> void:
 	moveHeadWMouse()
 
 	move_and_slide()
+	
 
 func forwardPaddle(charge: int, dir: Vector2, mag: float):
 	#charge = length of paddle, dir = right left down
@@ -96,10 +97,10 @@ func forwardPaddle(charge: int, dir: Vector2, mag: float):
 		return
 	if !can_paddle:
 		return
-
+#CHANGE SPEED HERE
 #adjust tilt intensity 
 	var rotateDividend: float = 45.0 - abs(dir.x/600)
-	var pushPower: float = 1.1 * (dir.y/1000)
+	var pushPower: float = 1.5 * (dir.y/1000)
 	
 	if abs(dir.y) > abs(dir.x):
 		tilt_x = 0.05 * charge
