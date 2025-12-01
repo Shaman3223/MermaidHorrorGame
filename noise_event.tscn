@@ -73,7 +73,7 @@ alpha_curve = SubResource("CurveTexture_d67mf")
 transparency = 1
 albedo_color = Color(1, 1, 1, 0.9411765)
 emission_enabled = true
-emission = Color(1, 1, 1, 1)
+emission = Color(0.42387754, 0.51509106, 0.36942083, 1)
 emission_energy_multiplier = 1.69
 
 [sub_resource type="TorusMesh" id="TorusMesh_op3io"]
