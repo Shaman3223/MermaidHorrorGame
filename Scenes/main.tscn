@@ -1,8 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://pm7l3k20fkv1"]
+[gd_scene load_steps=29 format=3 uid="uid://pm7l3k20fkv1"]
 
 [ext_resource type="PackedScene" uid="uid://bhio7k0sdbeev" path="res://Scenes/player.tscn" id="1_21xkr"]
 [ext_resource type="Script" uid="uid://dlyr1hc50om2i" path="res://Scenes/main.gd" id="1_d1ilt"]
 [ext_resource type="Shader" uid="uid://08qo0nnjkiii" path="res://Shaders/water.gdshader" id="2_jjvhh"]
+[ext_resource type="FontFile" uid="uid://blrbs4w6ixwqg" path="res://PixelifySans-Regular.ttf" id="4_6iyac"]
 [ext_resource type="PackedScene" uid="uid://5dbiancy5euq" path="res://Scenes/control copy.tscn" id="4_cbgmd"]
 [ext_resource type="Environment" uid="uid://o3kuyw8lgv3a" path="res://DarkEnviro.tres" id="4_ynf5e"]
 [ext_resource type="Shader" uid="uid://bwob34qicq1l8" path="res://Shaders/pixelation01.gdshader" id="6_7k868"]
@@ -45,6 +46,11 @@ shader_parameter/uWaveDirection = Vector2(1, 0)
 shader_parameter/uWaveDirection2 = Vector2(0, 1)
 shader_parameter/uTimeScale = 0.010000000475
 shader_parameter/uWaveScale = 1.6
+
+[sub_resource type="LabelSettings" id="LabelSettings_fdnlq"]
+font = ExtResource("4_6iyac")
+font_size = 60
+font_color = Color(0.07082722, 0.07082721, 0.07082722, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_21xkr"]
 size = Vector3(18.751953, 4.880127, 30.006073)
@@ -187,6 +193,139 @@ _data = {
 &"sky_anim": SubResource("Animation_fmarx")
 }
 
+[sub_resource type="Animation" id="Animation_d1ilt"]
+resource_name = "this is it"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-232.648, 1.104, 340.906)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CharacterBody3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.75398225, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CharacterBody3D/Head:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 2.3333333),
+"transitions": PackedFloat32Array(0.46651655, 0.6597539, 1),
+"update": 0,
+"values": [Vector3(0, 1.276, 0), Vector3(-1.08, 1.936, 0), Vector3(-11.94, 4.886, -0.26)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect2:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.0666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(7.790287, 7.790287, 7.790287, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_6iyac"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(550.9337, 1.1035833, -415.79773)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CharacterBody3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.50836205, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CharacterBody3D/Head:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.276, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect2:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fdnlq"]
+_data = {
+&"RESET": SubResource("Animation_6iyac"),
+&"this is it": SubResource("Animation_d1ilt")
+}
+
 [node name="Main" type="Node3D"]
 script = ExtResource("1_d1ilt")
 
@@ -194,6 +333,9 @@ script = ExtResource("1_d1ilt")
 transform = Transform3D(1.7470859, 0, 0.9734942, 0, 2, 0, -0.9734942, 0, 1.7470859, 550.9337, 1.1035833, -415.79773)
 axis_lock_linear_y = true
 minimumShakes = 25
+
+[node name="PathFollow3D" parent="CharacterBody3D/Head/Path3D" index="0"]
+transform = Transform3D(-0.99856555, 0, -0.051209345, 0, 0.99984527, 0, 0.051208578, 0, -0.9985805, 2, -1, 1.5)
 
 [node name="Water" type="CSGBox3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23077393, -0.4621513, -1.2306519)
@@ -212,6 +354,30 @@ light_color = Color(0.1828377, 0.5282172, 0.41893, 1)
 light_energy = 0.096
 light_indirect_energy = 1.33
 light_volumetric_fog_energy = 3.309
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "END"
+label_settings = SubResource("LabelSettings_fdnlq")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -283,9 +449,17 @@ libraries = {
 }
 speed_scale = 0.2
 
+[node name="EndOfGameAnimator" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_fdnlq")
+}
+
 [connection signal="enteredQTE" from="CharacterBody3D" to="." method="_on_character_body_3d_entered_qte"]
 [connection signal="weHaveFinishedTheGame" from="CharacterBody3D" to="." method="_on_character_body_3d_we_have_finished_the_game"]
 [connection signal="mouseEventObserved" from="CanvasLayer/Control" to="CharacterBody3D" method="forwardPaddle"]
 [connection signal="shake" from="CanvasLayer/Control" to="CharacterBody3D" method="_on_control_shake"]
 [connection signal="timeout" from="QTETimer" to="." method="QTE_timeout"]
 [connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]
+
+[editable path="CharacterBody3D"]
+[editable path="CharacterBody3D/loretta_rig_grabbing_02"]

@@ -3,6 +3,8 @@ extends CharacterBody3D
 #constants
 const SPEED = 5.0
 
+var immortal: bool = false
+
 @export var can_paddle: bool = true
 @export var minimumShakes: int = 10
 var shakeProgression:int = 5
@@ -169,6 +171,8 @@ func checkpointGained():
 	getControl().flashText("Checkpoint Found")
 
 func quickTimeEvent():
+	if immortal:
+		return
 	if getControl().mapOn == true:
 		getControl().toggleMap()
 	enteredQTE.emit()
