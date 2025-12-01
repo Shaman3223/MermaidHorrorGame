@@ -1,8 +1,9 @@
-[gd_scene load_steps=42 format=3 uid="uid://5dbiancy5euq"]
+[gd_scene load_steps=41 format=3 uid="uid://5dbiancy5euq"]
 
 [ext_resource type="Script" uid="uid://dyiry3nk68tm0" path="res://Script/InputObtainer.gd" id="1_0fbet"]
 [ext_resource type="FontFile" uid="uid://blrbs4w6ixwqg" path="res://PixelifySans-Regular.ttf" id="2_cgmvo"]
 [ext_resource type="Texture2D" uid="uid://6u73621sjs14" path="res://Sprites/Sprite-0011-Sheet.png" id="3_vh8u0"]
+[ext_resource type="Texture2D" uid="uid://cef6bss24jxpb" path="res://Sprites/Sprite-0012-Sheet.png" id="4_8y4ye"]
 [ext_resource type="AudioStream" uid="uid://bplgwqjwej2yg" path="res://Sounds/PaperSounds/zapsplat_foley_paper_sheet_a4_fold_in_half_002_44389.mp3" id="4_dqysy"]
 [ext_resource type="AudioStream" uid="uid://c78sjj4bdevw6" path="res://Sounds/PaperSounds/zapsplat_foley_sheet_of_paper_a4_fold_002_73778.mp3" id="5_1tcje"]
 [ext_resource type="Texture2D" uid="uid://dq067lv4dn6nh" path="res://Sprites/Star.png" id="6_dqysy"]
@@ -161,21 +162,13 @@ region = Rect2(4320, 0, 1080, 1080)
 atlas = ExtResource("3_vh8u0")
 region = Rect2(5400, 0, 1080, 1080)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mft5f"]
-atlas = ExtResource("3_vh8u0")
-region = Rect2(6480, 0, 1080, 1080)
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtvvr"]
+atlas = ExtResource("4_8y4ye")
+region = Rect2(8640, 0, 1080, 1080)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qtfct"]
-atlas = ExtResource("3_vh8u0")
-region = Rect2(7560, 0, 1080, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0yuog"]
-atlas = ExtResource("3_vh8u0")
-region = Rect2(7560, 0, 1080, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mwcvj"]
-atlas = ExtResource("3_vh8u0")
-region = Rect2(6480, 0, 1080, 1080)
+[sub_resource type="AtlasTexture" id="AtlasTexture_8y4ye"]
+atlas = ExtResource("4_8y4ye")
+region = Rect2(8640, 0, 1080, 1080)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vphrd"]
 atlas = ExtResource("3_vh8u0")
@@ -223,10 +216,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_fx7jt")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mft5f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qtfct")
+"texture": SubResource("AtlasTexture_mtvvr")
 }],
 "loop": false,
 "name": &"default",
@@ -234,10 +224,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0yuog")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mwcvj")
+"texture": SubResource("AtlasTexture_8y4ye")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vphrd")
@@ -481,7 +468,8 @@ unique_name_in_owner = true
 modulate = Color(0.7294118, 1, 0.7882353, 1)
 position = Vector2(265.66666, 302)
 sprite_frames = SubResource("SpriteFrames_ikxuy")
-frame = 7
+animation = &"reverse"
+frame = 6
 frame_progress = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Map/SubViewportContainer"]
