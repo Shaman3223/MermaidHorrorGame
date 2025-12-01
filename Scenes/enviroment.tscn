@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://b7aebl0e1v2ab" path="res://tileTextures/ATF_8.png" id="2_eg0ho"]
 [ext_resource type="PackedScene" uid="uid://b5d68t82bb0eu" path="res://noise_event.tscn" id="3_jun3y"]
 [ext_resource type="PackedScene" uid="uid://ce5auqul0pn8t" path="res://Scenes/check_point.tscn" id="4_c4c45"]
-[ext_resource type="PackedScene" uid="uid://by4cr6prmknoi" path="res://3DModels/rock.tscn" id="5_u2ac6"]
+[ext_resource type="PackedScene" path="res://3DModels/rock.tscn" id="5_u2ac6"]
 [ext_resource type="PackedScene" uid="uid://cdww3mjg6jchr" path="res://3DModels/tree_02.tscn" id="6_ps4by"]
-[ext_resource type="PackedScene" uid="uid://cubxt7y8n4au5" path="res://3DModels/log.tscn" id="7_5j4ey"]
-[ext_resource type="PackedScene" uid="uid://hrlq8eib5q50" path="res://3DModels/lilypad.tscn" id="8_fbmo1"]
+[ext_resource type="PackedScene" path="res://3DModels/log.tscn" id="7_5j4ey"]
+[ext_resource type="PackedScene" path="res://3DModels/lilypad.tscn" id="8_fbmo1"]
 [ext_resource type="PackedScene" uid="uid://caqxfqurbp3ku" path="res://addons/proton_scatter/demos/assets/pine_tree.tscn" id="9_kmak5"]
 [ext_resource type="Script" uid="uid://drwtt23j22axe" path="res://addons/proton_scatter/src/scatter.gd" id="10_n2fg3"]
 [ext_resource type="Script" uid="uid://b7a884ypfnibw" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="11_rulyx"]
@@ -931,7 +931,7 @@ metadata/_edit_lock_ = true
 
 [node name="NoiseEvent" parent="." instance=ExtResource("3_jun3y")]
 transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 499.74963, 0.65881634, -381.41055)
-isSafe = 1
+isSafe = 0
 isProximityActivated = true
 endOnCompletion = false
 dangerRadius = 10.0
