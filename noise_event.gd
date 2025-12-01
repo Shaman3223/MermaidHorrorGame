@@ -31,7 +31,8 @@ func load_mp3_folder(foldername: String) -> Array[AudioStream]:
 		dir.list_dir_begin()
 		var file_name := dir.get_next()
 		while file_name != "":
-			if not dir.current_is_dir() and file_name.ends_with(".mp3"):
+			var goodfiletype: bool = file_name.ends_with(".mp3") or file_name.ends_with(".wav")
+			if not dir.current_is_dir() and goodfiletype:
 				var stream: AudioStream = load(path + "/" + file_name)
 				if stream:
 					sounds.append(stream)
@@ -78,7 +79,6 @@ func emitEvent():
 func playSirenSound():
 	var sirenSoundLibrary: Array = load_mp3_folder("siren")
 	$AudioStreamPlayer3D.stream = sirenSoundLibrary[randi_range(0, sirenSoundLibrary.size() - 1)]
-	print(sirenSoundLibrary.size())
 	$GPUParticles3D.emitting = true
 	$AudioStreamPlayer3D.play()
 	var mainScene = get_parent().get_parent()

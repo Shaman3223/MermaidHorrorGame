@@ -28,9 +28,11 @@ func _physics_process(delta: float) -> void:
 func QTE_timeout() -> void:
 	if lastSirenEvent.isPlayerClose():
 		player.quickTimeEvent()
-		$DeathTimer.start()
 	else:
 		print("safe")
+
+func _on_character_body_3d_entered_qte() -> void:
+	$DeathTimer.start() # Replace with function body.
 
 func _on_death_timer_timeout() -> void:
 	if player.isInQTE:
