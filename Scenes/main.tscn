@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://pm7l3k20fkv1"]
+[gd_scene load_steps=24 format=3 uid="uid://pm7l3k20fkv1"]
 
 [ext_resource type="PackedScene" uid="uid://bhio7k0sdbeev" path="res://Scenes/player.tscn" id="1_21xkr"]
 [ext_resource type="Script" uid="uid://dlyr1hc50om2i" path="res://Scenes/main.gd" id="1_d1ilt"]
@@ -53,6 +53,115 @@ size = Vector3(18.751953, 4.880127, 30.006073)
 shader = ExtResource("6_7k868")
 
 [sub_resource type="QuadMesh" id="QuadMesh_6bp64"]
+
+[sub_resource type="Animation" id="Animation_hkdq0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorldEnvironment:environment:sky:sky_material:sky_horizon_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.84774035, 0.7306629, 0.782854, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WorldEnvironment:environment:sky:sky_material:sky_top_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.28304183, 0.3889769, 0.52916557, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WorldEnvironment:environment:fog_light_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.16284272, 0.34576368, 0.40917102, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Water:material:shader_parameter/uAlbedo")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.14889044, 0.17932618, 0.227514, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fmarx"]
+resource_name = "sky_anim"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorldEnvironment:environment:sky:sky_material:sky_horizon_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.84774035, 0.7306629, 0.782854, 1), Color(0.98148113, 0.27637056, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WorldEnvironment:environment:sky:sky_material:sky_top_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.28304183, 0.3889769, 0.52916557, 1), Color(1.5047112, 0, 0.2557108, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WorldEnvironment:environment:fog_light_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.16284272, 0.34576368, 0.40917102, 1), Color(0.41240463, 0.27473682, 0.288839, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Water:material:shader_parameter/uAlbedo")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.14889044, 0.17932618, 0.227514, 1), Color(0.41467577, 0, 0.050624155, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xcoo4"]
+_data = {
+&"RESET": SubResource("Animation_hkdq0"),
+&"sky_anim": SubResource("Animation_fmarx")
+}
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_d1ilt")
@@ -127,22 +236,28 @@ one_shot = true
 wait_time = 2.0
 one_shot = true
 
-[node name="CheckPoint" parent="." instance=ExtResource("11_fdnlq")]
-transform = Transform3D(5.173352, 0, 3.3549943, 0, 6.166, 0, -3.3549943, 0, 5.173352, 316.88452, 0.692, -363.70175)
-
-[node name="CheckPoint5" parent="." instance=ExtResource("11_fdnlq")]
+[node name="Checkpoint01" parent="." instance=ExtResource("11_fdnlq")]
 transform = Transform3D(5.173352, 0, 3.3549943, 0, 6.166, 0, -3.3549943, 0, 5.173352, 522.8575, 0.692, -384.7197)
 
-[node name="CheckPoint3" parent="." instance=ExtResource("11_fdnlq")]
+[node name="CheckPoint02" parent="." instance=ExtResource("11_fdnlq")]
+transform = Transform3D(5.173352, 0, 3.3549943, 0, 6.166, 0, -3.3549943, 0, 5.173352, 316.88452, 0.692, -363.70175)
+
+[node name="CheckPoint03" parent="." instance=ExtResource("11_fdnlq")]
 transform = Transform3D(-0.217448, 0, 6.1621647, 0, 6.166, 0, -6.1621647, 0, -0.217448, 286.4574, 0.692, -60.767197)
 
-[node name="CheckPoint4" parent="." instance=ExtResource("11_fdnlq")]
-transform = Transform3D(0.94586396, 0, 6.0930204, 0, 6.166001, 0, -6.0930204, 0, 0.94586396, 3.1033783, 0.692, 44.886703)
-
-[node name="CheckPoint2" parent="." instance=ExtResource("11_fdnlq")]
+[node name="CheckPoint04" parent="." instance=ExtResource("11_fdnlq")]
 transform = Transform3D(-1.3681662, 0, 6.0122943, 0, 6.166, 0, -6.0122943, 0, -1.3681662, -148.60541, 0.692, -378.0701)
 
+[node name="CheckPoint05" parent="." instance=ExtResource("11_fdnlq")]
+transform = Transform3D(0.94586396, 0, 6.0930204, 0, 6.166001, 0, -6.0930204, 0, 0.94586396, 3.1033783, 0.692, 44.886703)
+
 [node name="Enviroment" parent="." instance=ExtResource("8_d1ilt")]
+
+[node name="envAnimator" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xcoo4")
+}
+speed_scale = 1.19
 
 [connection signal="weHaveFinishedTheGame" from="CharacterBody3D" to="." method="_on_character_body_3d_we_have_finished_the_game"]
 [connection signal="mouseEventObserved" from="CanvasLayer/Control" to="CharacterBody3D" method="forwardPaddle"]
