@@ -1,5 +1,7 @@
 extends Control
 
+var firstTime: bool = true
+
 var start_pos:Vector2
 @export var min_swipe_distance := 100
 var lastSwipePosition: Vector2
@@ -97,6 +99,9 @@ func openMap():
 	%AnimatedSprite2D.play("default")
 
 func closeMap():
+	if firstTime:
+		flashText("Drag and release mouse in bottom corners to move")
+	firstTime = false
 	$Compass.hide()
 	%AnimatedSprite2D.play("reverse")
 	%AnimationPlayer.play("goDown")

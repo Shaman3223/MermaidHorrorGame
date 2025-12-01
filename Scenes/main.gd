@@ -45,7 +45,11 @@ func playerEntered(body: Node3D) -> void:
 
 
 func _on_character_body_3d_we_have_finished_the_game() -> void:
+	$EndOfGameAnimator.play("this is it")
+	await $EndOfGameAnimator.animation_finished
 	get_tree().change_scene_to_packed(mainMenu)
+	
+	
 	print("switched to main menu")
 
 func skyAnimate(start: float, end: float):
