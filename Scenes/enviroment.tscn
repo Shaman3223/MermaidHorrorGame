@@ -120,7 +120,7 @@ mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_jkdf5")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_h1bgf")])
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_6iyac"]
-radius = 63.164406
+radius = 33.677
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_fdnlq"]
 radius = 33.82169
@@ -953,23 +953,144 @@ folderName = "frog"
 
 [node name="NoiseEvent4" parent="." instance=ExtResource("3_jun3y")]
 transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 371.4946, 0.65881634, -337.04755)
-isSafe = 1
 isProximityActivated = true
 dangerRadius = 10.0
 folderName = "frog"
 
+[node name="NoiseEvent5" parent="." instance=ExtResource("3_jun3y")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 258.72513, 0.65881634, -328.06506)
+isSafe = 0
+isProximityActivated = true
+dangerRadius = 10.0
+
+[node name="NoiseEvent6" parent="." instance=ExtResource("3_jun3y")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 276.26428, 0.65881634, -234.27505)
+isProximityActivated = true
+dangerRadius = 15.0
+activationRadius = 20.0
+
+[node name="NoiseEvent7" parent="." instance=ExtResource("3_jun3y")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 196.47269, 0.65881634, -315.51663)
+isSafe = 1
+isProximityActivated = true
+dangerRadius = 15.0
+activationRadius = 20.0
+
+[node name="NoiseEvent13" parent="." instance=ExtResource("3_jun3y")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 196.47269, 0.65881634, -438.3888)
+isSafe = 0
+isProximityActivated = true
+dangerRadius = 15.0
+activationRadius = 20.0
+
+[node name="NoiseEvent15" parent="." instance=ExtResource("3_jun3y")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 167.88283, 0.65881634, -455.91458)
+isSafe = 0
+isProximityActivated = true
+dangerRadius = 15.0
+activationRadius = 20.0
+folderName = "duck"
+
+[node name="NoiseEvent14" parent="." instance=ExtResource("3_jun3y")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 110.50763, 0.65881634, -488.46106)
+isProximityActivated = true
+dangerRadius = 15.0
+activationRadius = 20.0
+
+[node name="NoiseEvent8" parent="." instance=ExtResource("3_jun3y")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 72.645645, 0.65881634, -315.51663)
+isSafe = 0
+isProximityActivated = true
+dangerRadius = 15.0
+activationRadius = 20.0
+folderName = "duck"
+
+[node name="NoiseEvent9" parent="." instance=ExtResource("3_jun3y")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 25.86676, 0.65881634, -346.3814)
+isSafe = 0
+isProximityActivated = true
+dangerRadius = 15.0
+activationRadius = 20.0
+folderName = "duck"
+
+[node name="NoiseEvent10" parent="." instance=ExtResource("3_jun3y")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 4.792984, 0.65881634, -372.79163)
+isSafe = 0
+isProximityActivated = true
+dangerRadius = 15.0
+activationRadius = 20.0
+folderName = "duck"
+
+[node name="NoiseEvent16" parent="." instance=ExtResource("3_jun3y")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 4.792984, 0.65881634, -504.6172)
+isProximityActivated = true
+dangerRadius = 10.0
+folderName = "duck"
+
+[node name="NoiseEvent11" parent="." instance=ExtResource("3_jun3y")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -161.47217, 0.65881634, -313.47452)
+isSafe = 1
+isProximityActivated = true
+dangerRadius = 20.0
+activationRadius = 20.0
+folderName = "duck"
+
+[node name="NoiseEvent12" parent="." instance=ExtResource("3_jun3y")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -225.76112, 0.65881634, -75.454895)
+isSafe = 1
+isProximityActivated = true
+dangerRadius = 20.0
+activationRadius = 20.0
+folderName = "duck"
+
+[node name="NoiseEvent18" parent="." instance=ExtResource("3_jun3y")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -99.70665, 0.65881634, -75.454895)
+isSafe = 0
+isProximityActivated = true
+dangerRadius = 10.0
+folderName = "duck"
+
+[node name="NoiseEvent19" parent="." instance=ExtResource("3_jun3y")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -80.56804, 0.65881634, -40.192177)
+isSafe = 0
+isProximityActivated = true
+dangerRadius = 10.0
+folderName = "duck"
+
+[node name="NoiseEvent17" parent="." instance=ExtResource("3_jun3y")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 206.72675, 0.65881634, 10.495861)
+isProximityActivated = true
+dangerRadius = 10.0
+folderName = "duck"
+
 [node name="NoiseEventSpawner" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 69.436)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 300.5137, 0, -66.499275)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NoiseEventSpawner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.659, 40.9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.221619, 0.659, 1.011879)
 shape = SubResource("SphereShape3D_6iyac")
 debug_color = Color(0.90252525, 0.00014593244, 0.752917, 0.9490196)
 
 [node name="NoiseEventSpawner2" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 696.11096, 0, -399.9368)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.59021, 0, 17.699493)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NoiseEventSpawner2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.659, 27.263)
+shape = SubResource("SphereShape3D_fdnlq")
+debug_color = Color(0.90252525, 0.00014593244, 0.752917, 0.9490196)
+
+[node name="NoiseEventSpawner4" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.957184, 0, -5.5731583)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NoiseEventSpawner4"]
+transform = Transform3D(0.9999842, 0, 0.0056199306, 0, 1, 0, -0.0056199306, 0, 0.9999842, 0, 0.659, 27.263)
+shape = SubResource("SphereShape3D_fdnlq")
+debug_color = Color(0.90252525, 0.00014593244, 0.752917, 0.9490196)
+
+[node name="NoiseEventSpawner5" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.957184, 0, 48.85852)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NoiseEventSpawner5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.659, 27.263)
 shape = SubResource("SphereShape3D_fdnlq")
 debug_color = Color(0.90252525, 0.00014593244, 0.752917, 0.9490196)
@@ -1533,6 +1654,7 @@ transform = Transform3D(33.155, 0, 0, 0, 33.155, 0, 0, 0, 33.155, 52.90298, -56.
 
 [node name="ProtonScatter" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0170689, 0)
+visible = false
 script = ExtResource("10_n2fg3")
 modifier_stack = SubResource("Resource_nw4kk")
 Performance/use_chunks = true
@@ -2319,14 +2441,14 @@ negative = true
 shape = SubResource("Resource_s8cid")
 
 [node name="HomeSweetHome" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -513, 0, 474)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -256.17255, 0, 340.64526)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HomeSweetHome"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.10022, 3.0799618, -1.9029541)
 shape = SubResource("SphereShape3D_eg0ho")
 
 [node name="ChaseSpawner" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 131.5279, 0, -487.6539)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.193214, 0, 272.0304)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ChaseSpawner"]
 shape = SubResource("SphereShape3D_fbmo1")
@@ -2460,5 +2582,8 @@ skeleton = NodePath("")
 
 [node name="PSX Church" parent="." instance=ExtResource("37_liq42")]
 transform = Transform3D(6.3724127, 0, -1.536352, 0, 6.555, 0, 1.536352, 0, 6.3724127, 202.76784, 7.944519, -375.74567)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+size = Vector3(1000, 1, 1000)
 
 [connection signal="body_entered" from="HomeSweetHome" to="." method="PlayerHasReachedEnd"]

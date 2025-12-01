@@ -180,7 +180,7 @@ tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_gymyn"]
@@ -461,7 +461,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.482, -1.1700721, 0)
 curve = SubResource("Curve3D_21xkr")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Head/Path3D"]
-transform = Transform3D(-0.9985653, 0, -0.051209345, 0, 0.99984527, 0, 0.051208563, 0, -0.9985805, 2, -1, 1.5)
+transform = Transform3D(-0.9985654, 0, -0.051209345, 0, 0.99984527, 0, 0.051208567, 0, -0.9985805, 2, -1, 1.5)
 progress = 9.513856
 loop = false
 
@@ -484,6 +484,7 @@ stream = ExtResource("11_pu2lt")
 
 [node name="loretta_rig_grabbing_02" parent="." instance=ExtResource("11_gymyn")]
 transform = Transform3D(0.024958624, 0, -0.016645333, 0, 0.03, 0, 0.016645333, 0, 0.024958624, -4.4397783, -4.1390057, -2.4598334)
+visible = false
 
 [node name="Skeleton3D" parent="loretta_rig_grabbing_02/Armature" index="0"]
 bones/0/position = Vector3(-0.021891475, -0.00020488551, -0.2691065)

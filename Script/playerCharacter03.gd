@@ -5,6 +5,8 @@ const SPEED = 5.0
 
 @export var can_paddle: bool = true
 @export var minimumShakes: int = 10
+var shakeProgression:int = 5
+
 var isInQTE: bool = false
 
 var shakes: int = 0
@@ -33,6 +35,7 @@ var wobble_amplitude: float = 0.0
 @onready var lastCheckpoint: CheckPoint
 
 signal weHaveFinishedTheGame
+signal enteredQTE
 
 func _ready() -> void:
 	pass
@@ -168,10 +171,10 @@ func checkpointGained():
 func quickTimeEvent():
 	if getControl().mapOn == true:
 		getControl().toggleMap()
-	
+	enteredQTE.emit()
 	getControl().flashText("Shake Mouse")
 	$BoatSnatch.play()
-	minimumShakes += 10
+	minimumShakes += shakeProgression
 	isInQTE = true
 	var rnd = randi_range(0,1)
 	match rnd:

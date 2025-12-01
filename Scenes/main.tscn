@@ -257,7 +257,7 @@ wait_time = 3.0
 one_shot = true
 
 [node name="DeathTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.0
 one_shot = true
 
 [node name="CheckPoint01" parent="." instance=ExtResource("11_fdnlq")]
@@ -283,6 +283,7 @@ libraries = {
 }
 speed_scale = 0.2
 
+[connection signal="enteredQTE" from="CharacterBody3D" to="." method="_on_character_body_3d_entered_qte"]
 [connection signal="weHaveFinishedTheGame" from="CharacterBody3D" to="." method="_on_character_body_3d_we_have_finished_the_game"]
 [connection signal="mouseEventObserved" from="CanvasLayer/Control" to="CharacterBody3D" method="forwardPaddle"]
 [connection signal="shake" from="CanvasLayer/Control" to="CharacterBody3D" method="_on_control_shake"]

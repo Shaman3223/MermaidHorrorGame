@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cdwfi2ju7bjr0"]
+[gd_scene load_steps=37 format=3 uid="uid://g057tcfh0gw"]
 
 [ext_resource type="Script" uid="uid://dyiry3nk68tm0" path="res://Script/InputObtainer.gd" id="1_0fbet"]
 [ext_resource type="FontFile" uid="uid://blrbs4w6ixwqg" path="res://PixelifySans-Regular.ttf" id="2_cgmvo"]
@@ -164,13 +164,9 @@ region = Rect2(5400, 0, 1080, 1080)
 atlas = ExtResource("4_1tcje")
 region = Rect2(8640, 0, 1080, 1080)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0yuog"]
-atlas = ExtResource("3_vh8u0")
-region = Rect2(7560, 0, 1080, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mwcvj"]
-atlas = ExtResource("3_vh8u0")
-region = Rect2(6480, 0, 1080, 1080)
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtfct"]
+atlas = ExtResource("4_1tcje")
+region = Rect2(8640, 0, 1080, 1080)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vphrd"]
 atlas = ExtResource("3_vh8u0")
@@ -196,6 +192,10 @@ region = Rect2(1080, 0, 1080, 1080)
 atlas = ExtResource("3_vh8u0")
 region = Rect2(0, 0, 1080, 1080)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yuog"]
+atlas = ExtResource("4_1tcje")
+region = Rect2(8640, 0, 1080, 1080)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ikxuy"]
 animations = [{
 "frames": [{
@@ -219,18 +219,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mft5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtfct")
 }],
 "loop": false,
 "name": &"default",
 "speed": 10.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0yuog")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mwcvj")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vphrd")
 }, {
@@ -248,6 +245,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6nikr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0yuog")
 }],
 "loop": false,
 "name": &"reverse",
@@ -414,9 +414,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -349.00037
-offset_top = 1280.0
+offset_top = -420.0
 offset_right = 251.00037
-offset_bottom = 1880.0
+offset_bottom = 180.00146
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.5, 1.5)
@@ -432,6 +432,7 @@ unique_name_in_owner = true
 modulate = Color(0.7294118, 1, 0.7882353, 1)
 position = Vector2(265.66666, 302)
 sprite_frames = SubResource("SpriteFrames_ikxuy")
+animation = &"reverse"
 frame = 6
 frame_progress = 1.0
 
