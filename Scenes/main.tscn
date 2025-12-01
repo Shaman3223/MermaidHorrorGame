@@ -104,6 +104,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Color(0.14889044, 0.17932618, 0.227514, 1)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WorldEnvironment:environment:background_energy_multiplier")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.18]
+}
 
 [sub_resource type="Animation" id="Animation_fmarx"]
 resource_name = "sky_anim"
@@ -155,6 +167,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0.14889044, 0.17932618, 0.227514, 1), Color(0.41467577, 0, 0.050624155, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WorldEnvironment:environment:background_energy_multiplier")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.18, 0.62]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xcoo4"]
@@ -236,7 +260,7 @@ one_shot = true
 wait_time = 3.0
 one_shot = true
 
-[node name="Checkpoint01" parent="." instance=ExtResource("11_fdnlq")]
+[node name="CheckPoint01" parent="." instance=ExtResource("11_fdnlq")]
 transform = Transform3D(5.173352, 0, 3.3549943, 0, 6.166, 0, -3.3549943, 0, 5.173352, 522.8575, 0.692, -384.7197)
 
 [node name="CheckPoint02" parent="." instance=ExtResource("11_fdnlq")]
@@ -257,7 +281,7 @@ transform = Transform3D(0.94586396, 0, 6.0930204, 0, 6.166001, 0, -6.0930204, 0,
 libraries = {
 &"": SubResource("AnimationLibrary_xcoo4")
 }
-speed_scale = 1.19
+speed_scale = 0.2
 
 [connection signal="enteredQTE" from="CharacterBody3D" to="." method="_on_character_body_3d_entered_qte"]
 [connection signal="weHaveFinishedTheGame" from="CharacterBody3D" to="." method="_on_character_body_3d_we_have_finished_the_game"]

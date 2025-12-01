@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=4 uid="uid://w7bmh5kfe3s2"]
+[gd_scene load_steps=70 format=4 uid="uid://w7bmh5kfe3s2"]
 
 [ext_resource type="Script" uid="uid://ded83riab41bj" path="res://Scenes/main_menu.gd" id="1_5egv6"]
 [ext_resource type="PackedScene" uid="uid://dmuyyt4o3ougc" path="res://3DModels/boat_prot.fbx" id="1_vr1f0"]
@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://blrbs4w6ixwqg" path="res://PixelifySans-Regular.ttf" id="4_vtepg"]
 [ext_resource type="Texture2D" uid="uid://dmxfrejbef7ox" path="res://Sprites/LorettaLogo.png" id="5_5egv6"]
 [ext_resource type="Environment" uid="uid://o3kuyw8lgv3a" path="res://DarkEnviro.tres" id="5_8dnnj"]
+[ext_resource type="PackedScene" uid="uid://hrlq8eib5q50" path="res://3DModels/lilypad.tscn" id="6_hkdq0"]
 [ext_resource type="Shader" uid="uid://yvgemnay0w2o" path="res://Shaders/pixelation.gdshader" id="6_m3bi6"]
 [ext_resource type="PackedScene" uid="uid://cdet5l6wmgm7t" path="res://Shaders/pixelation.tscn" id="7_wyh8j"]
 [ext_resource type="AudioStream" uid="uid://br2ggeqbkl7qc" path="res://Sounds/zapsplat_nature_ambience_rainforest_insects_crickets_distant_waterfall_summer_night_time_eastern_australia_78201.mp3" id="10_16hvj"]
@@ -242,6 +243,12 @@ _data = {
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5egv6"]
 bg_color = Color(0.20784314, 0.23921569, 0.2901961, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hkdq0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xcoo4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jw7lb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tt8ml"]
 shader = ExtResource("6_m3bi6")
@@ -671,13 +678,27 @@ transform = Transform3D(0.3224388, -0.29155007, -0.24704595, 0.24201567, -0.0943
 visible = false
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.82206774, 0.07634348, -0.56424844, 0.041092273, 0.9804319, 0.19252196, 0.56790495, -0.18145233, 0.8028443, -9.913666, 4.3447666, 85.78991)
+transform = Transform3D(0.82206774, 0.07634347, -0.56424844, 0.041092273, 0.9804319, 0.19252193, 0.56790495, -0.18145233, 0.8028443, -9.920882, 4.3447666, 85.798706)
 environment = ExtResource("4_tt8ml")
 
 [node name="Water" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23077393, 0.6418487, 6.153966)
 size = Vector3(257.42712, 0.001, 216.2555)
 material = SubResource("ShaderMaterial_84iac")
+
+[node name="Water2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23077393, 0.083522916, 6.153966)
+size = Vector3(257.42712, 0.001, 216.2555)
+material = SubResource("ShaderMaterial_84iac")
+
+[node name="lilypad" parent="Water2" instance=ExtResource("6_hkdq0")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -3.988594, 0.16119337, 78.9409)
+
+[node name="lilypad2" parent="Water2" instance=ExtResource("6_hkdq0")]
+transform = Transform3D(-0.26906732, 0, 0.3418008, 0, 0.435, 0, -0.3418008, 0, -0.26906732, -7.6520157, 0.16119337, 74.28404)
+
+[node name="lilypad3" parent="Water2" instance=ExtResource("6_hkdq0")]
+transform = Transform3D(-0.256889, 0, -0.35104567, 0, 0.435, 0, 0.35104567, 0, -0.256889, -9.41144, 0.16119337, 74.329735)
 
 [node name="bkgAnimator" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Water")
@@ -724,10 +745,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -870.14014
-offset_top = 108.0
-offset_right = -748.14014
-offset_bottom = 148.0
+offset_left = -932.0
+offset_top = 82.0
+offset_right = -810.0
+offset_bottom = 120.85714
 grow_horizontal = 0
 scale = Vector2(7, 7)
 texture = ExtResource("5_5egv6")
@@ -749,6 +770,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("4_vtepg")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_5egv6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hkdq0")
 text = "    BEGIN"
 alignment = 0
 
@@ -757,6 +779,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("4_vtepg")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_5egv6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xcoo4")
 text = "    CREDITS
 "
 alignment = 0
@@ -766,6 +789,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("4_vtepg")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_5egv6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jw7lb")
 text = "    QUIT"
 alignment = 0
 

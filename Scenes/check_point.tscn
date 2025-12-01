@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://ce5auqul0pn8t"]
+[gd_scene load_steps=12 format=3 uid="uid://ce5auqul0pn8t"]
 
 [ext_resource type="Script" uid="uid://cw0nxva6rjwml" path="res://Scenes/check_point.gd" id="1_oampm"]
 [ext_resource type="PackedScene" uid="uid://bmh8em6ih4v6u" path="res://3DModels/PS1BuoyWLantern.fbx" id="2_mcmgj"]
 [ext_resource type="AudioStream" uid="uid://d8wakygpn5iw" path="res://Sounds/bell.mp3" id="3_cdwub"]
+[ext_resource type="PackedScene" uid="uid://opomykdvdvvg" path="res://ps_1_buoy_w_lantern.tscn" id="4_wxktv"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_cdwub"]
 top_radius = 0.1
@@ -78,6 +79,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5134082, 0.5699309, 0)
 
 [node name="PS1BuoyWLantern" parent="." instance=ExtResource("2_mcmgj")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, -0.10398388, 0)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4519043, 0)
@@ -86,5 +88,9 @@ shape = SubResource("CylinderShape3D_mcmgj")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_cdwub")
 volume_db = 5.0
+
+[node name="PS1BuoyWLantern2" parent="." instance=ExtResource("4_wxktv")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, -0.10398388, 0)
+skeleton = NodePath("../PS1BuoyWLantern")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

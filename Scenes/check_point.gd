@@ -20,13 +20,17 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		body.checkpointGained()
 		lastPosition = body.global_position
 		
-		if self.name == "Checkpoint01":
-			main.skyAnimate(0,1)
-		elif self.name == "Checkpoint02":
-			main.skyAnimate(1,2)
-		elif self.name == "Checkpoint03":
-			main.skyAnimate(2,3)
-		elif self.name == "Checkpoint04":
-			main.skyAnimate(3,4)
-		elif self.name == "Checkpoint04":
-			main.skyAnimate(3,4)
+		match self.name:
+			"CheckPoint01":
+				main.skyAnimate(0,0.5)
+				print("hello")
+			"CheckPoint02":
+				main.skyAnimate(0.5,1)
+				print("hello2")
+			"CheckPoint03":
+				main.skyAnimate(1,2)
+				print("hello3")
+			"CheckPoint04":
+				main.skyAnimate(1,2)
+			"CheckPoint05":
+				main.skyAnimate(2,3)
