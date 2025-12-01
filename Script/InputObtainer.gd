@@ -115,3 +115,6 @@ func compass():
 		return
 	
 	$Compass.rotation = wrap(player.rotation.y, 0.0, TAU)
+
+func fadein():
+	$CanvasLayer/ColorRect/AnimationPlayer.play("fadeout_2")

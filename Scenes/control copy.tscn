@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://5dbiancy5euq"]
+[gd_scene load_steps=42 format=3 uid="uid://5dbiancy5euq"]
 
 [ext_resource type="Script" uid="uid://dyiry3nk68tm0" path="res://Script/InputObtainer.gd" id="1_0fbet"]
 [ext_resource type="FontFile" uid="uid://blrbs4w6ixwqg" path="res://PixelifySans-Regular.ttf" id="2_cgmvo"]
@@ -130,10 +130,39 @@ tracks/1/keys = {
 "values": [true, false]
 }
 
+[sub_resource type="Animation" id="Animation_8y4ye"]
+resource_name = "fadeout_2"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fx7jt"]
 _data = {
 &"RESET": SubResource("Animation_vxodi"),
-&"fadeout": SubResource("Animation_1tcje")
+&"fadeout": SubResource("Animation_1tcje"),
+&"fadeout_2": SubResource("Animation_8y4ye")
 }
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_btyrf"]

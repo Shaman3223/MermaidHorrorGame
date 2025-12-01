@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://pm7l3k20fkv1"]
+[gd_scene load_steps=31 format=3 uid="uid://pm7l3k20fkv1"]
 
 [ext_resource type="PackedScene" uid="uid://bhio7k0sdbeev" path="res://Scenes/player.tscn" id="1_21xkr"]
 [ext_resource type="Script" uid="uid://dlyr1hc50om2i" path="res://Scenes/main.gd" id="1_d1ilt"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dbl7sltilltm1" path="res://Scenes/enviroment.tscn" id="8_d1ilt"]
 [ext_resource type="AudioStream" uid="uid://br2ggeqbkl7qc" path="res://Sounds/zapsplat_nature_ambience_rainforest_insects_crickets_distant_waterfall_summer_night_time_eastern_australia_78201.mp3" id="9_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://ce5auqul0pn8t" path="res://Scenes/check_point.tscn" id="11_fdnlq"]
+[ext_resource type="AudioStream" uid="uid://hccsw81737of" path="res://Sounds/813308__qubodup__wilhelm-scream.wav" id="13_fdnlq"]
 
 [sub_resource type="Gradient" id="Gradient_ig7tw"]
 offsets = PackedFloat32Array(0.11129032, 0.33548388)
@@ -235,7 +236,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("ColorRect2:color")
+tracks/3/path = NodePath("CanvasLayer/ColorRect2:color")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -247,7 +248,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("ColorRect2:visible")
+tracks/4/path = NodePath("CanvasLayer/ColorRect2:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -255,6 +256,18 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/ColorRect2/Label:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["WELCOME HOME"]
 }
 
 [sub_resource type="Animation" id="Animation_6iyac"]
@@ -298,7 +311,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("ColorRect2:color")
+tracks/3/path = NodePath("CanvasLayer/ColorRect2:color")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -310,7 +323,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("ColorRect2:visible")
+tracks/4/path = NodePath("CanvasLayer/ColorRect2:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -319,10 +332,87 @@ tracks/4/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/ColorRect2/Label:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["WELCOME HOME"]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Scream:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_jkdf5"]
+resource_name = "fade to red"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(2.4622889, 0.4665164),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0.8235294, 0, 0.03529412, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/ColorRect2/Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["YOU DIED"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Scream:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.46666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fdnlq"]
 _data = {
 &"RESET": SubResource("Animation_6iyac"),
+&"fade to red": SubResource("Animation_jkdf5"),
 &"this is it": SubResource("Animation_d1ilt")
 }
 
@@ -330,12 +420,12 @@ _data = {
 script = ExtResource("1_d1ilt")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_21xkr")]
-transform = Transform3D(1.7470859, 0, 0.9734942, 0, 2, 0, -0.9734942, 0, 1.7470859, 550.9337, 1.1035833, -415.79773)
+transform = Transform3D(1.7470857, 0, 0.97349405, 0, 2, 0, -0.97349405, 0, 1.7470857, 550.9337, 1.1035833, -415.79773)
 axis_lock_linear_y = true
 minimumShakes = 25
 
 [node name="PathFollow3D" parent="CharacterBody3D/Head/Path3D" index="0"]
-transform = Transform3D(-0.99856555, 0, -0.051209345, 0, 0.99984527, 0, 0.051208578, 0, -0.9985805, 2, -1, 1.5)
+transform = Transform3D(-0.9985659, 0, -0.051209345, 0, 0.99984527, 0, 0.051208593, 0, -0.9985805, 2, -1, 1.5)
 
 [node name="Water" type="CSGBox3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23077393, -0.4621513, -1.2306519)
@@ -355,15 +445,20 @@ light_energy = 0.096
 light_indirect_energy = 1.33
 light_volumetric_fog_energy = 3.309
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("4_cbgmd")]
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
 visible = false
+z_index = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="ColorRect2"]
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -376,12 +471,8 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "END"
+text = "WELCOME HOME"
 label_settings = SubResource("LabelSettings_fdnlq")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Control" parent="CanvasLayer" instance=ExtResource("4_cbgmd")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("4_ynf5e")
@@ -454,6 +545,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_fdnlq")
 }
 
+[node name="Scream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_fdnlq")
+
 [connection signal="enteredQTE" from="CharacterBody3D" to="." method="_on_character_body_3d_entered_qte"]
 [connection signal="weHaveFinishedTheGame" from="CharacterBody3D" to="." method="_on_character_body_3d_we_have_finished_the_game"]
 [connection signal="mouseEventObserved" from="CanvasLayer/Control" to="CharacterBody3D" method="forwardPaddle"]
@@ -463,3 +557,4 @@ libraries = {
 
 [editable path="CharacterBody3D"]
 [editable path="CharacterBody3D/loretta_rig_grabbing_02"]
+[editable path="CanvasLayer/Control"]
