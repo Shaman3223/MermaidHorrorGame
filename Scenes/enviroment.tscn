@@ -930,8 +930,31 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="NoiseEvent" parent="." instance=ExtResource("3_jun3y")]
-transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 499.74963, 0.65881634, -389.41055)
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 499.74963, 0.65881634, -381.41055)
+isSafe = 0
+isProximityActivated = true
+endOnCompletion = false
+dangerRadius = 10.0
+activationRadius = 20.0
+folderName = "frog"
+
+[node name="NoiseEvent2" parent="." instance=ExtResource("3_jun3y")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 466.60904, 0.65881634, -372.62552)
+isSafe = 0
+isProximityActivated = true
+dangerRadius = 10.0
+
+[node name="NoiseEvent3" parent="." instance=ExtResource("3_jun3y")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 429.1333, 0.65881634, -356.08286)
+isSafe = 0
+isProximityActivated = true
+dangerRadius = 10.0
+folderName = "frog"
+
+[node name="NoiseEvent4" parent="." instance=ExtResource("3_jun3y")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 371.4946, 0.65881634, -337.04755)
 isSafe = 1
+isProximityActivated = true
 dangerRadius = 10.0
 folderName = "frog"
 

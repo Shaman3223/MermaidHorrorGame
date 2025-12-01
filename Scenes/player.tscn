@@ -105,6 +105,42 @@ tracks/5/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("loretta_rig_grabbing_02:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-4.4397783, -4.1390057, -2.4598334)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("loretta_rig_grabbing_02:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.58817595, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("loretta_rig_grabbing_02:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_gymyn"]
 resource_name = "going in house"
@@ -261,6 +297,42 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(-0.15184365, 0, 0)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("loretta_rig_grabbing_02:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3.9333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-4.4397783, -4.1390057, -2.4598334), Vector3(-3.86, -4.139, -2.46)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("loretta_rig_grabbing_02:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 3.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -0.58817595, 0), Vector3(0.101229094, -0.58817595, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("loretta_rig_grabbing_02:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fkybt"]
 _data = {
@@ -313,7 +385,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.482, -1.1700721, 0)
 curve = SubResource("Curve3D_21xkr")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Head/Path3D"]
-transform = Transform3D(-0.99856496, 0, -0.051209345, 0, 0.99984527, 0, 0.051208545, 0, -0.9985805, 2, -1, 1.5)
+transform = Transform3D(-0.99856514, 0, -0.051209345, 0, 0.99984527, 0, 0.051208556, 0, -0.9985805, 2, -1, 1.5)
 progress = 9.513856
 loop = false
 
@@ -335,26 +407,25 @@ pitch_scale = 1.1
 stream = ExtResource("11_pu2lt")
 
 [node name="loretta_rig_grabbing_02" parent="." instance=ExtResource("11_gymyn")]
-transform = Transform3D(0.022886483, 0, 0.019396104, 0, 0.03, 0, -0.019396104, 0, 0.022886483, -4.4397783, -4.1390057, 2.682744)
-visible = false
+transform = Transform3D(0.024958624, 0, -0.016645333, 0, 0.03, 0, 0.016645333, 0, 0.024958624, -4.4397783, -4.1390057, -2.4598334)
 
 [node name="Skeleton3D" parent="loretta_rig_grabbing_02/Armature" index="0"]
-bones/0/position = Vector3(0.004385628, -0.00020489987, -0.16230284)
+bones/0/position = Vector3(-0.021891475, -0.00020488551, -0.2691065)
 bones/0/rotation = Quaternion(0.6802272, 0.19310865, -0.19310868, 0.6802272)
 bones/1/rotation = Quaternion(1.3673556e-08, 3.5480085e-08, 0.2312415, 0.9728964)
 bones/2/rotation = Quaternion(-1.1930467e-08, 1.16095705e-07, 0.09514962, 0.995463)
 bones/3/rotation = Quaternion(1.6032699e-08, -4.0593463e-08, -0.07965041, 0.9968229)
-bones/4/rotation = Quaternion(6.6237127e-09, -3.0840457e-09, -0.017903687, 0.9998397)
-bones/5/rotation = Quaternion(-3.1712702e-08, 7.715652e-08, 0.13401943, 0.9909787)
-bones/6/rotation = Quaternion(-0.053800166, -0.023684725, -0.073318325, 0.9955748)
-bones/8/position = Vector3(0.0041027823, 0.08267189, 0.027315805)
+bones/4/rotation = Quaternion(2.3123109e-08, 1.1063787e-08, -0.12199253, 0.99253106)
+bones/5/rotation = Quaternion(-3.171271e-08, 7.715653e-08, 0.13401945, 0.9909787)
+bones/6/rotation = Quaternion(-0.053800166, -0.023684725, -0.07331834, 0.9955748)
+bones/8/position = Vector3(0.004102782, 0.08267189, 0.027315805)
 bones/8/rotation = Quaternion(0.6306079, 0.40785676, -0.4048225, 0.5216372)
 bones/9/rotation = Quaternion(-0.039344154, 0.09463693, -0.06921749, 0.992323)
 bones/10/rotation = Quaternion(0.06747644, 0.37893373, -0.34578505, 0.85573876)
 bones/11/rotation = Quaternion(0.22465774, -0.5161384, 0.10018367, 0.8204227)
 bones/12/rotation = Quaternion(0.1459471, 8.6373724e-08, 1.1216814e-06, 0.9892924)
 bones/14/rotation = Quaternion(0.45339054, -0.46558487, 0.011542792, 0.759957)
-bones/16/position = Vector3(0.0037738404, 0.07979738, -0.027635574)
+bones/16/position = Vector3(0.0037738413, 0.07979739, -0.027635574)
 bones/16/rotation = Quaternion(-0.5555436, -0.33516935, -0.4736851, 0.5955294)
 bones/18/rotation = Quaternion(0.124730505, 0.13163248, 0.48510256, 0.8554477)
 bones/19/rotation = Quaternion(0.08650568, -0.23721205, -0.22000748, 0.9422547)
@@ -363,23 +434,23 @@ bones/22/rotation = Quaternion(0.15637887, 0.31042162, 0.118151926, 0.9301743)
 bones/24/rotation = Quaternion(-0.07933005, -0.13271193, -0.82399726, 0.54508966)
 bones/25/rotation = Quaternion(4.3354035e-07, 1.2583418e-07, -0.49041378, 0.8714898)
 bones/26/rotation = Quaternion(0.21945074, 0.026430013, -0.20586263, 0.9532908)
-bones/28/position = Vector3(0.02424289, 0.08092393, 0.003353042)
+bones/28/position = Vector3(0.02424289, 0.080923945, 0.003353042)
 bones/28/rotation = Quaternion(0.7419388, 0.12326847, 0.34551752, 0.5612035)
 bones/29/rotation = Quaternion(-0.05181395, -0.013327551, 0.15795507, 0.98599595)
-bones/31/position = Vector3(0.023902796, 0.041781574, 0.0022148981)
+bones/31/position = Vector3(0.023902792, 0.04178161, 0.0022148981)
 bones/31/rotation = Quaternion(0.50951827, 0.18914726, 0.3553043, 0.76050866)
-bones/34/position = Vector3(0.024253573, 0.080690175, -0.005268566)
+bones/34/position = Vector3(0.024253573, 0.080690205, -0.005268566)
 bones/34/rotation = Quaternion(0.5716581, -0.48874885, 0.5857155, -0.3021078)
 bones/35/rotation = Quaternion(-0.14029989, 0.05300436, -0.075800285, 0.98577935)
-bones/37/position = Vector3(0.023897357, 0.041900687, -0.0020992397)
+bones/37/position = Vector3(0.023897357, 0.041900724, -0.0020992397)
 bones/37/rotation = Quaternion(-0.43777555, -0.32208377, 0.44068408, 0.71443135)
-bones/40/position = Vector3(-0.024500677, 0.062067427, 7.425902e-09)
+bones/40/position = Vector3(-0.024500677, 0.062067457, 7.42509e-09)
 bones/40/rotation = Quaternion(-1.9177855e-07, 3.2981071e-09, 0.92189014, 0.3874514)
-bones/42/position = Vector3(-0.023188787, 0.03996389, 4.197639e-09)
+bones/42/position = Vector3(-0.023188787, 0.039963912, 4.1968264e-09)
 bones/42/rotation = Quaternion(-9.976742e-08, -5.569528e-08, 0.9213329, 0.3887749)
 bones/44/rotation = Quaternion(-7.292529e-08, -1.5128447e-09, 0.90662146, 0.42194498)
 bones/46/rotation = Quaternion(9.740103e-10, -8.6134854e-08, 0.97287285, 0.23134094)
-bones/48/position = Vector3(0.004562862, -0.00020489977, -0.16237584)
+bones/48/position = Vector3(-0.02171424, -0.00020488542, -0.26917952)
 bones/48/rotation = Quaternion(-0.69133085, -0.15403113, -0.1494175, 0.68993515)
 bones/51/rotation = Quaternion(-1.39062575e-08, 9.455071e-08, 0.18849662, 0.9820739)
 bones/52/rotation = Quaternion(-2.2125949e-08, 7.4527776e-08, 0.10854252, 0.99409187)

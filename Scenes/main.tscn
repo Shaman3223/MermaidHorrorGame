@@ -233,7 +233,7 @@ wait_time = 3.0
 one_shot = true
 
 [node name="DeathTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.0
 one_shot = true
 
 [node name="Checkpoint01" parent="." instance=ExtResource("11_fdnlq")]
