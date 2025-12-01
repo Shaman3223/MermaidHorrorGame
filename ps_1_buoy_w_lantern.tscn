@@ -1,0 +1,117 @@
+[gd_scene load_steps=3 format=3 uid="uid://opomykdvdvvg"]
+
+[ext_resource type="PackedScene" uid="uid://bmh8em6ih4v6u" path="res://3DModels/PS1BuoyWLantern.fbx" id="1_at715"]
+[ext_resource type="Material" uid="uid://djo8dhygdua3r" path="res://Materials/green01.tres" id="2_rsu0j"]
+
+[node name="PS1BuoyWLantern" instance=ExtResource("1_at715")]
+
+[node name="Buoy_Leg" parent="BuoyWithLantern/BuoyLegs" index="0"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="Buoy_Leg1" parent="BuoyWithLantern/BuoyLegs" index="1"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="Buoy_Leg2" parent="BuoyWithLantern/BuoyLegs" index="2"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="Buoy_Leg3" parent="BuoyWithLantern/BuoyLegs" index="3"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="BuoyLegBottomSupport" parent="BuoyWithLantern/BuoyLegSupports" index="0"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="BuoyLegBottomSupport1" parent="BuoyWithLantern/BuoyLegSupports" index="1"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="BuoyLegBottomSupport2" parent="BuoyWithLantern/BuoyLegSupports" index="2"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="BuoyLegBottomSupport3" parent="BuoyWithLantern/BuoyLegSupports" index="3"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="CrossbarFront2" parent="BuoyWithLantern/Crossbar" index="0"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="CrossbarFront1" parent="BuoyWithLantern/Crossbar" index="1"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="CrossbarBack1" parent="BuoyWithLantern/Crossbar" index="2"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="CrossbarBack2" parent="BuoyWithLantern/Crossbar" index="3"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="CrossbarRight1" parent="BuoyWithLantern/Crossbar" index="4"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="CrossbarRight2" parent="BuoyWithLantern/Crossbar" index="5"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="CrossbarLeft1" parent="BuoyWithLantern/Crossbar" index="6"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="CrossbarLeft2" parent="BuoyWithLantern/Crossbar" index="7"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="Buoy_Base" parent="BuoyWithLantern" index="3"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="RopeHookLeft" parent="BuoyWithLantern/RopeHooksIThink" index="0"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="RopeHookRight" parent="BuoyWithLantern/RopeHooksIThink" index="1"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="BuoyCrossSection" parent="BuoyWithLantern/BuoyTopSection" index="0"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="BuoyTopMiddle" parent="BuoyWithLantern/BuoyTopSection" index="1"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="BuoyTopStand" parent="BuoyWithLantern/BuoyTopSection" index="2"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="BuoyTopRing" parent="BuoyWithLantern/BuoyTopSection" index="3"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="Bell" parent="BuoyWithLantern/BellSection" index="0"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="BellSupport1" parent="BuoyWithLantern/BellSection" index="1"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="BellSupport2" parent="BuoyWithLantern/BellSection" index="2"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="BellRope2" parent="BuoyWithLantern/BellSection" index="3"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="BellRope1" parent="BuoyWithLantern/BellSection" index="4"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="BellSupportBar" parent="BuoyWithLantern/BellSection" index="5"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="LanternTop" parent="BuoyWithLantern/BuoyLight" index="0"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="LanternBottom" parent="BuoyWithLantern/BuoyLight" index="2"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="MBarBellRight" parent="BuoyWithLantern/MiddleSupport" index="0"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="MBarRight" parent="BuoyWithLantern/MiddleSupport" index="1"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="MBarBellLeft" parent="BuoyWithLantern/MiddleSupport" index="2"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="MBarLeft" parent="BuoyWithLantern/MiddleSupport" index="3"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="MBackBar" parent="BuoyWithLantern/MiddleSupport" index="4"]
+material_override = ExtResource("2_rsu0j")
+
+[node name="MFrontBar" parent="BuoyWithLantern/MiddleSupport" index="5"]
+material_override = ExtResource("2_rsu0j")
