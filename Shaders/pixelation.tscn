@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdet5l6wmgm7t"]
+
+[ext_resource type="Material" uid="uid://co4am6gdd3dlw" path="res://Shaders/pixelation.tres" id="1_r64ey"]
+
+[node name="ColorRect" type="ColorRect"]
+material = ExtResource("1_r64ey")
+offset_right = 1920.0
+offset_bottom = 1440.0

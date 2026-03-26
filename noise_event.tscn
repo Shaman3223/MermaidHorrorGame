@@ -1,0 +1,134 @@
+[gd_scene load_steps=24 format=3 uid="uid://b5d68t82bb0eu"]
+
+[ext_resource type="Script" uid="uid://cdosy8in6j1au" path="res://noise_event.gd" id="1_77lm1"]
+[ext_resource type="AudioStream" uid="uid://diykxkone73r7" path="res://Sounds/waterSplash1.mp3" id="2_pd817"]
+[ext_resource type="AudioStream" uid="uid://d3uoyajvf6bo3" path="res://Sounds/siren/fakefrogsound.mp3" id="7_q2wn1"]
+
+[sub_resource type="Curve" id="Curve_5bwql"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.99361014, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_d67mf"]
+curve = SubResource("Curve_5bwql")
+
+[sub_resource type="Gradient" id="Gradient_op3io"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_q2wn1"]
+gradient = SubResource("Gradient_op3io")
+
+[sub_resource type="Gradient" id="Gradient_754gx"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ww047"]
+gradient = SubResource("Gradient_754gx")
+
+[sub_resource type="Curve" id="Curve_8sbet"]
+_limits = [-2.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_8sbet"]
+curve = SubResource("Curve_8sbet")
+
+[sub_resource type="Curve" id="Curve_d67mf"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_op3io"]
+curve = SubResource("Curve_d67mf")
+
+[sub_resource type="CurveTexture" id="CurveTexture_q2wn1"]
+
+[sub_resource type="Curve" id="Curve_77lm1"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.2871194), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_pd817"]
+curve = SubResource("Curve_77lm1")
+
+[sub_resource type="Curve" id="Curve_5f1b2"]
+_limits = [0.0, 84.85, 0.0, 1.0]
+_data = [Vector2(0, 50.964878), 0.0, 0.0, 0, 0, Vector2(0.43130988, 50.221783), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_5bwql"]
+curve = SubResource("Curve_5f1b2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8sbet"]
+direction = Vector3(0, 0, 0)
+spread = 0.0
+orbit_velocity_curve = SubResource("CurveTexture_8sbet")
+radial_velocity_curve = SubResource("CurveTexture_q2wn1")
+gravity = Vector3(0, 0, 0)
+radial_accel_curve = SubResource("CurveTexture_op3io")
+scale_min = 0.0
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_pd817")
+scale_over_velocity_curve = SubResource("CurveTexture_5bwql")
+color = Color(1, 1, 1, 0)
+color_ramp = SubResource("GradientTexture1D_ww047")
+color_initial_ramp = SubResource("GradientTexture1D_q2wn1")
+alpha_curve = SubResource("CurveTexture_d67mf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d67mf"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.9411765)
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 1.69
+
+[sub_resource type="TorusMesh" id="TorusMesh_op3io"]
+material = SubResource("StandardMaterial3D_d67mf")
+inner_radius = 1.237
+outer_radius = 1.23
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pd817"]
+height = 0.93359375
+radius = 17.529785
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_op3io"]
+radius = 8.659668
+
+[node name="NoiseEvent" type="Node3D"]
+script = ExtResource("1_77lm1")
+isProximityActivated = false
+endOnCompletion = true
+dangerRadius = 5.0
+sirenSounds = Array[AudioStream]([ExtResource("7_q2wn1")])
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.19252014, 0)
+emitting = false
+amount = 4
+lifetime = 6.0
+one_shot = true
+speed_scale = 3.0
+explosiveness = 0.44
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_8sbet")
+draw_pass_1 = SubResource("TorusMesh_op3io")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_pd817")
+
+[node name="Interval" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5332031, 0)
+shape = SubResource("CylinderShape3D_pd817")
+
+[node name="ActivationRadius" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ActivationRadius"]
+shape = SubResource("CylinderShape3D_op3io")
+debug_color = Color(0.13081512, 0.62731904, 0.4560246, 0.41960785)
+
+[connection signal="timeout" from="Interval" to="." method="_on_interval_timeout"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="ActivationRadius" to="." method="_on_activation_radius_body_entered"]

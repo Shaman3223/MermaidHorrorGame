@@ -21,4 +21,5 @@ void fragment() {
 	ROUGHNESS = .3;
 	SPECULAR = 0.1;
 	NORMAL_MAP = normal;
+	ALPHA = 0.8;
 }

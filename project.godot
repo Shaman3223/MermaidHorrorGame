@@ -11,9 +11,18 @@ config_version=5
 [application]
 
 config/name="Below The Lake"
-run/main_scene="uid://pm7l3k20fkv1"
+run/main_scene="uid://w7bmh5kfe3s2"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1440
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/proton_scatter/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
 
 [file_customization]
 
@@ -22,5 +31,15 @@ folder_colors={
 "res://Materials/": "yellow",
 "res://Scenes/": "teal",
 "res://Script/": "red",
-"res://Shaders/": "purple"
+"res://Shaders/": "purple",
+"res://Sounds/": "blue",
+"res://Sprites/": "green",
+"res://tileTextures/": "gray"
 }
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+shading/overrides/force_vertex_shading=true
+shading/overrides/force_lambert_over_burley=true
+anti_aliasing/screen_space_roughness_limiter/enabled=false

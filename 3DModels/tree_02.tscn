@@ -1,0 +1,772 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdww3mjg6jchr"]
+
+[ext_resource type="PackedScene" uid="uid://la2vlainkro1" path="res://3DModels/Tree003.fbx" id="1_avvo0"]
+[ext_resource type="Texture2D" uid="uid://bxhkw6wtlxidi" path="res://3DModels/trunk.png" id="2_erorf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_31ylw"]
+albedo_texture = ExtResource("2_erorf")
+
+[node name="Tree003" instance=ExtResource("1_avvo0")]
+
+[node name="polySurface54" parent="group2/group5/Tree_2" index="1"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.12222804, -0.4683244)
+
+[node name="polySurface57" parent="group2/group5/Tree_2" index="3"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface58" parent="group2/group5/Tree_2" index="4"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface59" parent="group2/group5/Tree_2" index="5"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.12222804, -0.4683244)
+
+[node name="polySurface60" parent="group2/group5/Tree_2" index="6"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.16341306, -0.4683244)
+
+[node name="polySurface61" parent="group2/group5/Tree_2" index="7"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface63" parent="group2/group5/Tree_2" index="9"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.16341306, -0.4683244)
+
+[node name="polySurface64" parent="group2/group5/Tree_2" index="10"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.16341306, -0.4683244)
+
+[node name="polySurface67" parent="group2/group5/Tree_2" index="11"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface68" parent="group2/group5/Tree_2" index="12"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface69" parent="group2/group5/Tree_2" index="13"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface70" parent="group2/group5/Tree_2" index="14"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.12222804, -0.4683244)
+
+[node name="polySurface71" parent="group2/group5/Tree_2" index="15"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface72" parent="group2/group5/Tree_2" index="16"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface73" parent="group2/group5/Tree_2" index="17"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface74" parent="group2/group5/Tree_2" index="18"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface75" parent="group2/group5/Tree_2" index="19"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface76" parent="group2/group5/Tree_2" index="20"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface77" parent="group2/group5/Tree_2" index="21"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface78" parent="group2/group5/Tree_2" index="22"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface79" parent="group2/group5/Tree_2" index="23"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface80" parent="group2/group5/Tree_2" index="24"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface81" parent="group2/group5/Tree_2" index="25"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface83" parent="group2/group5/Tree_2" index="26"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface86" parent="group2/group5/Tree_2" index="27"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface87" parent="group2/group5/Tree_2" index="28"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface88" parent="group2/group5/Tree_2" index="29"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface90" parent="group2/group5/Tree_2" index="30"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface91" parent="group2/group5/Tree_2" index="31"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface92" parent="group2/group5/Tree_2" index="32"]
+transform = Transform3D(1.0475067, -0.12825318, 1.8556541, -1.6758993, -0.8562331, 0.7419572, 1.0213137, -1.2734721, -0.68574876, -0.22181386, 1.6441562, -0.43729016)
+
+[node name="polySurface94" parent="group2/group5/Tree_2" index="34"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface97" parent="group2/group5/Tree_2" index="35"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.12222804, -0.4683244)
+
+[node name="polySurface98" parent="group2/group5/Tree_2" index="36"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface99" parent="group2/group5/Tree_2" index="37"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface100" parent="group2/group5/Tree_2" index="38"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface101" parent="group2/group5/Tree_2" index="39"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.21217993, -0.22708182, -0.7228861)
+
+[node name="polySurface102" parent="group2/group5/Tree_2" index="40"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface103" parent="group2/group5/Tree_2" index="41"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface104" parent="group2/group5/Tree_2" index="42"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface105" parent="group2/group5/Tree_2" index="43"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface106" parent="group2/group5/Tree_2" index="44"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface107" parent="group2/group5/Tree_2" index="45"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface108" parent="group2/group5/Tree_2" index="46"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface109" parent="group2/group5/Tree_2" index="47"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface110" parent="group2/group5/Tree_2" index="48"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface111" parent="group2/group5/Tree_2" index="49"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface112" parent="group2/group5/Tree_2" index="50"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface113" parent="group2/group5/Tree_2" index="51"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface115" parent="group2/group5/Tree_2" index="52"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface116" parent="group2/group5/Tree_2" index="53"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface117" parent="group2/group5/Tree_2" index="54"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface119" parent="group2/group5/Tree_2" index="55"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface134" parent="group2/group5/Tree_2" index="56"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface137" parent="group2/group5/Tree_2" index="57"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface138" parent="group2/group5/Tree_2" index="58"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface139" parent="group2/group5/Tree_2" index="59"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface141" parent="group2/group5/Tree_2" index="60"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface143" parent="group2/group5/Tree_2" index="61"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface145" parent="group2/group5/Tree_2" index="62"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface146" parent="group2/group5/Tree_2" index="63"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface147" parent="group2/group5/Tree_2" index="64"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface148" parent="group2/group5/Tree_2" index="65"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface149" parent="group2/group5/Tree_2" index="66"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface150" parent="group2/group5/Tree_2" index="67"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface151" parent="group2/group5/Tree_2" index="68"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface152" parent="group2/group5/Tree_2" index="69"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface155" parent="group2/group5/Tree_2" index="70"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface156" parent="group2/group5/Tree_2" index="71"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface157" parent="group2/group5/Tree_2" index="72"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface158" parent="group2/group5/Tree_2" index="73"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface160" parent="group2/group5/Tree_2" index="74"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface162" parent="group2/group5/Tree_2" index="75"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface164" parent="group2/group5/Tree_2" index="76"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface165" parent="group2/group5/Tree_2" index="77"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface167" parent="group2/group5/Tree_2" index="78"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface168" parent="group2/group5/Tree_2" index="79"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface169" parent="group2/group5/Tree_2" index="80"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface170" parent="group2/group5/Tree_2" index="81"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface171" parent="group2/group5/Tree_2" index="82"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.16341306, -0.4683244)
+
+[node name="polySurface172" parent="group2/group5/Tree_2" index="83"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.12222804, -0.4683244)
+
+[node name="polySurface173" parent="group2/group5/Tree_2" index="84"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface174" parent="group2/group5/Tree_2" index="85"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface175" parent="group2/group5/Tree_2" index="86"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface176" parent="group2/group5/Tree_2" index="87"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface177" parent="group2/group5/Tree_2" index="88"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface178" parent="group2/group5/Tree_2" index="89"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface180" parent="group2/group5/Tree_2" index="90"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface181" parent="group2/group5/Tree_2" index="91"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface183" parent="group2/group5/Tree_2" index="92"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface184" parent="group2/group5/Tree_2" index="93"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface187" parent="group2/group5/Tree_2" index="94"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface189" parent="group2/group5/Tree_2" index="95"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface191" parent="group2/group5/Tree_2" index="96"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface193" parent="group2/group5/Tree_2" index="97"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface194" parent="group2/group5/Tree_2" index="98"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.12222804, -0.4683244)
+
+[node name="polySurface195" parent="group2/group5/Tree_2" index="99"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.12222804, -0.4683244)
+
+[node name="polySurface196" parent="group2/group5/Tree_2" index="100"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface199" parent="group2/group5/Tree_2" index="101"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface203" parent="group2/group5/Tree_2" index="103"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.2856411, -0.4683244)
+
+[node name="polySurface204" parent="group2/group5/Tree_2" index="104"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.16341306, -0.4683244)
+
+[node name="polySurface206" parent="group2/group5/Tree_2" index="105"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface208" parent="group2/group5/Tree_2" index="106"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.12222804, -0.4683244)
+
+[node name="polySurface209" parent="group2/group5/Tree_2" index="107"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.16341306, -0.4683244)
+
+[node name="polySurface212" parent="group2/group5/Tree_2" index="108"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.16341306, -0.4683244)
+
+[node name="polySurface214" parent="group2/group5/Tree_2" index="109"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface215" parent="group2/group5/Tree_2" index="110"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface216" parent="group2/group5/Tree_2" index="111"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface217" parent="group2/group5/Tree_2" index="112"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface218" parent="group2/group5/Tree_2" index="113"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface219" parent="group2/group5/Tree_2" index="114"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface220" parent="group2/group5/Tree_2" index="115"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface221" parent="group2/group5/Tree_2" index="116"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface222" parent="group2/group5/Tree_2" index="117"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface223" parent="group2/group5/Tree_2" index="118"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface224" parent="group2/group5/Tree_2" index="119"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface225" parent="group2/group5/Tree_2" index="120"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface226" parent="group2/group5/Tree_2" index="121"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface227" parent="group2/group5/Tree_2" index="122"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface228" parent="group2/group5/Tree_2" index="123"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface229" parent="group2/group5/Tree_2" index="124"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface230" parent="group2/group5/Tree_2" index="125"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface231" parent="group2/group5/Tree_2" index="126"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface232" parent="group2/group5/Tree_2" index="127"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface233" parent="group2/group5/Tree_2" index="128"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface234" parent="group2/group5/Tree_2" index="129"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface235" parent="group2/group5/Tree_2" index="130"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface236" parent="group2/group5/Tree_2" index="131"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface237" parent="group2/group5/Tree_2" index="132"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface242" parent="group2/group5/Tree_2" index="133"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface244" parent="group2/group5/Tree_2" index="134"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 0.19110243, -0.4683244)
+
+[node name="polySurface245" parent="group2/group5/Tree_2" index="135"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.12222804, -0.4683244)
+
+[node name="polySurface246" parent="group2/group5/Tree_2" index="136"]
+transform = Transform3D(2.0622203, 0.10767449, -0.7785947, -0.070663095, 1.5300139, 0.22951007, 0.8314106, -0.13703577, 1.9507229, 0.0058143893, -0.000863399, 0.068727255)
+
+[node name="polySurface247" parent="group2/group5/Tree_2" index="137"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface249" parent="group2/group5/Tree_2" index="138"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.16341306, -0.4683244)
+
+[node name="polySurface250" parent="group2/group5/Tree_2" index="139"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.16341306, -0.4683244)
+
+[node name="polySurface251" parent="group2/group5/Tree_2" index="140"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface252" parent="group2/group5/Tree_2" index="141"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface253" parent="group2/group5/Tree_2" index="142"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface254" parent="group2/group5/Tree_2" index="143"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface255" parent="group2/group5/Tree_2" index="144"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface256" parent="group2/group5/Tree_2" index="145"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface257" parent="group2/group5/Tree_2" index="146"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.12222804, -0.4683244)
+
+[node name="polySurface258" parent="group2/group5/Tree_2" index="147"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface260" parent="group2/group5/Tree_2" index="148"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface261" parent="group2/group5/Tree_2" index="149"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface263" parent="group2/group5/Tree_2" index="150"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface265" parent="group2/group5/Tree_2" index="151"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface267" parent="group2/group5/Tree_2" index="152"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface269" parent="group2/group5/Tree_2" index="153"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface282" parent="group2/group5/Tree_2" index="154"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface285" parent="group2/group5/Tree_2" index="155"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface287" parent="group2/group5/Tree_2" index="156"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface291" parent="group2/group5/Tree_2" index="157"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface292" parent="group2/group5/Tree_2" index="158"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.12222804, -0.4683244)
+
+[node name="polySurface293" parent="group2/group5/Tree_2" index="159"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface294" parent="group2/group5/Tree_2" index="160"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface295" parent="group2/group5/Tree_2" index="161"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface296" parent="group2/group5/Tree_2" index="162"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface297" parent="group2/group5/Tree_2" index="163"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface298" parent="group2/group5/Tree_2" index="164"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface299" parent="group2/group5/Tree_2" index="165"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface301" parent="group2/group5/Tree_2" index="166"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface303" parent="group2/group5/Tree_2" index="167"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface305" parent="group2/group5/Tree_2" index="168"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface306" parent="group2/group5/Tree_2" index="169"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface308" parent="group2/group5/Tree_2" index="170"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface310" parent="group2/group5/Tree_2" index="171"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface312" parent="group2/group5/Tree_2" index="172"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface315" parent="group2/group5/Tree_2" index="173"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface316" parent="group2/group5/Tree_2" index="174"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface317" parent="group2/group5/Tree_2" index="175"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface318" parent="group2/group5/Tree_2" index="176"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface319" parent="group2/group5/Tree_2" index="177"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.16341306, -0.4683244)
+
+[node name="polySurface321" parent="group2/group5/Tree_2" index="178"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface322" parent="group2/group5/Tree_2" index="179"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface323" parent="group2/group5/Tree_2" index="180"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface324" parent="group2/group5/Tree_2" index="181"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.12222804, -0.4683244)
+
+[node name="polySurface325" parent="group2/group5/Tree_2" index="182"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface327" parent="group2/group5/Tree_2" index="183"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface328" parent="group2/group5/Tree_2" index="184"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface331" parent="group2/group5/Tree_2" index="185"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface334" parent="group2/group5/Tree_2" index="186"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface336" parent="group2/group5/Tree_2" index="187"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface338" parent="group2/group5/Tree_2" index="188"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface340" parent="group2/group5/Tree_2" index="189"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface341" parent="group2/group5/Tree_2" index="190"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface342" parent="group2/group5/Tree_2" index="191"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.12222804, -0.4683244)
+
+[node name="polySurface343" parent="group2/group5/Tree_2" index="192"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface344" parent="group2/group5/Tree_2" index="193"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface346" parent="group2/group5/Tree_2" index="194"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface350" parent="group2/group5/Tree_2" index="195"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface351" parent="group2/group5/Tree_2" index="196"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.16341306, -0.4683244)
+
+[node name="polySurface353" parent="group2/group5/Tree_2" index="197"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface354" parent="group2/group5/Tree_2" index="198"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.10024689, 0.34651583, -0.34153602)
+
+[node name="polySurface355" parent="group2/group5/Tree_2" index="199"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.12222804, -0.4683244)
+
+[node name="polySurface359" parent="group2/group5/Tree_2" index="200"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.16341306, -0.4683244)
+
+[node name="polySurface360" parent="group2/group5/Tree_2" index="201"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.16341306, -0.4683244)
+
+[node name="polySurface361" parent="group2/group5/Tree_2" index="202"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface362" parent="group2/group5/Tree_2" index="203"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.16341306, -0.4683244)
+
+[node name="polySurface363" parent="group2/group5/Tree_2" index="204"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface364" parent="group2/group5/Tree_2" index="205"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface365" parent="group2/group5/Tree_2" index="206"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.12222804, -0.4683244)
+
+[node name="polySurface366" parent="group2/group5/Tree_2" index="207"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface367" parent="group2/group5/Tree_2" index="208"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.12222804, -0.4683244)
+
+[node name="polySurface368" parent="group2/group5/Tree_2" index="209"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface369" parent="group2/group5/Tree_2" index="210"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface370" parent="group2/group5/Tree_2" index="211"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface371" parent="group2/group5/Tree_2" index="212"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface372" parent="group2/group5/Tree_2" index="213"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface373" parent="group2/group5/Tree_2" index="214"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface374" parent="group2/group5/Tree_2" index="215"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface375" parent="group2/group5/Tree_2" index="216"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface376" parent="group2/group5/Tree_2" index="217"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface378" parent="group2/group5/Tree_2" index="218"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface379" parent="group2/group5/Tree_2" index="219"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface381" parent="group2/group5/Tree_2" index="220"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface382" parent="group2/group5/Tree_2" index="221"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface383" parent="group2/group5/Tree_2" index="222"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface385" parent="group2/group5/Tree_2" index="223"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface389" parent="group2/group5/Tree_2" index="224"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.12222804, -0.4683244)
+
+[node name="polySurface392" parent="group2/group5/Tree_2" index="226"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.2856411, -0.4683244)
+
+[node name="polySurface394" parent="group2/group5/Tree_2" index="227"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface395" parent="group2/group5/Tree_2" index="228"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface396" parent="group2/group5/Tree_2" index="229"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.21217993, -0.22708182, -0.7228861)
+
+[node name="polySurface397" parent="group2/group5/Tree_2" index="230"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.16341306, -0.4683244)
+
+[node name="polySurface398" parent="group2/group5/Tree_2" index="231"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface400" parent="group2/group5/Tree_2" index="232"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface402" parent="group2/group5/Tree_2" index="233"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface403" parent="group2/group5/Tree_2" index="234"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface404" parent="group2/group5/Tree_2" index="235"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface405" parent="group2/group5/Tree_2" index="236"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface406" parent="group2/group5/Tree_2" index="237"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface407" parent="group2/group5/Tree_2" index="238"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface408" parent="group2/group5/Tree_2" index="239"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface409" parent="group2/group5/Tree_2" index="240"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface410" parent="group2/group5/Tree_2" index="241"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface411" parent="group2/group5/Tree_2" index="242"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface412" parent="group2/group5/Tree_2" index="243"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface413" parent="group2/group5/Tree_2" index="244"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface416" parent="group2/group5/Tree_2" index="245"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface426" parent="group2/group5/Tree_2" index="246"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface428" parent="group2/group5/Tree_2" index="247"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface431" parent="group2/group5/Tree_2" index="248"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface432" parent="group2/group5/Tree_2" index="249"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface433" parent="group2/group5/Tree_2" index="250"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface436" parent="group2/group5/Tree_2" index="251"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface437" parent="group2/group5/Tree_2" index="252"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, -0.12222804, -0.4683244)
+
+[node name="polySurface438" parent="group2/group5/Tree_2" index="253"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface439" parent="group2/group5/Tree_2" index="254"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface440" parent="group2/group5/Tree_2" index="255"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface441" parent="group2/group5/Tree_2" index="256"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface442" parent="group2/group5/Tree_2" index="257"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="polySurface443" parent="group2/group5/Tree_2" index="258"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 0.13746154, 9.921026e-17, -0.4683244)
+
+[node name="Tree_0" parent="group2/group5" index="1"]
+transform = Transform3D(2.2246325, 0, 0, 0, 1.5399075, 0, 0, 0, 2.1128664, 1.2967112, -1.6901182, -3.828321)
+surface_material_override/0 = SubResource("StandardMaterial3D_31ylw")
